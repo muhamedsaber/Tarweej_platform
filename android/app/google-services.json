@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "695079877551",
+    "project_id": "tarweej-platform-b78b7",
+    "storage_bucket": "tarweej-platform-b78b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695079877551:android:3bec0eecd9a59a9babcd5a",
+        "android_client_info": {
+          "package_name": "com.example.tarweej_platform"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC00UC-fDDF-xcLpUhj6HJTvq8VL4Ptwc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
