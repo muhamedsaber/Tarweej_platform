@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tarweej_platform/config/router/app_router.dart';
 import 'package:tarweej_platform/config/theme/dark_theme/dark_theme.dart';
+import 'package:tarweej_platform/generated/l10n.dart';
 
 void main() {
   runApp(const TarweejPlatformApp());
@@ -14,6 +16,14 @@ class TarweejPlatformApp extends StatelessWidget {
       theme:  DarkTheme().theme,
       debugShowCheckedModeBanner: false,
       onGenerateRoute:AppRouter().onGenerateRoute,
+      locale: Locale("ar"),
+       localizationsDelegates:const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
     );
   }
 }
