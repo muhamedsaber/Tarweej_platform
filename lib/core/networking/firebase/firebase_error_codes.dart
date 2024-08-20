@@ -1,4 +1,3 @@
-import 'package:tarweej_platform/core/networking/firebase/firebase_error_messages.dart';
 
 class FirebaseErrorCodes {
   static const String adminRestrictedOperation = "admin-restricted-operation";

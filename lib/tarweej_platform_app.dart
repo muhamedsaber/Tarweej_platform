@@ -10,10 +10,15 @@ class TarweejPlatformApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: DarkTheme().theme,
+      builder: (context, child) {
+        return Theme(
+          data: DarkTheme.theme(context),
+          child: child!,
+        );
+      },
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter().onGenerateRoute,
-      locale: const Locale("ar"),
+      locale: const Locale("en"),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

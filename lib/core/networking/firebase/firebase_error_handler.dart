@@ -24,7 +24,7 @@ class FirebaseErrorHandler {
   }
 
   static String _getErrorMessage(String errorCode) {
-    AppLanguage lang = LocalizationHerlper.getCurrentLanguageByIntl();
+    AppLanguage lang = LocalizationHelper.getCurrentLanguageByIntl();
 
     if (lang == AppLanguage.ar) {
       return FirebaseErrorMapper.firebaseErrorCodeToArabicMessage[errorCode] ??

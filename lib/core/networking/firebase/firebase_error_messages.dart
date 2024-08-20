@@ -299,7 +299,7 @@ class FirebaseArabicErrorMessages {
   static const String insufficientPermission = "ليس لديك إذن كافٍ لإجراء هذا الإجراء.";
   static const String invalidClaims = "المطالب المقدمة غير صالحة. يرجى مراجعة مطالبك.";
   static const String invalidCreationTime = "وقت الإنشاء المقدم غير صالح. يرجى التحقق من إعداداتك.";
-  static const String invalidCredential = "بيانات الاعتماد المقدمة غير صالحة. يرجى التحقق من تفاصيل المصادقة الخاصة بك.";
+  static const String invalidCredential = "البيانات المقدمة غير صالحة. يرجى التحقق من بياناتك.";
   static const String invalidDisabledField = "الحقل الخاص بحالة التعطيل غير صالح. يرجى مراجعة تكوين المستخدم الخاص بك.";
   static const String invalidDisplayName = "اسم العرض المقدم غير صالح. يرجى التحقق من إدخالك.";
   static const String invalidEmailVerified = "حالة التحقق من البريد الإلكتروني غير صالحة. يرجى التحقق من تكوينك.";
