@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tarweej_platform/generated/l10n.dart';
 
 //Navigation Extension for BuildContext to navigate between screens
 // it use The Navigator to push and pop routes to the screen
@@ -55,4 +56,7 @@ extension DateTimeFormate on String? {
     }
   }
   
+}
+extension TranslationExtension on BuildContext{
+  S get translate => S.of(this);
 }

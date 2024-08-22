@@ -1,3 +1,17 @@
 {
-    "login":"Login"
+    "login":"Login",
+    "welcome":"Welcome",
+    "create":"Create ",
+    "yourAccount":"Your Account",
+    "toContinue":"to continue",
+    "email" :   "Email",
+    "password" :    "Password",
+    "isPasswordContainsAtLeast8Characters" :    "Password must contain at least 8 characters",
+    "isPasswordContainsAtLeast1Number" :    "Password must contain at least 1 number",
+    "isPasswordContainsAtLeast1UpperCaseLetter" :   "Password must contain at least 1 uppercase letter",
+    "isPasswordContainsAtLeast1LowerCaseLetter" :  "Password must contain at least 1 lowercase letter",
+    "isPasswordContainsAtLeast1SpecialCharacter" :   "Password must contain at least 1 special character",
+    "createAccount" :  "Create Account",
+    "or" :  "or",
+    "passwordIsValid":  "Password is valid"
 }

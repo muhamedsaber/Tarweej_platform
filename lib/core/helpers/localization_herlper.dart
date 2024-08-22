@@ -14,6 +14,8 @@ class LocalizationHelper {
 
   static AppLanguage getCurrentLanguageByContext(BuildContext context) {
     final local = Localizations.localeOf(context);
+   
+
     if (local.languageCode == AppConstants.ar) {
       return AppLanguage.ar;
     } else {
@@ -21,7 +23,7 @@ class LocalizationHelper {
     }
   }
   static String getFontFamily(BuildContext context) {
-    AppLanguage lang =getCurrentLanguageByContext(context);
+    AppLanguage lang = getCurrentLanguageByContext(context);
     if (lang == AppLanguage.ar) {
       return AppConstants.lamaFont;
     } else {

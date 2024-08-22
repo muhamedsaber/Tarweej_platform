@@ -1,3 +1,18 @@
 {
-    "login":"تسجيل الدخول"
+    "login":"تسجيل الدخول",
+    "welcome":"مرحبا بك",
+    "create":"أنشئ ",
+    "yourAccount":"حسابك",
+    "toContinue":"للمتابعة",
+    "email" : "البريد الإلكتروني",
+    "password" : "كلمة المرور",
+    "isPasswordContainsAtLeast8Characters" : "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل",
+    "isPasswordContainsAtLeast1Number" : "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+    "isPasswordContainsAtLeast1UpperCaseLetter" : "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+    "isPasswordContainsAtLeast1LowerCaseLetter" : "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+    "isPasswordContainsAtLeast1SpecialCharacter" : "يجب أن تحتوي كلمة المرور على حرف خاص واحد على الأقل",
+    "createAccount" : "إنشاء حساب",
+    "or" : "أو",
+    "passwordIsValid": "كلمة المرور صالحة"
+
 }
