@@ -1,4 +1,3 @@
-
 class PasswordState {
   final bool isPasswordContainsUpperCase;
   final bool isPasswordContainsLowerCase;
@@ -21,17 +20,20 @@ class PasswordState {
     bool? isPasswordLengthValid,
   }) {
     return PasswordState(
-      isPasswordContainsUpperCase: isPasswordContainsUpperCase ??  this.isPasswordContainsUpperCase,
-      isPasswordContainsLowerCase: isPasswordContainsLowerCase ?? this.isPasswordContainsLowerCase,
-      isPasswordContainsNumber: isPasswordContainsNumber ??  this.isPasswordContainsNumber,
-      isPasswordContainsSpecialCharacter:
-          isPasswordContainsSpecialCharacter ??  this.isPasswordContainsSpecialCharacter,
-      isPasswordLengthValid: isPasswordLengthValid ??   this.isPasswordLengthValid,
+      isPasswordContainsUpperCase:
+          isPasswordContainsUpperCase ?? this.isPasswordContainsUpperCase,
+      isPasswordContainsLowerCase:
+          isPasswordContainsLowerCase ?? this.isPasswordContainsLowerCase,
+      isPasswordContainsNumber:
+          isPasswordContainsNumber ?? this.isPasswordContainsNumber,
+      isPasswordContainsSpecialCharacter: isPasswordContainsSpecialCharacter ??
+          this.isPasswordContainsSpecialCharacter,
+      isPasswordLengthValid:
+          isPasswordLengthValid ?? this.isPasswordLengthValid,
     );
   }
 
   bool get isPasswordValid {
-
     return isPasswordContainsUpperCase &&
         isPasswordContainsLowerCase &&
         isPasswordContainsNumber &&

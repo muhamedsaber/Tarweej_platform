@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
+import 'package:tarweej_platform/core/helpers/size.dart';
 
 class AppTextField extends StatefulWidget {
   const AppTextField(
@@ -57,7 +58,7 @@ class _AppTextFieldState extends State<AppTextField> {
         fillColor: fillColor,
         filled: true,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15.r),
+          borderRadius: AppBorderRadius.circularAll15,
           borderSide: BorderSide(
             color: context.theme.colorScheme.secondary,
             width: 1.6,
@@ -67,6 +68,21 @@ class _AppTextFieldState extends State<AppTextField> {
           borderRadius: BorderRadius.circular(7.r),
           borderSide: BorderSide(
             color: context.theme.colorScheme.secondary,
+            width: 1.6,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(7.r),
+          borderSide: BorderSide(
+            color: context.theme.colorScheme.secondary,
+            width: 1.6,
+          ),
+        ),
+        errorStyle: context.theme.font14ErrorRegular,
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(7.r),
+          borderSide: BorderSide(
+            color: context.theme.colorScheme.error,
             width: 1.6,
           ),
         ),

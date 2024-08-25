@@ -20,6 +20,22 @@ extension TextStylesExtension on ThemeData {
       fontWeight: FontWeightHelper.medium,
     );
   }
+  TextStyle get font18OnSurfaceMedium {
+    return TextStyle(
+ 
+      fontSize: 18.sp,
+      color: colorScheme.onSurface,
+      fontWeight: FontWeightHelper.medium,
+    );
+  }
+  TextStyle get font14OnSurfaceMedium {
+    return TextStyle(
+ 
+      fontSize: 14.sp,
+      color: colorScheme.onSurface,
+      fontWeight: FontWeightHelper.medium,
+    );
+  }
    //--------------Regular---------------
   TextStyle get font24SecondaryRegular {
     return TextStyle(
@@ -54,6 +70,13 @@ extension TextStylesExtension on ThemeData {
     return TextStyle(
       fontSize: 10.sp,
       color: Colors.grey,
+      fontWeight: FontWeightHelper.regular,
+    );
+  }
+  TextStyle get font14ErrorRegular {
+    return TextStyle(
+      fontSize: 14.sp,
+      color: colorScheme.error,
       fontWeight: FontWeightHelper.regular,
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/config/theme/dark_theme/dark_theme_color.dart';
 import 'package:tarweej_platform/core/helpers/localization_herlper.dart';
-import 'package:tarweej_platform/config/theme/styles/font_weight_helper.dart';
 
 class DarkTheme {
   static ThemeData theme(BuildContext context) => ThemeData(
@@ -19,7 +18,7 @@ class DarkTheme {
         onSecondary: DarkThemeColors.onSecondaryColor,
       ),
       fontFamily: LocalizationHelper.getFontFamily(context),
-      textTheme: TextTheme().apply(
+      textTheme:const TextTheme().apply(
         fontFamily: LocalizationHelper.getFontFamily(context),
       ));
 }

@@ -13,6 +13,9 @@
     "isPasswordContainsAtLeast1SpecialCharacter" : "يجب أن تحتوي كلمة المرور على حرف خاص واحد على الأقل",
     "createAccount" : "إنشاء حساب",
     "or" : "أو",
-    "passwordIsValid": "كلمة المرور صالحة"
+    "passwordIsValid": "كلمة المرور صالحة",
+    "thisFieldIsRequired": "هذا الحقل مطلوب",
+    "pleaseEnterValidEmail": "الرجاء إدخال بريد إلكتروني صالح",
+    "gotIt":"حسناً"
 
 }

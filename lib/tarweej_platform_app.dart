@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej_platform/config/router/app_router.dart';
 import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/config/theme/dark_theme/dark_theme.dart';
+import 'package:tarweej_platform/core/helpers/app_constants.dart';
 import 'package:tarweej_platform/generated/l10n.dart';
 
 class TarweejPlatformApp extends StatelessWidget {
@@ -24,9 +25,12 @@ class TarweejPlatformApp extends StatelessWidget {
                 child: child!,
               );
             },
+            onGenerateInitialRoutes: (initialRoute) => [
+              AppRouter().onGenerateRoute(RouteSettings(name: initialRoute)),
+            ],
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppRouter().onGenerateRoute,
-            locale: const Locale("ar"),
+            locale: const Locale(AppConstants.ar),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

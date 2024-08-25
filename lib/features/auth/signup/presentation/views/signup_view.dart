@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarweej_platform/core/common_ui/widgets/app_text_field.dart';
-import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/widgets/password/password_field_with_validation_guide.dart';
+import 'package:tarweej_platform/features/auth/signup/presentation/widgets/signup_form.dart';
 import 'package:tarweej_platform/features/auth/signup/presentation/widgets/singup_headline.dart';
 
 class SignupView extends StatelessWidget {
@@ -12,6 +10,7 @@ class SignupView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        // hide keyboard when user taps outside the text field 
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
@@ -22,12 +21,7 @@ class SignupView extends StatelessWidget {
               verticalSpace(50),
               const SignupHeadline(),
               verticalSpace(26),
-               AppTextField(
-                hintText:context.translate.email ,
-              ),
-              verticalSpace(16),
-             const PasswordFieldWithValidationGuide(),
-              verticalSpace(10),
+              const SignupForm()
             ],
           ),
         ),

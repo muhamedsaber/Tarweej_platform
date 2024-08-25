@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "create": MessageLookupByLibrary.simpleMessage("أنشئ "),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "gotIt": MessageLookupByLibrary.simpleMessage("حسناً"),
         "isPasswordContainsAtLeast1LowerCaseLetter":
             MessageLookupByLibrary.simpleMessage(
                 "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل"),
@@ -45,6 +46,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordIsValid":
             MessageLookupByLibrary.simpleMessage("كلمة المرور صالحة"),
+        "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
+            "الرجاء إدخال بريد إلكتروني صالح"),
+        "thisFieldIsRequired":
+            MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "toContinue": MessageLookupByLibrary.simpleMessage("للمتابعة"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك"),
         "yourAccount": MessageLookupByLibrary.simpleMessage("حسابك")

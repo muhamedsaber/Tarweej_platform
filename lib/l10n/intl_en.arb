@@ -13,5 +13,8 @@
     "isPasswordContainsAtLeast1SpecialCharacter" :   "Password must contain at least 1 special character",
     "createAccount" :  "Create Account",
     "or" :  "or",
-    "passwordIsValid":  "Password is valid"
+    "passwordIsValid":  "Password is valid",
+    "thisFieldIsRequired":   "This field is required",
+    "pleaseEnterValidEmail":    "Please enter a valid email",
+    "gotIt":"Got it"
 }

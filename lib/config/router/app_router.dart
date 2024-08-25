@@ -9,7 +9,9 @@ class AppRouter {
         return _build(const SignupView());
 
       default:
-        return _build(  NotFoundScreen(routeName: settings.name??"",));
+        return _build(NotFoundScreen(
+          routeName: settings.name ?? "",
+        ));
     }
   }
 
@@ -33,12 +35,12 @@ class AppRouter {
 }
 
 class NotFoundScreen extends StatelessWidget {
-  const NotFoundScreen({super.key,required this.routeName});
-final String routeName;
+  const NotFoundScreen({super.key, required this.routeName});
+  final String routeName;
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
         child: Text("$routeName not found"),
       ),

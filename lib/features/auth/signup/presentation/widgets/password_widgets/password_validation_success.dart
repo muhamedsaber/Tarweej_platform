@@ -14,7 +14,8 @@ class PasswordValidationSuccess extends StatelessWidget {
             color: Colors.green,
           ),
           horizontalSpace(10),
-          Text(context.translate.passwordIsValid, style: context.theme.font16SecondaryRegular)
+          Text(context.translate.passwordIsValid,
+              style: context.theme.font16SecondaryRegular)
         ],
       ),
     );

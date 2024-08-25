@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
@@ -12,33 +11,37 @@ class SignupHeadline extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text(
+          context.translate.welcome,
+          style: context.theme.font32OnSurfaceMedium,
+        ),
+        // READ THIS CAREFULLY
 
-         Text(
-             context.translate.welcome,
-              style: context.theme.font32OnSurfaceMedium,
-            ),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: context.translate.create,
-                    style: context.theme.font24SecondaryRegular.copyWith(
-                      fontFamily: LocalizationHelper.getFontFamily(context),
-                    ),
-                  ),
-                  TextSpan(
-                    text: context.translate.yourAccount,
-                    style: context.theme.font24OnSurfaceRegular.copyWith(
-                      fontFamily: LocalizationHelper.getFontFamily(context),
-                    ),
-                  )
-                ],
+        // RichText is Not Inherit From Theme
+        // So It Not Get The font Family From The Theme
+        // We Need To Add It Manually
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: context.translate.create,
+                style: context.theme.font24SecondaryRegular.copyWith(
+                  fontFamily: LocalizationHelper.getFontFamily(context),
+                ),
               ),
-            ),
-            Text(
-              context.translate.toContinue,
-              style: context.theme.font24SecondaryRegular,
-            )
+              TextSpan(
+                text: context.translate.yourAccount,
+                style: context.theme.font24OnSurfaceRegular.copyWith(
+                  fontFamily: LocalizationHelper.getFontFamily(context),
+                ),
+              )
+            ],
+          ),
+        ),
+        Text(
+          context.translate.toContinue,
+          style: context.theme.font24SecondaryRegular,
+        )
       ],
     );
   }

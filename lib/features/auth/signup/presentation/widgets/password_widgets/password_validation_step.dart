@@ -10,31 +10,22 @@ class PasswordValidationStep extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        _buildIcon(),
+        Icon(
+          isValid ? Icons.done : Icons.close,
+          color: isValid ? Colors.green : Colors.grey,
+        ),
         horizontalSpace(8),
         Text(text, style: _buildTextStyle(context))
       ],
     );
   }
 
-  _buildIcon() {
-    if (isValid) {
-      return const Icon(
-        Icons.done,
-        color: Colors.green,
-      );
-    } else {
-      return const Icon(
-        Icons.close,
-        color: Colors.grey,
-      );
-    }
-  }
-
   TextStyle _buildTextStyle(BuildContext context) {
     if (isValid) {
       return context.theme.font10GreyRegular.copyWith(
-          decoration: TextDecoration.lineThrough, decorationColor: Colors.grey);
+        decoration: TextDecoration.lineThrough,
+        decorationColor: Colors.grey,
+      );
     } else {
       return context.theme.font10GreyRegular.copyWith(
         color: Colors.red,
