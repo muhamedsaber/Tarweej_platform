@@ -1,36 +1,39 @@
+
+
+
 import 'dart:developer';
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/alerts/app_alers.dart';
-import 'package:tarweej_platform/core/alerts/app_dialogs.dart';
-import 'package:tarweej_platform/core/common_ui/widgets/app_text_button.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
-import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/google/logic/signin_with_google_state.dart';
-import 'package:tarweej_platform/features/auth/features/providers/google/logic/singin_with_google_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/providers/twitter/logic/signin_with_twitter_notifier.dart';
 
-class SigninWithGoogleListener extends ConsumerWidget {
-  const SigninWithGoogleListener({super.key});
+import '../../../../../../core/alerts/app_dialogs.dart';
+import '../../../../../../core/common_ui/widgets/app_text_button.dart';
+import '../../../../../../core/helpers/size.dart';
+
+class SigninWithTwitterListener extends ConsumerWidget {
+  const SigninWithTwitterListener({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<SigninWithGoogleState>(
-      singInWithGoogleProvider,
+    ref.listen<SigninWithTwitterState>(
+      signInWithTwitterProvider ,
       (previous, state) {
         log(state.toString());
-        if (state is SigninWithGoogleSuccess) {
-          if (previous is SigninWithGoogleLoading) {
+        if (state is SigninWithTwitterLoading) {
+          if (previous is SigninWithTwitterLoading) {
             AppLoadingIndicator.hide(context);
           }
-        } else if (state is SigninWithGoogleError) {
-          if (previous is SigninWithGoogleLoading) {
+        } else if (state is SigninWithTwitterError) {
+          if (previous is SigninWithTwitterLoading) {
             AppLoadingIndicator.hide(context);
           }
           _buildErrorDialog(context, state);
-        } else if (state is SigninWithGoogleLoading) {
+        } else if (state is SigninWithTwitterLoading) {
           AppLoadingIndicator.show(context);
         }
       },
@@ -38,7 +41,7 @@ class SigninWithGoogleListener extends ConsumerWidget {
     return const SizedBox.shrink();
   }
 
-  _buildErrorDialog(BuildContext context, SigninWithGoogleError state) {
+  _buildErrorDialog(BuildContext context, SigninWithTwitterError state) {
     AppDialogs.showAlertDialog(
       context: context,
       icon: state.error.icon,

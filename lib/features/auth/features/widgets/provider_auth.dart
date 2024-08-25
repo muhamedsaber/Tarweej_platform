@@ -8,6 +8,8 @@ import 'package:tarweej_platform/features/auth/features/providers/facebook/logic
 import 'package:tarweej_platform/features/auth/features/providers/facebook/widgets/signin_with_facebook_listener.dart';
 import 'package:tarweej_platform/features/auth/features/providers/google/logic/singin_with_google_notifier.dart';
 import 'package:tarweej_platform/features/auth/features/providers/google/widgets/signin_with_google_listener.dart';
+import 'package:tarweej_platform/features/auth/features/providers/twitter/logic/signin_with_twitter_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/providers/twitter/widgets/signin_with_twitter_listener.dart';
 part 'provider_button.dart';
 
 class ProvidersAuth extends ConsumerWidget {
@@ -15,30 +17,59 @@ class ProvidersAuth extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Row(
+    return Column(
       children: [
-        ProviderButton(
-          imagePath: AppAssets.googleLogo,
-          onTap: () {
-            ref
-                .read<SingInWithGoogleNotifier>(
-                    singInWithGoogleProvider.notifier)
-                .signIn();
-          },
+        Row(
+          children: [
+            ProviderButton(
+              imagePath: AppAssets.googleLogo,
+              onTap: () {
+                ref
+                    .read<SingInWithGoogleNotifier>(
+                        singInWithGoogleProvider.notifier)
+                    .signIn();
+              },
+            ),
+            horizontalSpace(10),
+            ProviderButton(
+              imagePath: AppAssets.facebookLogo,
+              onTap: () {
+                ref
+                    .read<SingInWithFacebookNotifier>(
+                        signInWithFacebookProvider.notifier)
+                    .signIn();
+              },
+            ),
+          ],
         ),
-        horizontalSpace(10),
-        ProviderButton(
-          imagePath: AppAssets.facebookLogo,
-          onTap: () {
-             ref
-                .read<SingInWithFacebookNotifier>(
-                    signInWithFacebookProvider.notifier)
-                .signIn();
-          },
+        verticalSpace(20),
+        Row(
+          children: [
+            ProviderButton(
+              imagePath: AppAssets.facebookLogo,
+              onTap: () {
+                ref
+                    .read<SingInWithTwitterNotifier>(
+                        signInWithTwitterProvider.notifier)
+                    .signIn();
+              },
+            ),
+            horizontalSpace(10),
+            ProviderButton(
+              imagePath: AppAssets.googleLogo,
+              onTap: () {
+                ref
+                    .read<SingInWithFacebookNotifier>(
+                        signInWithFacebookProvider.notifier)
+                    .signIn();
+              },
+            ),
+          ],
         ),
         //----Listeners
         const SigninWithGoogleListener(),
-        const SigninWithFacebookListener()
+        const SigninWithFacebookListener(),
+        const SigninWithTwitterListener()
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:tarweej_platform/features/auth/features/providers/facebook/data/signin_with_facebook_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/google/data/signin_with_google_repo.dart';
+import 'package:tarweej_platform/features/auth/features/providers/twitter/data/signin_with_twitter_repo.dart';
 import 'package:tarweej_platform/features/auth/services/email_service.dart';
 import 'package:tarweej_platform/features/auth/features/signup/data/repos/signup_repo.dart';
 import 'package:tarweej_platform/features/auth/services/provider_services.dart';
@@ -13,6 +14,7 @@ void setupDependencyInjection() {
   _setupSignup();
   _setupSignInWithGoogle();
   _setupSignInWithFacebook();
+  _setupSignInWithTwitter();
 }
 
 _setupSignup() {
@@ -28,4 +30,8 @@ _setupSignInWithGoogle() {
 _setupSignInWithFacebook(){
    getIt.registerSingleton<SigninWithFacebookRepo>(
       SigninWithFacebookRepo(providerServices: getIt<AuthProviderServices>()));
+}
+_setupSignInWithTwitter(){
+   getIt.registerSingleton<SignInWithTwitterRepo>(
+      SignInWithTwitterRepo(providersService: getIt<AuthProviderServices>()));
 }
