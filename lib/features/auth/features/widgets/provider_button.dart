@@ -1,5 +1,5 @@
+part of 'provider_auth_section.dart';
 
-part of 'provider_auth.dart';
 class ProviderButton extends StatelessWidget {
   const ProviderButton(
       {super.key, required this.imagePath, required this.onTap});
@@ -12,11 +12,12 @@ class ProviderButton extends StatelessWidget {
         borderRadius: AppBorderRadius.circularAll15,
         onTap: onTap,
         child: Container(
-          height: 60.h,
+          height: 50.h,
           padding: const EdgeInsets.symmetric(vertical: 14),
           decoration: BoxDecoration(
-              color: context.theme.colorScheme.surface,
-              borderRadius: AppBorderRadius.circularAll15),
+            color: context.theme.colorScheme.surface,
+            borderRadius: AppBorderRadius.circularAll15,
+          ),
           child: Image.asset(imagePath),
         ),
       ),

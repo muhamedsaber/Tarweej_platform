@@ -8,7 +8,7 @@ import 'package:tarweej_platform/features/auth/features/signup/presentation/noti
 import 'package:tarweej_platform/features/auth/features/signup/presentation/notifiers/password/password_state.dart';
 part 'password_validation_guide.dart';
 part 'password_validation_step.dart';
-part 'password_validation_steps.dart';
+part 'password_validation_total_steps.dart';
 part 'password_validation_success.dart';
 
 class PasswordFieldWithValidationGuide extends StatelessWidget {

@@ -18,7 +18,7 @@ class SigninWithGoogleListener extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<SigninWithGoogleState>(
-      singInWithGoogleProvider,
+      signInWithGoogleProvider,
       (previous, state) {
         log(state.toString());
         if (state is SigninWithGoogleSuccess) {

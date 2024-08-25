@@ -3,7 +3,7 @@ import 'package:tarweej_platform/core/helpers/size.dart';
 import 'package:tarweej_platform/features/auth/features/signup/presentation/widgets/signup_form.dart';
 import 'package:tarweej_platform/features/auth/features/signup/presentation/widgets/singup_headline.dart';
 import 'package:tarweej_platform/features/auth/features/widgets/or_separator.dart';
-import 'package:tarweej_platform/features/auth/features/widgets/provider_auth.dart';
+import 'package:tarweej_platform/features/auth/features/widgets/provider_auth_section.dart';
 
 class MainAuthView extends StatelessWidget {
   const MainAuthView({super.key});
@@ -27,7 +27,7 @@ class MainAuthView extends StatelessWidget {
               verticalSpace(26),
               const OrSeparator(),
                verticalSpace(15),
-              const ProvidersAuth()
+              const ProvidersAuthSection()
             ],
           ),
         ),
