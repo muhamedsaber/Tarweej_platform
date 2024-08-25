@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_model.dart';
-import 'package:tarweej_platform/features/auth/signup/data/repos/signup_repo.dart';
+import 'package:tarweej_platform/features/auth/features/signup/data/repos/signup_repo.dart';
 part 'signup_state.dart';
 
 

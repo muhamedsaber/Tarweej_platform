@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/config/router/routes.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/views/signup_view.dart';
+import 'package:tarweej_platform/features/auth/features/signup/presentation/views/signup_view.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {

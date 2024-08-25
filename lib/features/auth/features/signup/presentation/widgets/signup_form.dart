@@ -5,10 +5,10 @@ import 'package:tarweej_platform/core/common_ui/widgets/app_text_field.dart';
 import 'package:tarweej_platform/core/helpers/app_regex.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/notifiers/signup/signup_state_notifier.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/notifiers/password/password_change_notifier.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/widgets/password_widgets/password_field_with_validation_guide.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/widgets/singup_listener.dart';
+import 'package:tarweej_platform/features/auth/features/signup/presentation/notifiers/signup/signup_state_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/signup/presentation/notifiers/password/password_change_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/signup/presentation/widgets/password_widgets/password_field_with_validation_guide.dart';
+import 'package:tarweej_platform/features/auth/features/signup/presentation/widgets/singup_listener.dart';
 
 class SignupForm extends ConsumerWidget {
   const SignupForm({super.key});

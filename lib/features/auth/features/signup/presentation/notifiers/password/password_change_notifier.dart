@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/core/helpers/app_regex.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/notifiers/password/password_state.dart';
+import 'package:tarweej_platform/features/auth/features/signup/presentation/notifiers/password/password_state.dart';
 
 class PasswordChangeNotifier extends ChangeNotifier {
   PasswordChangeNotifier._();

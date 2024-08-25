@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/widgets/signup_form.dart';
-import 'package:tarweej_platform/features/auth/signup/presentation/widgets/singup_headline.dart';
+import 'package:tarweej_platform/features/auth/features/signup/presentation/widgets/signup_form.dart';
+import 'package:tarweej_platform/features/auth/features/signup/presentation/widgets/singup_headline.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
