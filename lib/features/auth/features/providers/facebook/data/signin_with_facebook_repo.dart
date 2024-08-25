@@ -6,12 +6,12 @@ import 'package:tarweej_platform/core/networking/firebase/firebase_error_handler
 import 'package:tarweej_platform/core/networking/firebase/firebase_result.dart';
 import 'package:tarweej_platform/features/auth/services/provider_services.dart';
 
-class SignInWithGoogleRepo {
-  final AuthProviderServices providersService;
-  SignInWithGoogleRepo({required this.providersService});
+class SigninWithFacebookRepo {
+  final AuthProviderServices providerServices;
+  SigninWithFacebookRepo({required this.providerServices});
   Future<FirebaseResult<UserModel>> signIn() async {
     try {
-      UserCredential credentials = await providersService.signInWithGoogle();
+      UserCredential credentials = await providerServices.signInWithFacebook();
       log(credentials.user.toString());
       UserModel model = UserModel(
         email: credentials.user!.email,
