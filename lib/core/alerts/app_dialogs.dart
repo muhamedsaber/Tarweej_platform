@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
+import 'package:tarweej_platform/core/common_ui/widgets/app_text_button.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
 
@@ -54,4 +55,6 @@ class AppDialogs {
       },
     );
   }
+  
+  
 }
