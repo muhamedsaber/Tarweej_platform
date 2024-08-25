@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/config/router/routes.dart';
-import 'package:tarweej_platform/features/auth/features/signup/presentation/views/signup_view.dart';
+import 'package:tarweej_platform/features/auth/features/main_auth_view.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.signupView:
-        return _build(const SignupView());
+      case Routes.mainAuthView:
+        return _build(const MainAuthView());
 
       default:
         return _build(NotFoundScreen(

@@ -1,3 +1,3 @@
 class Routes {
-  static const String signupView = "/SignupView";
+  static const String mainAuthView = "/MainAuthView";
 }

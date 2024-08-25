@@ -18,7 +18,7 @@ class TarweejPlatformApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (_, context) {
           return MaterialApp(
-            initialRoute: Routes.signupView,
+            initialRoute: Routes.mainAuthView,
             builder: (context, child) {
               return Theme(
                 data: DarkTheme.theme(context),
