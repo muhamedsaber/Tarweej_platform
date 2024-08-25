@@ -46,4 +46,12 @@ class AuthProviderServices {
     }
     return credential;
   }
+
+  // github
+  Future<UserCredential> signInWithGitHub() async {
+    // Create a new provider
+    GithubAuthProvider githubProvider = GithubAuthProvider();
+
+    return await FirebaseAuth.instance.signInWithProvider(githubProvider);
+  }
 }
