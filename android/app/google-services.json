@@ -12,7 +12,20 @@
           "package_name": "com.example.tarweej_platform"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "695079877551-bhpa7vn8okoocmdspfdg1ol9mhelf77u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tarweej_platform",
+            "certificate_hash": "c7bb73a8c03042099116a22544c77d06526b79da"
+          }
+        },
+        {
+          "client_id": "695079877551-0bf19t99es0v9v0r2p1p7ft210og9kde.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC00UC-fDDF-xcLpUhj6HJTvq8VL4Ptwc4"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695079877551-0bf19t99es0v9v0r2p1p7ft210og9kde.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "695079877551-8halmlun62t1fjgdtctju5co48nm56c3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tarweejPlatform"
+              }
+            }
+          ]
         }
       }
     }
