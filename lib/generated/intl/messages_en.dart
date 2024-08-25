@@ -22,6 +22,36 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "login": MessageLookupByLibrary.simpleMessage("Login")
+        "create": MessageLookupByLibrary.simpleMessage("Create "),
+        "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "gotIt": MessageLookupByLibrary.simpleMessage("Got it"),
+        "isPasswordContainsAtLeast1LowerCaseLetter":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must contain at least 1 lowercase letter"),
+        "isPasswordContainsAtLeast1Number":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must contain at least 1 number"),
+        "isPasswordContainsAtLeast1SpecialCharacter":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must contain at least 1 special character"),
+        "isPasswordContainsAtLeast1UpperCaseLetter":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must contain at least 1 uppercase letter"),
+        "isPasswordContainsAtLeast8Characters":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must contain at least 8 characters"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "or": MessageLookupByLibrary.simpleMessage("or"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordIsValid":
+            MessageLookupByLibrary.simpleMessage("Password is valid"),
+        "pleaseEnterValidEmail":
+            MessageLookupByLibrary.simpleMessage("Please enter a valid email"),
+        "thisFieldIsRequired":
+            MessageLookupByLibrary.simpleMessage("This field is required"),
+        "toContinue": MessageLookupByLibrary.simpleMessage("to continue"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "yourAccount": MessageLookupByLibrary.simpleMessage("Your Account")
       };
 }

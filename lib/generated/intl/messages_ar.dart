@@ -22,6 +22,36 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول")
+        "create": MessageLookupByLibrary.simpleMessage("أنشئ "),
+        "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "gotIt": MessageLookupByLibrary.simpleMessage("حسناً"),
+        "isPasswordContainsAtLeast1LowerCaseLetter":
+            MessageLookupByLibrary.simpleMessage(
+                "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل"),
+        "isPasswordContainsAtLeast1Number":
+            MessageLookupByLibrary.simpleMessage(
+                "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل"),
+        "isPasswordContainsAtLeast1SpecialCharacter":
+            MessageLookupByLibrary.simpleMessage(
+                "يجب أن تحتوي كلمة المرور على حرف خاص واحد على الأقل"),
+        "isPasswordContainsAtLeast1UpperCaseLetter":
+            MessageLookupByLibrary.simpleMessage(
+                "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل"),
+        "isPasswordContainsAtLeast8Characters":
+            MessageLookupByLibrary.simpleMessage(
+                "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "or": MessageLookupByLibrary.simpleMessage("أو"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "passwordIsValid":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور صالحة"),
+        "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
+            "الرجاء إدخال بريد إلكتروني صالح"),
+        "thisFieldIsRequired":
+            MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+        "toContinue": MessageLookupByLibrary.simpleMessage("للمتابعة"),
+        "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك"),
+        "yourAccount": MessageLookupByLibrary.simpleMessage("حسابك")
       };
 }

@@ -59,6 +59,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create `
+  String get create {
+    return Intl.message(
+      'Create ',
+      name: 'create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Account`
+  String get yourAccount {
+    return Intl.message(
+      'Your Account',
+      name: 'yourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `to continue`
+  String get toContinue {
+    return Intl.message(
+      'to continue',
+      name: 'toContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least 8 characters`
+  String get isPasswordContainsAtLeast8Characters {
+    return Intl.message(
+      'Password must contain at least 8 characters',
+      name: 'isPasswordContainsAtLeast8Characters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least 1 number`
+  String get isPasswordContainsAtLeast1Number {
+    return Intl.message(
+      'Password must contain at least 1 number',
+      name: 'isPasswordContainsAtLeast1Number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least 1 uppercase letter`
+  String get isPasswordContainsAtLeast1UpperCaseLetter {
+    return Intl.message(
+      'Password must contain at least 1 uppercase letter',
+      name: 'isPasswordContainsAtLeast1UpperCaseLetter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least 1 lowercase letter`
+  String get isPasswordContainsAtLeast1LowerCaseLetter {
+    return Intl.message(
+      'Password must contain at least 1 lowercase letter',
+      name: 'isPasswordContainsAtLeast1LowerCaseLetter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least 1 special character`
+  String get isPasswordContainsAtLeast1SpecialCharacter {
+    return Intl.message(
+      'Password must contain at least 1 special character',
+      name: 'isPasswordContainsAtLeast1SpecialCharacter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account`
+  String get createAccount {
+    return Intl.message(
+      'Create Account',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or`
+  String get or {
+    return Intl.message(
+      'or',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password is valid`
+  String get passwordIsValid {
+    return Intl.message(
+      'Password is valid',
+      name: 'passwordIsValid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get thisFieldIsRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'thisFieldIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email`
+  String get pleaseEnterValidEmail {
+    return Intl.message(
+      'Please enter a valid email',
+      name: 'pleaseEnterValidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Got it`
+  String get gotIt {
+    return Intl.message(
+      'Got it',
+      name: 'gotIt',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
