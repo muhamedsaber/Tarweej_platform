@@ -16,5 +16,20 @@
     "passwordIsValid":  "Password is valid",
     "thisFieldIsRequired":   "This field is required",
     "pleaseEnterValidEmail":    "Please enter a valid email",
-    "gotIt":"Got it"
+    "gotIt":"Got it",
+    "enterPhoneNumber": "Enter phone number",
+    "Egypt":"Egypt",
+    "WeWillSendYouACodeToConfirmYourPhoneNumber":"We will send you a code to confirm your phone number",
+    "PhoneNumber":"Phone number",
+    "chooseYourCountry":"Choose your country",
+    "search":"Search",
+    "noResults":"No results",
+    "next":"Next",
+    "EnterYourCode":"Enter your code",
+    "WeSentASixdigitCodeTo" : "We sent a 6-digit code to",
+    "TheCodeIsInvalidCheckTheCodeAndTryAgain":"The code is invalid. Check the code and try again",
+    "EnterValidPhoneNumber":"Enter a valid phone number",
+    "PhoneNumbersMustBeAtLeast":"Phone numbers must be at least ",
+    "digits": "digits"
+   
 }

@@ -17,8 +17,14 @@ class DarkTheme {
         onPrimary: DarkThemeColors.onPrimaryColor,
         onSecondary: DarkThemeColors.onSecondaryColor,
       ),
+      
+      appBarTheme:const AppBarTheme(
+         backgroundColor: DarkThemeColors.scaffoldBackgroundColor,
+         
+      ),
       fontFamily: LocalizationHelper.getFontFamily(context),
       textTheme:const TextTheme().apply(
         fontFamily: LocalizationHelper.getFontFamily(context),
       ));
 }
+

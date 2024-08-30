@@ -16,6 +16,21 @@
     "passwordIsValid": "كلمة المرور صالحة",
     "thisFieldIsRequired": "هذا الحقل مطلوب",
     "pleaseEnterValidEmail": "الرجاء إدخال بريد إلكتروني صالح",
-    "gotIt":"حسناً"
+    "gotIt":"حسناً",
+    "enterPhoneNumber": "أدخل رقم الهاتف",
+    "Egypt":"مصر",
+    "WeWillSendYouACodeToConfirmYourPhoneNumber":"سنرسل لك رمزًا لتأكيد رقم هاتفك",
+    "PhoneNumber":"رقم الهاتف",
+    "chooseYourCountry":"اختر بلدك",
+    "search":"إبحث",
+    "noResults":"لا توجد نتائج",
+    "next":"التالي",
+    "EnterYourCode":"أدخل الرمز",
+    "WeSentASixdigitCodeTo" : "لقد أرسلنا رمزًا مكونًا من 6 أرقام إلى",
+    "TheCodeIsInvalidCheckTheCodeAndTryAgain":"الرمز غير صالح. تحقق من الرمز وحاول مرة أخرى",
+    "EnterValidPhoneNumber":"أدخل رقم هاتف صالح",
+    "PhoneNumbersMustBeAtLeast":" يجب أن تكون أرقام الهاتف على الأقل",
+    "digits": "أرقام"
+
 
 }

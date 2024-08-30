@@ -27,7 +27,8 @@ class MainAuthView extends StatelessWidget {
               verticalSpace(26),
               const OrSeparator(),
                verticalSpace(15),
-              const ProvidersAuthSection()
+              const ProvidersAuthSection(),
+              
             ],
           ),
         ),

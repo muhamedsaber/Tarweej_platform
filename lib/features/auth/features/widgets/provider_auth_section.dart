@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/core/helpers/app_assets.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
@@ -44,6 +45,17 @@ class ProvidersAuthSection extends ConsumerWidget {
             ProviderButton(
               imagePath: AppAssets.githubLogo,
               onTap: () => _signInWithGitHub(ref),
+            ),
+          ],
+        ),
+        verticalSpace(10),
+        Row(
+          children: [
+            ProviderButton(
+              icon: Icons.phone,
+              onTap: () {
+                context.navigateTo(Routes.phoneAuthView);
+              },
             ),
           ],
         ),

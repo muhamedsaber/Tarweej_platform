@@ -229,6 +229,146 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter phone number`
+  String get enterPhoneNumber {
+    return Intl.message(
+      'Enter phone number',
+      name: 'enterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Egypt`
+  String get Egypt {
+    return Intl.message(
+      'Egypt',
+      name: 'Egypt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We will send you a code to confirm your phone number`
+  String get WeWillSendYouACodeToConfirmYourPhoneNumber {
+    return Intl.message(
+      'We will send you a code to confirm your phone number',
+      name: 'WeWillSendYouACodeToConfirmYourPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number`
+  String get PhoneNumber {
+    return Intl.message(
+      'Phone number',
+      name: 'PhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your country`
+  String get chooseYourCountry {
+    return Intl.message(
+      'Choose your country',
+      name: 'chooseYourCountry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No results`
+  String get noResults {
+    return Intl.message(
+      'No results',
+      name: 'noResults',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your code`
+  String get EnterYourCode {
+    return Intl.message(
+      'Enter your code',
+      name: 'EnterYourCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We sent a 6-digit code to`
+  String get WeSentASixdigitCodeTo {
+    return Intl.message(
+      'We sent a 6-digit code to',
+      name: 'WeSentASixdigitCodeTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The code is invalid. Check the code and try again`
+  String get TheCodeIsInvalidCheckTheCodeAndTryAgain {
+    return Intl.message(
+      'The code is invalid. Check the code and try again',
+      name: 'TheCodeIsInvalidCheckTheCodeAndTryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a valid phone number`
+  String get EnterValidPhoneNumber {
+    return Intl.message(
+      'Enter a valid phone number',
+      name: 'EnterValidPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone numbers must be at least `
+  String get PhoneNumbersMustBeAtLeast {
+    return Intl.message(
+      'Phone numbers must be at least ',
+      name: 'PhoneNumbersMustBeAtLeast',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `digits`
+  String get digits {
+    return Intl.message(
+      'digits',
+      name: 'digits',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

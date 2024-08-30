@@ -11,14 +11,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
- 
-   setupDependencyInjection();
+
+  setupDependencyInjection();
   runApp(const ProviderScope(child: TarweejPlatformApp()));
 }
-//RjJYZElYOHUybzRSZllnRkl2Wk06MTpjaQ
-
-//S0AQhV9_Z1-huhwSulHcgSB0SEGbB63QuUTB6kIiAPg8dAORrE //Access Token
-//1175678873645854720-GqOpYuh88C4qaXs9hjG1OnAiXkQnWP //Access Token Secret
-
-
-

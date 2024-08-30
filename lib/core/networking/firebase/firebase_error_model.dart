@@ -10,4 +10,6 @@ class FirebaseErrorModel {
     required this.message,
     required this.icon,
   });
+  @override
+  toString() => 'FirebaseErrorModel(code: $code, message: $message, icon: $icon)';
 }
