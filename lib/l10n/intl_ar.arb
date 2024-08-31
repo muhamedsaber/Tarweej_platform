@@ -30,7 +30,10 @@
     "TheCodeIsInvalidCheckTheCodeAndTryAgain":"الرمز غير صالح. تحقق من الرمز وحاول مرة أخرى",
     "EnterValidPhoneNumber":"أدخل رقم هاتف صالح",
     "PhoneNumbersMustBeAtLeast":" يجب أن تكون أرقام الهاتف على الأقل",
-    "digits": "أرقام"
+    "digits": "أرقام",
+    "Arabic":"Arabic",
+    "English":"English"
+
 
 
 }

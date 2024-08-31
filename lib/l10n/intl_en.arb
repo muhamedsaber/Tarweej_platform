@@ -30,6 +30,8 @@
     "TheCodeIsInvalidCheckTheCodeAndTryAgain":"The code is invalid. Check the code and try again",
     "EnterValidPhoneNumber":"Enter a valid phone number",
     "PhoneNumbersMustBeAtLeast":"Phone numbers must be at least ",
-    "digits": "digits"
+    "digits": "digits",
+    "Arabic":"Arabic",
+    "English":"English"
    
 }

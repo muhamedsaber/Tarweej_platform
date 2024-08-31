@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:tarweej_platform/core/helpers/localization_herlper.dart';
+import 'package:tarweej_platform/config/language/localization_herlper.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_codes.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_messages.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_model.dart';

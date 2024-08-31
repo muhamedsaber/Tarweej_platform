@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tarweej_platform/core/helpers/localization_herlper.dart';
+import 'package:tarweej_platform/config/language/localization_herlper.dart';
 
 class CountryModel {
   final String englishName;

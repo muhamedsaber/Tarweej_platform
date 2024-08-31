@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tarweej_platform/config/language/language_changer_notifier.dart';
 import 'package:tarweej_platform/config/router/app_router.dart';
 import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/config/theme/dark_theme/dark_theme.dart';
-import 'package:tarweej_platform/core/helpers/app_constants.dart';
 import 'package:tarweej_platform/generated/l10n.dart';
 
-class TarweejPlatformApp extends StatelessWidget {
+class TarweejPlatformApp extends ConsumerWidget {
   const TarweejPlatformApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    String lang = ref.watch(languageChangerProvider);
     return ScreenUtilInit(
         designSize: const Size(360, 690),
         minTextAdapt: true,
@@ -30,7 +32,7 @@ class TarweejPlatformApp extends StatelessWidget {
             ],
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppRouter().onGenerateRoute,
-            locale: const Locale(AppConstants.ar),
+            locale: Locale(lang),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,
