@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/logic/phone/phone_auth_notifier.dart';
 
-class OtpTextField extends ConsumerWidget {
-  const OtpTextField({super.key});
-
+class OtpTextField extends StatelessWidget {
+  const OtpTextField({super.key,
+  required this.controller,
+  });
+final TextEditingController controller ;
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Center(
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: Pinput(
           closeKeyboardWhenCompleted: true,
-          controller: ref.watch(phoneAuthProvider.notifier).otbController,
+          controller: controller,
           length: 6,
           errorTextStyle: context.theme.font14ErrorRegular,
           keyboardType: TextInputType.number,

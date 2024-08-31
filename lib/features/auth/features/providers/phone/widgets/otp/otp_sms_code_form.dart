@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
+import 'package:tarweej_platform/core/common_ui/widgets/otp_textfield.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
 import 'package:tarweej_platform/features/auth/features/providers/phone/logic/country/country_changer_notifier.dart';
 import 'package:tarweej_platform/features/auth/features/providers/phone/logic/phone/phone_auth_notifier.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/widgets/otp/otp_textfield.dart';
 import 'package:tarweej_platform/features/auth/features/providers/phone/widgets/otp/submit_sms_code_button.dart';
 
 class OTPSmsCodeForm extends ConsumerWidget {
@@ -17,7 +17,9 @@ class OTPSmsCodeForm extends ConsumerWidget {
       key: ref.watch(phoneAuthProvider.notifier).otbFormKey,
       child: Column(
         children: [
-          const OtpTextField(),
+          OtpTextField(
+            controller: ref.watch(phoneAuthProvider.notifier).otbController,
+          ),
           verticalSpace(10),
           Text(
             context.translate.WeSentASixdigitCodeTo,

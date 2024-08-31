@@ -23,11 +23,15 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+        "CheckYourEmail":
+            MessageLookupByLibrary.simpleMessage("تحقق من بريدك الإلكتروني"),
         "Egypt": MessageLookupByLibrary.simpleMessage("مصر"),
         "English": MessageLookupByLibrary.simpleMessage("English"),
         "EnterValidPhoneNumber":
             MessageLookupByLibrary.simpleMessage("أدخل رقم هاتف صالح"),
         "EnterYourCode": MessageLookupByLibrary.simpleMessage("أدخل الرمز"),
+        "EnterYourNewPassword":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور الجديدة"),
         "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "PhoneNumbersMustBeAtLeast": MessageLookupByLibrary.simpleMessage(
             " يجب أن تكون أرقام الهاتف على الأقل"),
@@ -40,12 +44,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "سنرسل لك رمزًا لتأكيد رقم هاتفك"),
         "chooseYourCountry": MessageLookupByLibrary.simpleMessage("اختر بلدك"),
+        "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "create": MessageLookupByLibrary.simpleMessage("أنشئ "),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "digits": MessageLookupByLibrary.simpleMessage("أرقام"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("أدخل رقم الهاتف"),
+        "enterYourEmail":
+            MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "gotIt": MessageLookupByLibrary.simpleMessage("حسناً"),
         "isPasswordContainsAtLeast1LowerCaseLetter":
             MessageLookupByLibrary.simpleMessage(
@@ -71,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("كلمة المرور صالحة"),
         "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال بريد إلكتروني صالح"),
+        "resetPassword":
+            MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "search": MessageLookupByLibrary.simpleMessage("إبحث"),
         "thisFieldIsRequired":
             MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),

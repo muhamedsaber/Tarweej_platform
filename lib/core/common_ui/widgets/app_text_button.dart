@@ -13,6 +13,7 @@ class AppTextButton extends StatelessWidget {
       this.style,
       this.width,
       this.height,
+      this.isLoading = false,
       this.borderRadius,
       required this.onPressed});
   final Color? backgroundColor;
@@ -23,25 +24,29 @@ class AppTextButton extends StatelessWidget {
   final double? width;
   final double? height;
   final BorderRadius? borderRadius;
-
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height:height ,
+      height: height,
       width: width,
       child: TextButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
             backgroundColor: backgroundColor ?? context.theme.primaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: borderRadius??AppBorderRadius.circularAll15,
+              borderRadius: borderRadius ?? AppBorderRadius.circularAll15,
             ),
             padding: padding ??
                 EdgeInsets.symmetric(horizontal: 20.w, vertical: 11.h)),
-        child: Text(
-          title,
-          style: style ?? context.theme.font18OnSurfaceMedium,
-        ),
+        child: isLoading
+            ? const CircularProgressIndicator(
+                color: Colors.white,
+              )
+            : Text(
+                title,
+                style: style ?? context.theme.font18OnSurfaceMedium,
+              ),
       ),
     );
   }

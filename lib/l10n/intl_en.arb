@@ -32,6 +32,13 @@
     "PhoneNumbersMustBeAtLeast":"Phone numbers must be at least ",
     "digits": "digits",
     "Arabic":"Arabic",
-    "English":"English"
+    "English":"English",
+    "forgotPassword":"Forgot password ?",
+    "resetPassword":"Reset password",
+    "enterYourEmail":"Enter your email",
+    "confirm": "Confirm",
+    "EnterYourNewPassword":"Enter your new password",
+    "CheckYourEmail":"Check your email"
+   
    
 }

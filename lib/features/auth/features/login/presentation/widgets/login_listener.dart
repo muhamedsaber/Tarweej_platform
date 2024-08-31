@@ -7,7 +7,7 @@ import 'package:tarweej_platform/core/alerts/app_dialogs.dart';
 import 'package:tarweej_platform/core/common_ui/widgets/app_text_button.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/login/presentation/notifier/login_state_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/login/presentation/notifier/login/login_state_notifier.dart';
 
 class LoginListener extends ConsumerWidget {
   const LoginListener({super.key});

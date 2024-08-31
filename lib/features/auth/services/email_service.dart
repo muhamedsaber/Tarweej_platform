@@ -21,18 +21,31 @@ class EmailService {
     return credential;
   }
 
-  // Future<void> logout() async {
-  //   await FirebaseAuth.instance.signOut();
-  // }
+  Future<void> logout() async {
+    await FirebaseAuth.instance.signOut();
+  }
 
-  // Future<User?> getCurrentUser() async {
-  //   return FirebaseAuth.instance.currentUser;
-  // }
+  Future<User?> getCurrentUser() async {
+    return FirebaseAuth.instance.currentUser;
+  }
 
-  // Future<void> resetPassword({required String email}) async {
-  //   await FirebaseAuth.instance.sendPasswordResetEmail(email: email,actionCodeSettings: );
-  // }
-  // confirmPassword(){
-  //   FirebaseAuth.instance.confirmPasswordReset(code:,newPassword:  );
-  // }
+  Future<void> sendPasswordResetEmail({required String email}) async {
+    await FirebaseAuth.instance.sendPasswordResetEmail(
+      email: email,
+    );
+  }
+
+  Future<String> verifyPasswordResetCode({
+    required String code,
+  }) async {
+    return await FirebaseAuth.instance.verifyPasswordResetCode(code);
+  }
+
+  Future<void> confirmPasswordReset({
+    required String code,
+    required String newPassword,
+  }) async {
+    await FirebaseAuth.instance
+        .confirmPasswordReset(code: code, newPassword: newPassword);
+  }
 }
