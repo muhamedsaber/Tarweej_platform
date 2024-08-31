@@ -45,7 +45,11 @@ class _AppTextFieldState extends State<AppTextField> {
         : context.theme.colorScheme.surface;
     setState(() {});
   }
-
+  @override
+  void dispose() {
+    focusNode.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return TextFormField(

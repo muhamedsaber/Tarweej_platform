@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppPadding {
-  static EdgeInsets syHorizontal23 = EdgeInsets.symmetric(horizontal: 23.w);
+  static EdgeInsets screenHorizontal23 = EdgeInsets.symmetric(horizontal: 23.w);
   static EdgeInsets syHorizontal14 = EdgeInsets.symmetric(horizontal: 14.w);
 }
 

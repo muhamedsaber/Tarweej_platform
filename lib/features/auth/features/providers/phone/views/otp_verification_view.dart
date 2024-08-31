@@ -19,7 +19,7 @@ class OTPVerificationView extends StatelessWidget {
               icon: const Icon(Icons.close)),
         ),
         body: Padding(
-          padding: AppPadding.syHorizontal23,
+          padding: AppPadding.screenHorizontal23,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

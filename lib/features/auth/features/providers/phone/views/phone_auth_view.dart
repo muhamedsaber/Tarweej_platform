@@ -24,7 +24,7 @@ class PhoneAuthView extends StatelessWidget {
           ),
         ),
         body: Padding(
-          padding: AppPadding.syHorizontal23,
+          padding: AppPadding.screenHorizontal23,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

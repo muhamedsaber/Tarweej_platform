@@ -19,6 +19,7 @@ class DarkTheme {
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: DarkThemeColors.scaffoldBackgroundColor,
+        
       ),
       
       fontFamily: LocalizationHelper.getFontFamily(context),

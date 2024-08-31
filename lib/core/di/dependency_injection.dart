@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:tarweej_platform/features/auth/features/login/data/login_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/facebook/data/signin_with_facebook_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/github/data/signin_with_github_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/google/data/signin_with_google_repo.dart';
@@ -19,6 +20,7 @@ void setupDependencyInjection() {
   _setupSignInWithTwitter();
   _setupSignInWithGitHub();
   _setupSignInWithPhoneNumber();
+  _setupLogin();
 }
 
 _setupSignup() {
@@ -47,5 +49,10 @@ void _setupSignInWithGitHub() {
 void _setupSignInWithPhoneNumber() {
   getIt.registerFactory<SigninWithPhoneNumberRepo>(
     () => SigninWithPhoneNumberRepo(),
+  );
+}
+void _setupLogin(){
+  getIt.registerSingleton<LoginRepo>(
+    LoginRepo(emailService: getIt<EmailService>()),
   );
 }
