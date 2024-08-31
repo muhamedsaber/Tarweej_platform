@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tarweej_platform/config/language/widgets/language_changer_menu_button.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
-import 'package:tarweej_platform/core/helpers/localization_herlper.dart';
+import 'package:tarweej_platform/config/language/localization_herlper.dart';
 
 class SignupHeadline extends StatelessWidget {
   const SignupHeadline({super.key});
@@ -11,9 +12,15 @@ class SignupHeadline extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          context.translate.welcome,
-          style: context.theme.font32OnSurfaceMedium,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              context.translate.welcome,
+              style: context.theme.font32OnSurfaceMedium,
+            ),
+            const LaguageChangerButton(),
+          ],
         ),
         // READ THIS CAREFULLY
 
@@ -46,3 +53,4 @@ class SignupHeadline extends StatelessWidget {
     );
   }
 }
+

@@ -1,7 +1,7 @@
 class AppRegex {
   static final RegExp email = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
   static final RegExp password = RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
-  static final RegExp phone = RegExp(r'^[0-9]{10}$');
+  
   static final RegExp name = RegExp(r'^[a-zA-Z ]+$');
   static final RegExp number = RegExp(r'^[0-9]+$');
   static final RegExp alphaNumeric = RegExp(r'^[a-zA-Z0-9]+$');
@@ -19,6 +19,7 @@ class AppRegex {
   static final RegExp cvv = RegExp(r'^[0-9]{3,4}$');
   static final RegExp otp = RegExp(r'^[0-9]{4}$');
   static final RegExp otp6 = RegExp(r'^[0-9]{6}$');
+  static final RegExp onlyNumbers = RegExp(r'^[0-9]');
 
   static final RegExp isPasswordContainsLowerCase= RegExp(r'[a-z]');
   static final RegExp isPasswordContainsUpperCase= RegExp(r'[A-Z]');

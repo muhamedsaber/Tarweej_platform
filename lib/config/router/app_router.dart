@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/config/router/routes.dart';
+import 'package:tarweej_platform/features/auth/features/login/presentation/views/login_view.dart';
 import 'package:tarweej_platform/features/auth/features/main_auth_view.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/views/change_country_view.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/views/otp_verification_view.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/views/phone_auth_view.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.mainAuthView:
         return _build(const MainAuthView());
-
+      case Routes.phoneAuthView:
+        return _buildWithTransition(const PhoneAuthView());
+      case Routes.changeCountryView:
+        return _buildWithTransition(const ChangeCountryView());
+      case Routes.otpVerificationView:
+        return _buildWithTransition(const OTPVerificationView());
+      case Routes.loginView:
+        return _buildWithTransition(const LoginView());
       default:
         return _build(NotFoundScreen(
           routeName: settings.name ?? "",
@@ -30,6 +41,24 @@ class AppRouter {
       allowSnapshotting: allowSnapshotting,
       barrierDismissible: barrierDismissible,
       builder: (context) => widget,
+    );
+  }
+
+  _buildWithTransition(Widget widget) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => widget,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1.0, 0.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var offsetAnimation = animation.drive(tween);
+        return SlideTransition(
+          position: offsetAnimation,
+          child: child,
+        );
+      },
     );
   }
 }

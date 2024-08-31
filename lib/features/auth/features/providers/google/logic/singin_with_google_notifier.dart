@@ -20,6 +20,6 @@ class SingInWithGoogleNotifier extends StateNotifier<SigninWithGoogleState> {
   }
 }
 
-final singInWithGoogleProvider =
+final signInWithGoogleProvider =
     StateNotifierProvider<SingInWithGoogleNotifier, SigninWithGoogleState>(
         (ref) => SingInWithGoogleNotifier(getIt<SignInWithGoogleRepo>()));

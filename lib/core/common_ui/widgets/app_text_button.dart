@@ -12,6 +12,7 @@ class AppTextButton extends StatelessWidget {
       required this.title,
       this.style,
       this.width,
+      this.height,
       this.borderRadius,
       required this.onPressed});
   final Color? backgroundColor;
@@ -20,10 +21,13 @@ class AppTextButton extends StatelessWidget {
   final String title;
   final TextStyle? style;
   final double? width;
+  final double? height;
   final BorderRadius? borderRadius;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      height:height ,
       width: width,
       child: TextButton(
         onPressed: onPressed,

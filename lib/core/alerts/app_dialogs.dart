@@ -55,6 +55,18 @@ class AppDialogs {
       },
     );
   }
-  
-  
+
+  static Widget okButton(BuildContext context) {
+    return Center(
+      child: AppTextButton(
+        title: context.translate.gotIt,
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 7.h),
+        borderRadius: AppBorderRadius.circularAll6,
+        style: context.theme.font14OnSurfaceMedium,
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+      ),
+    );
+  }
 }

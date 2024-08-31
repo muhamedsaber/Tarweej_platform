@@ -22,9 +22,30 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+        "Egypt": MessageLookupByLibrary.simpleMessage("مصر"),
+        "English": MessageLookupByLibrary.simpleMessage("English"),
+        "EnterValidPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("أدخل رقم هاتف صالح"),
+        "EnterYourCode": MessageLookupByLibrary.simpleMessage("أدخل الرمز"),
+        "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "PhoneNumbersMustBeAtLeast": MessageLookupByLibrary.simpleMessage(
+            " يجب أن تكون أرقام الهاتف على الأقل"),
+        "TheCodeIsInvalidCheckTheCodeAndTryAgain":
+            MessageLookupByLibrary.simpleMessage(
+                "الرمز غير صالح. تحقق من الرمز وحاول مرة أخرى"),
+        "WeSentASixdigitCodeTo": MessageLookupByLibrary.simpleMessage(
+            "لقد أرسلنا رمزًا مكونًا من 6 أرقام إلى"),
+        "WeWillSendYouACodeToConfirmYourPhoneNumber":
+            MessageLookupByLibrary.simpleMessage(
+                "سنرسل لك رمزًا لتأكيد رقم هاتفك"),
+        "chooseYourCountry": MessageLookupByLibrary.simpleMessage("اختر بلدك"),
         "create": MessageLookupByLibrary.simpleMessage("أنشئ "),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "digits": MessageLookupByLibrary.simpleMessage("أرقام"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "enterPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("أدخل رقم الهاتف"),
         "gotIt": MessageLookupByLibrary.simpleMessage("حسناً"),
         "isPasswordContainsAtLeast1LowerCaseLetter":
             MessageLookupByLibrary.simpleMessage(
@@ -42,12 +63,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "noResults": MessageLookupByLibrary.simpleMessage("لا توجد نتائج"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordIsValid":
             MessageLookupByLibrary.simpleMessage("كلمة المرور صالحة"),
         "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال بريد إلكتروني صالح"),
+        "search": MessageLookupByLibrary.simpleMessage("إبحث"),
         "thisFieldIsRequired":
             MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "toContinue": MessageLookupByLibrary.simpleMessage("للمتابعة"),

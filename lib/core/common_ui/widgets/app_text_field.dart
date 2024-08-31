@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,10 +7,18 @@ import 'package:tarweej_platform/core/helpers/size.dart';
 
 class AppTextField extends StatefulWidget {
   const AppTextField(
-      {super.key, this.controller, this.hintText, this.validator});
+      {super.key,
+      this.controller,
+      this.hintText,
+      this.validator,
+      this.suffixIcon,
+      this.prefixIcon});
   final String? hintText;
   final String? Function(String? word)? validator;
   final TextEditingController? controller;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
+
   @override
   State<AppTextField> createState() => _AppTextFieldState();
 }
@@ -21,7 +28,6 @@ class _AppTextFieldState extends State<AppTextField> {
   late Color fillColor;
   @override
   void initState() {
-    log("initState");
     focusNode = FocusNode();
     focusNode.addListener(updateFillColor);
     super.initState();
@@ -39,16 +45,23 @@ class _AppTextFieldState extends State<AppTextField> {
         : context.theme.colorScheme.surface;
     setState(() {});
   }
-
+  @override
+  void dispose() {
+    focusNode.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autofocus: false,
       controller: widget.controller,
       validator: widget.validator,
       focusNode: focusNode,
       style:
           context.theme.font18OnSurfaceRegular.copyWith(decorationThickness: 0),
       decoration: InputDecoration(
+        prefixIcon: widget.prefixIcon,
+        suffixIcon: widget.suffixIcon,
         contentPadding: EdgeInsets.symmetric(
           horizontal: 15.w,
           vertical: 12.h,

@@ -8,21 +8,30 @@ class PasswordValidationGuide extends StatelessWidget {
     return ListenableBuilder(
       listenable: PasswordChangeNotifier(),
       builder: (context, child) {
-        bool isPasswordGuideVisible =
-            PasswordChangeNotifier().isPasswordGuideVisible;
-        bool isPasswordValid =
-            PasswordChangeNotifier().passwordState.isPasswordValid;
-        if (isPasswordValid) {
-          return const PasswordValidationSuccess();
-        } else if (isPasswordGuideVisible) {
-          return PasswordValidationTotalSteps(
-            passwordState: PasswordChangeNotifier().passwordState,
-          );
-        } else {
-          // Hide the guide
-          // If Password is Empty or null
-          return const SizedBox.shrink();
-        }
+        PasswordChangeNotifier passwordChangeNotifier =
+            PasswordChangeNotifier();
+
+        return AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          switchInCurve: Curves.easeInOut,
+          switchOutCurve: Curves.easeInOut,
+          transitionBuilder: (child, animation) {
+            return FadeTransition(
+              opacity: animation,
+              child: SizeTransition(
+                sizeFactor: animation,
+                child: child,
+              ),
+            );
+          },
+          child: passwordChangeNotifier.passwordState.isPasswordValid
+              ? const PasswordValidationSuccess()
+              : passwordChangeNotifier.isPasswordGuideVisible
+                  ? PasswordValidationTotalSteps(
+                      passwordState: passwordChangeNotifier.passwordState,
+                    )
+                  : const SizedBox.shrink(),
+        );
       },
     );
   }
