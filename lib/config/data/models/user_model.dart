@@ -3,30 +3,31 @@ import 'package:firebase_auth/firebase_auth.dart';
 class UserModel {
   final String? uid;
   final String? email;
-  final String? firstName;
-  final String? lastName;
+  final String? name;
   final String? phoneNumber;
   final String? photoUrl;
   final String? accountCoverPhoto;
   final String? bio;
-
+  final bool? isVerified;
+  
+  /// UserModel constructor
   UserModel({
     this.uid,
     this.email,
-    this.firstName,
-    this.lastName,
+    this.name,
     this.phoneNumber,
     this.photoUrl,
     this.accountCoverPhoto,
     this.bio,
+    this.isVerified,
   });
 
-  // implement copy with
+  //  copyWith method
   UserModel copyWith({
     String? uid,
     String? email,
-    String? firstName,
-    String? lastName,
+    bool? isVerified,
+    String? name,
     String? phoneNumber,
     String? photoUrl,
     String? accountCoverPhoto,
@@ -35,49 +36,54 @@ class UserModel {
     return UserModel(
       uid: uid ?? this.uid,
       email: email ?? this.email,
-      firstName: firstName ?? this.firstName,
-      lastName: lastName ?? this.lastName,
+      name: name ?? this.name,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       photoUrl: photoUrl ?? this.photoUrl,
       accountCoverPhoto: accountCoverPhoto ?? this.accountCoverPhoto,
       bio: bio ?? this.bio,
+      isVerified: isVerified ?? this.isVerified,
     );
   }
-
+  //  fromJson 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       uid: json['uid'],
       email: json['email'],
-      firstName: json['firstName'],
-      lastName: json['lastName'],
+      name: json['name'],
       phoneNumber: json['phoneNumber'],
       photoUrl: json['photoUrl'],
       accountCoverPhoto: json['accountCoverPhoto'],
       bio: json['bio'],
+      isVerified: json['isVerified'],
     );
   }
+  // toJson
   Map<String, dynamic> toJson() {
     return {
       'uid': uid,
       'email': email,
-      'firstName': firstName,
-      'lastName': lastName,
+      'name': name,
       'phoneNumber': phoneNumber,
       'photoUrl': photoUrl,
       'accountCoverPhoto': accountCoverPhoto,
       'bio': bio,
+      'isVerified': isVerified,
     };
-  }
-  
+  } 
+   // fromCredentials
   factory UserModel.fromCredentials(UserCredential credential) {
     return UserModel(
-      uid: credential.user!.uid,
-      email: credential.user!.email,
+      uid: credential.user?.uid,
+      email: credential.user?.email,
+      photoUrl: credential.user?.photoURL,
+      name: credential.user?.displayName,
+      phoneNumber: credential.user?.phoneNumber,
+      isVerified: credential.user?.emailVerified,
     );
   }
-
+  // toString
   @override
   String toString() {
-    return 'UserModel(uid: $uid, email: $email, firstName: $firstName, lastName: $lastName, phoneNumber: $phoneNumber, photoUrl: $photoUrl, accountCoverPhoto: $accountCoverPhoto, bio: $bio)';
+    return 'UserModel{uid: $uid, email: $email, name: $name, phoneNumber: $phoneNumber, photoUrl: $photoUrl, accountCoverPhoto: $accountCoverPhoto, bio: $bio, isVerified: $isVerified}';
   }
 }

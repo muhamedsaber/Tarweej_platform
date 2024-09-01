@@ -7,7 +7,7 @@ import 'package:tarweej_platform/features/auth/features/providers/google/data/si
 import 'package:tarweej_platform/features/auth/features/providers/phone/data/signin_with_phone_number_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/twitter/data/signin_with_twitter_repo.dart';
 import 'package:tarweej_platform/features/auth/services/email_service.dart';
-import 'package:tarweej_platform/features/auth/features/signup/data/repos/signup_repo.dart';
+import 'package:tarweej_platform/features/auth/features/signup/data/signup_repo.dart';
 import 'package:tarweej_platform/features/auth/services/provider_services.dart';
 
 GetIt getIt = GetIt.instance;

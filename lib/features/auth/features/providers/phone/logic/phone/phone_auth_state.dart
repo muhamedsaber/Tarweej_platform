@@ -7,8 +7,7 @@ class PhoneAuthInitial extends PhoneAuthState {}
 class PhoneAuthLoading extends PhoneAuthState {}
 
 class PhoneAuthSubmitCodeSuccess extends PhoneAuthState {
-  final UserModel user;
-  PhoneAuthSubmitCodeSuccess({required this.user});
+  PhoneAuthSubmitCodeSuccess();
 }
 
 class PhoneAuthError extends PhoneAuthState {

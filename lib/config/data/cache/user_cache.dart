@@ -13,7 +13,12 @@ class UserCache {
 
   static Future<UserModel> getUser() async {
     final usrStr = await CacheHelper.getString(key: CacheConstants.userData);
-    return UserModel.fromJson(jsonDecode(usrStr));
+    if (usrStr == "") {
+      return UserModel();
+    } else {
+      final user = UserModel.fromJson(jsonDecode(usrStr));
+      return user;
+    }
   }
 
   static Future<String> getUserUid() async {
@@ -22,15 +27,15 @@ class UserCache {
     return user.uid ?? ""; // it will never be empty
   }
 
-  Future<void> updateUser(UserModel user) async {
+  static Future<void> updateUser(UserModel user) async {
     UserModel userModel = await getUser();
     userModel = userModel.copyWith(
       email: user.email,
       uid: user.uid,
       accountCoverPhoto: user.accountCoverPhoto,
       bio: user.bio,
-      firstName: user.firstName,
-      lastName: user.lastName,
+      isVerified: user.isVerified,
+      name: user.name,
       phoneNumber: user.phoneNumber,
       photoUrl: user.photoUrl,
     );

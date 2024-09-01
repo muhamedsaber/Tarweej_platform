@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tarweej_platform/config/data/cache/user_cache.dart';
 import 'package:tarweej_platform/config/data/models/user_model.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_handler.dart';
@@ -44,19 +45,14 @@ class PhoneAuthNotifier extends StateNotifier<PhoneAuthState> {
 
     final result = await repo.verifyCodeSMS(
         smsCode: otbController.text, verificationId: verificationId);
-    result.when(onSuccess: (data) {
-      state = PhoneAuthSubmitCodeSuccess(
-          user: UserModel(
-        uid: data!.user!.uid,
-        phoneNumber: data.user!.phoneNumber,
-      ));
+    result.when(onSuccess: (data) async {
+      await UserCache.saveUser(data!);
+      state = PhoneAuthSubmitCodeSuccess();
     }, onError: (error) {
       log(error.toString());
       state = PhoneAuthError(error!);
     });
   }
-
-  
 }
 
 final phoneAuthProvider =

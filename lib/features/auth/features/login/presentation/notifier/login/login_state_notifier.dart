@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tarweej_platform/config/data/cache/user_cache.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_model.dart';
 import 'package:tarweej_platform/features/auth/features/login/data/login_repo.dart';
@@ -24,7 +25,8 @@ class LoginNotifier extends StateNotifier<LoginState> {
     state = LoginLoading();
     final result = await repo.login(
         email: emailController.text, password: passwordController.text);
-    result.when(onSuccess: (data) {
+    result.when(onSuccess: (data) async{
+      await UserCache.saveUser(data!);
       log(data.toString());
       state = LoginSuccess();
     }, onError: (error) {
