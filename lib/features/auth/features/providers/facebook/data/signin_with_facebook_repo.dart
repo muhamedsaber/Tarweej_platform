@@ -13,11 +13,8 @@ class SigninWithFacebookRepo {
     try {
       UserCredential credentials = await providerServices.signInWithFacebook();
       log(credentials.user.toString());
-      UserModel model = UserModel(
-        email: credentials.user!.email,
-        uid: credentials.user!.uid,
-      );
-      return FirebaseResult.success(model);
+      final user = UserModel.fromCredentials(credentials);
+      return FirebaseResult.success(user);
     } catch (e) {
       return FirebaseResult.error(FirebaseErrorHandler.handle(e));
     }

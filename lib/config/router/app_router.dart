@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/features/auth/features/login/presentation/views/login_view.dart';
 import 'package:tarweej_platform/features/auth/features/main_auth_view.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/views/change_country_view.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/views/otp_verification_view.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/views/phone_auth_view.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/views/change_country_view.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/views/otp_verification_view.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/views/phone_auth_view.dart';
+
+import '../../features/main_navigation/presentation/views/main_navigation_view.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
@@ -19,6 +21,8 @@ class AppRouter {
         return _buildWithTransition(const OTPVerificationView());
       case Routes.loginView:
         return _buildWithTransition(const LoginView());
+      case Routes.mainNavigationView:
+        return _build(const MainNavigationView());
       default:
         return _build(NotFoundScreen(
           routeName: settings.name ?? "",

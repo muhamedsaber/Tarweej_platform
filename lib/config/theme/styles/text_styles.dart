@@ -95,7 +95,8 @@ extension TextStylesExtension on ThemeData {
       fontWeight: FontWeightHelper.regular,
     );
   }
-  TextStyle get fontOnSurfaceRegular {
+  
+  TextStyle get font14OnSurfaceRegular {
     return TextStyle(
       fontSize: 14.sp,
       color: colorScheme.onSurface,

@@ -2,7 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_model.dart';
-import 'package:tarweej_platform/features/auth/features/signup/data/repos/signup_repo.dart';
+import 'package:tarweej_platform/features/auth/features/signup/data/signup_repo.dart';
+
+import '../../../../../../../config/data/cache/user_cache.dart';
 part 'signup_state.dart';
 
 
@@ -22,7 +24,9 @@ class SignupNotifier extends StateNotifier<SignupState> {
     state = SignupLoading();
     final result = await repo.signup(
         email: emailController.text, password: passwordController.text);
-    result.when(onSuccess: (data) {
+    result.when(onSuccess: (data)async {
+      await UserCache.saveUser(data!);
+      await UserCache.setLoginStatusTo(true);
       state = SignupSuccess();
     }, onError: (error) {
       state = SignupError(error: error!);

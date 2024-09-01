@@ -7,13 +7,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:tarweej_platform/config/data/cache/user_cache.dart';
 import 'package:tarweej_platform/tarweej_platform_app.dart';
-
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const TarweejPlatformApp());
+    final isUserLoggedIn = await UserCache.isUserLoggedIn();
+    await tester.pumpWidget(TarweejPlatformApp(
+      isUserLoggedIn: isUserLoggedIn,
+    ));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

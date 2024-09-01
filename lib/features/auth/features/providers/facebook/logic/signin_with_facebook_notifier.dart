@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meta/meta.dart';
+import 'package:tarweej_platform/config/data/cache/user_cache.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_model.dart';
 import 'package:tarweej_platform/features/auth/features/providers/facebook/data/signin_with_facebook_repo.dart';
@@ -13,7 +14,9 @@ class SingInWithFacebookNotifier extends StateNotifier<SigninWithFacebookState> 
   signIn() async {
     state = SigninWithFacebookLoading();
     final result = await repo.signIn();
-    result.when(onSuccess: (data) {
+    result.when(onSuccess: (data) async{
+      await UserCache.saveUser(data!);
+      await UserCache.setLoginStatusTo(true);
       state = SigninWithFacebookSuccess();
     }, onError: (error) {
       log(error?.code.toString() ?? "");

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tarweej_platform/config/data/cache/user_cache.dart';
 import 'package:tarweej_platform/config/language/localization_herlper.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 
@@ -15,6 +16,13 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  //--------Test--------
+  final user = await UserCache.getUser();
+  debugPrint(user.toString());
+
+  /// Check if the user is logged in or not
+  final isUserLoggedIn = await UserCache.isUserLoggedIn();
+  //--------------------
   // getting app language from cache
   String appLanguage = await LocalizationHelper.loadLanguage();
   // setting up dependency injection
@@ -33,7 +41,9 @@ void main() async {
 
         /// [overrideWithProvider] is deprecated and will be removed
       ],
-      child: const TarweejPlatformApp(),
+      child: TarweejPlatformApp(
+        isUserLoggedIn: isUserLoggedIn,
+      ),
     ),
   );
 }

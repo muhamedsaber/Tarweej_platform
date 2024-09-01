@@ -7,6 +7,8 @@ import 'package:meta/meta.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_model.dart';
 import 'package:tarweej_platform/features/auth/features/providers/twitter/data/signin_with_twitter_repo.dart';
+
+import '../../../../../../config/data/cache/user_cache.dart';
 part 'signin_with_twitter_state.dart';
 class SingInWithTwitterNotifier extends StateNotifier<SigninWithTwitterState> {
   SingInWithTwitterNotifier(this.repo) : super(SigninWithTwitterInitial());
@@ -14,7 +16,9 @@ class SingInWithTwitterNotifier extends StateNotifier<SigninWithTwitterState> {
   signIn() async {
     state = SigninWithTwitterLoading();
     final result = await repo.signIn();
-    result.when(onSuccess: (data) {
+    result.when(onSuccess: (data) async{
+       await UserCache.saveUser(data!);
+       await UserCache.setLoginStatusTo(true);
       state = SigninWithTwitterSuccess();
     }, onError: (error) {
       log(error?.code.toString() ?? "");

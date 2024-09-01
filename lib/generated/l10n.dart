@@ -389,6 +389,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Forgot password ?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot password ?',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email`
+  String get enterYourEmail {
+    return Intl.message(
+      'Enter your email',
+      name: 'enterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your new password`
+  String get EnterYourNewPassword {
+    return Intl.message(
+      'Enter your new password',
+      name: 'EnterYourNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your email`
+  String get CheckYourEmail {
+    return Intl.message(
+      'Check your email',
+      name: 'CheckYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to login instead?`
+  String get doYouWantToLoginInstead {
+    return Intl.message(
+      'Do you want to login instead?',
+      name: 'doYouWantToLoginInstead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dismiss`
+  String get dismiss {
+    return Intl.message(
+      'Dismiss',
+      name: 'dismiss',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

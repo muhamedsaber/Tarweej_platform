@@ -23,12 +23,16 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+        "CheckYourEmail":
+            MessageLookupByLibrary.simpleMessage("Check your email"),
         "Egypt": MessageLookupByLibrary.simpleMessage("Egypt"),
         "English": MessageLookupByLibrary.simpleMessage("English"),
         "EnterValidPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Enter a valid phone number"),
         "EnterYourCode":
             MessageLookupByLibrary.simpleMessage("Enter your code"),
+        "EnterYourNewPassword":
+            MessageLookupByLibrary.simpleMessage("Enter your new password"),
         "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
         "PhoneNumbersMustBeAtLeast": MessageLookupByLibrary.simpleMessage(
             "Phone numbers must be at least "),
@@ -42,12 +46,20 @@ class MessageLookup extends MessageLookupByLibrary {
                 "We will send you a code to confirm your phone number"),
         "chooseYourCountry":
             MessageLookupByLibrary.simpleMessage("Choose your country"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "create": MessageLookupByLibrary.simpleMessage("Create "),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "digits": MessageLookupByLibrary.simpleMessage("digits"),
+        "dismiss": MessageLookupByLibrary.simpleMessage("Dismiss"),
+        "doYouWantToLoginInstead": MessageLookupByLibrary.simpleMessage(
+            "Do you want to login instead?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Enter phone number"),
+        "enterYourEmail":
+            MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot password ?"),
         "gotIt": MessageLookupByLibrary.simpleMessage("Got it"),
         "isPasswordContainsAtLeast1LowerCaseLetter":
             MessageLookupByLibrary.simpleMessage(
@@ -73,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password is valid"),
         "pleaseEnterValidEmail":
             MessageLookupByLibrary.simpleMessage("Please enter a valid email"),
+        "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "thisFieldIsRequired":
             MessageLookupByLibrary.simpleMessage("This field is required"),

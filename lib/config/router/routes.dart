@@ -5,4 +5,5 @@ class Routes {
   static const String changeCountryView = "/ChangeCountryView";
   static const String otpVerificationView="/OTPVerificationView";
   static const String loginView="/LoginView";
+  static const String mainNavigationView="/MainNavigationView";
 }

@@ -1,12 +1,13 @@
 import 'package:get_it/get_it.dart';
 import 'package:tarweej_platform/features/auth/features/login/data/login_repo.dart';
+import 'package:tarweej_platform/features/auth/features/login/data/reset_password_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/facebook/data/signin_with_facebook_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/github/data/signin_with_github_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/google/data/signin_with_google_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/phone/data/signin_with_phone_number_repo.dart';
 import 'package:tarweej_platform/features/auth/features/providers/twitter/data/signin_with_twitter_repo.dart';
 import 'package:tarweej_platform/features/auth/services/email_service.dart';
-import 'package:tarweej_platform/features/auth/features/signup/data/repos/signup_repo.dart';
+import 'package:tarweej_platform/features/auth/features/signup/data/signup_repo.dart';
 import 'package:tarweej_platform/features/auth/services/provider_services.dart';
 
 GetIt getIt = GetIt.instance;
@@ -21,6 +22,7 @@ void setupDependencyInjection() {
   _setupSignInWithGitHub();
   _setupSignInWithPhoneNumber();
   _setupLogin();
+  _resetPasswordSetup();
 }
 
 _setupSignup() {
@@ -54,5 +56,10 @@ void _setupSignInWithPhoneNumber() {
 void _setupLogin(){
   getIt.registerSingleton<LoginRepo>(
     LoginRepo(emailService: getIt<EmailService>()),
+  );
+}
+void _resetPasswordSetup(){
+  getIt.registerSingleton<ResetPasswordRepo>(
+    ResetPasswordRepo( getIt<EmailService>()),
   );
 }
