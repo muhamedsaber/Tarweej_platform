@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 class UserModel {
   final String? uid;
   final String? email;
@@ -41,6 +43,7 @@ class UserModel {
       bio: bio ?? this.bio,
     );
   }
+
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       uid: json['uid'],
@@ -64,5 +67,17 @@ class UserModel {
       'accountCoverPhoto': accountCoverPhoto,
       'bio': bio,
     };
+  }
+  
+  factory UserModel.fromCredentials(UserCredential credential) {
+    return UserModel(
+      uid: credential.user!.uid,
+      email: credential.user!.email,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'UserModel(uid: $uid, email: $email, firstName: $firstName, lastName: $lastName, phoneNumber: $phoneNumber, photoUrl: $photoUrl, accountCoverPhoto: $accountCoverPhoto, bio: $bio)';
   }
 }
