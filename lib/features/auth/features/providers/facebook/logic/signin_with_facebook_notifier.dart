@@ -16,6 +16,7 @@ class SingInWithFacebookNotifier extends StateNotifier<SigninWithFacebookState> 
     final result = await repo.signIn();
     result.when(onSuccess: (data) async{
       await UserCache.saveUser(data!);
+      await UserCache.setLoginStatusTo(true);
       state = SigninWithFacebookSuccess();
     }, onError: (error) {
       log(error?.code.toString() ?? "");

@@ -27,6 +27,7 @@ class LoginNotifier extends StateNotifier<LoginState> {
         email: emailController.text, password: passwordController.text);
     result.when(onSuccess: (data) async{
       await UserCache.saveUser(data!);
+      await UserCache.setLoginStatusTo(true);
       log(data.toString());
       state = LoginSuccess();
     }, onError: (error) {

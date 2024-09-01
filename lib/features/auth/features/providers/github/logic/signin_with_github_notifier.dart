@@ -18,6 +18,7 @@ class SingInWithGitHubNotifier extends StateNotifier<SigninWithGitHubState> {
     final result = await repo.signIn();
     result.when(onSuccess: (data) async {
       await UserCache.saveUser(data!);
+      await UserCache.setLoginStatusTo(true);
       state = SigninWithGitHubSuccess();
     }, onError: (error) {
       log(error?.code.toString() ?? "");

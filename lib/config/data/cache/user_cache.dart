@@ -27,6 +27,7 @@ class UserCache {
     return user.uid ?? ""; // it will never be empty
   }
 
+  // Update user in cache with only the updated fields
   static Future<void> updateUser(UserModel user) async {
     UserModel userModel = await getUser();
     userModel = userModel.copyWith(
@@ -40,5 +41,17 @@ class UserCache {
       photoUrl: user.photoUrl,
     );
     await saveUser(userModel);
+  }
+
+  // Remove user from cache when user logs out
+  static Future<void> clearUser() async {
+    await CacheHelper.removeData(key: CacheConstants.userData);
+  }
+
+  /// Sets the user's login status in the cache.
+  /// 
+  /// [status] is a boolean indicating whether the user is logged in (true) or logged out (false).
+  static Future<void> setLoginStatusTo(bool status) async {
+    await CacheHelper.setData(key: CacheConstants.loginStatus, value: status);
   }
 }

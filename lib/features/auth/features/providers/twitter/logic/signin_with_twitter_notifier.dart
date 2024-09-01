@@ -18,6 +18,7 @@ class SingInWithTwitterNotifier extends StateNotifier<SigninWithTwitterState> {
     final result = await repo.signIn();
     result.when(onSuccess: (data) async{
        await UserCache.saveUser(data!);
+       await UserCache.setLoginStatusTo(true);
       state = SigninWithTwitterSuccess();
     }, onError: (error) {
       log(error?.code.toString() ?? "");

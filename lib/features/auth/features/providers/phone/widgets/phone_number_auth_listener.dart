@@ -32,7 +32,7 @@ class PhoneNumberAuthListener extends ConsumerWidget {
           context.navigateTo(Routes.otpVerificationView);
         } else if (next is PhoneAuthSubmitCodeSuccess) {
           hideLoadingIndicator(context, previous);
-          log(next.user.toString());
+         
         }
       },
     );

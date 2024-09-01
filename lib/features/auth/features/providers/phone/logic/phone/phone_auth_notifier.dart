@@ -4,7 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/config/data/cache/user_cache.dart';
-import 'package:tarweej_platform/config/data/models/user_model.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_handler.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_model.dart';
@@ -47,6 +46,7 @@ class PhoneAuthNotifier extends StateNotifier<PhoneAuthState> {
         smsCode: otbController.text, verificationId: verificationId);
     result.when(onSuccess: (data) async {
       await UserCache.saveUser(data!);
+      await UserCache.setLoginStatusTo(true);
       state = PhoneAuthSubmitCodeSuccess();
     }, onError: (error) {
       log(error.toString());

@@ -15,6 +15,7 @@ class SingInWithGoogleNotifier extends StateNotifier<SigninWithGoogleState> {
     result.when(onSuccess: (data) async {
       // Saving user info in cache
       await UserCache.saveUser(data!);
+      await UserCache.setLoginStatusTo(true);
       // updating the state
       state = SigninWithGoogleSuccess();
     }, onError: (error) {
