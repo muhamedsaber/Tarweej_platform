@@ -48,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "create": MessageLookupByLibrary.simpleMessage("أنشئ "),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "digits": MessageLookupByLibrary.simpleMessage("أرقام"),
+        "dismiss": MessageLookupByLibrary.simpleMessage("تجاهل"),
+        "doYouWantToLoginInstead": MessageLookupByLibrary.simpleMessage(
+            "هل تريد تسجيل الدخول بدلاً من ذلك؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("أدخل رقم الهاتف"),

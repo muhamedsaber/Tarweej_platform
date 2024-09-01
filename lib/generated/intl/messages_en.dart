@@ -50,6 +50,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "create": MessageLookupByLibrary.simpleMessage("Create "),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "digits": MessageLookupByLibrary.simpleMessage("digits"),
+        "dismiss": MessageLookupByLibrary.simpleMessage("Dismiss"),
+        "doYouWantToLoginInstead": MessageLookupByLibrary.simpleMessage(
+            "Do you want to login instead?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Enter phone number"),

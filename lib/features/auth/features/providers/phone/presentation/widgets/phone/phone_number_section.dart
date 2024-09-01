@@ -5,8 +5,8 @@ import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/logic/country/country_changer_notifier.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/widgets/phone/phone_number_textfield.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/logic/country/country_changer_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/widgets/phone/phone_number_textfield.dart';
 part '../country/country_changer_button.dart';
 
 class PhoneNumberSection extends StatefulWidget {

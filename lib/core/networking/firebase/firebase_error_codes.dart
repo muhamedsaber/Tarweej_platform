@@ -62,7 +62,7 @@ class FirebaseErrorCodes {
   static const String missingPhoneNumber = "missing-phone-number";
   static const String missingSessionInfo = "missing-verification-id";
   static const String moduleDestroyed = "app-deleted";
-  static const String needConfirmation = "account-exists-with-different-credential";
+  static const String accountAlreadyExistWithDifferentCredentials = "account-exists-with-different-credential";
   static const String networkRequestFailed = "network-request-failed";
   static const String nullUser = "null-user";
   static const String noAuthEvent = "no-auth-event";

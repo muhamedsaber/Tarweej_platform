@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/widgets/country/search_for_countries_textfield.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/widgets/country/search_for_countries_textfield.dart';
 
 import '../widgets/country/countries_listview_builder.dart';
 

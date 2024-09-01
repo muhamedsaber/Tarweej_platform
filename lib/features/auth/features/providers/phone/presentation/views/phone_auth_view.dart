@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/widgets/phone_number_auth_listener.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/widgets/phone/phone_number_form.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/widgets/phone_number_auth_listener.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/widgets/phone/phone_number_form.dart';
 
 class PhoneAuthView extends StatelessWidget {
   const PhoneAuthView({super.key});

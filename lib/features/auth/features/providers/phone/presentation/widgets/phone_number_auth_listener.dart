@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/core/alerts/app_alers.dart';
-import 'package:tarweej_platform/core/alerts/app_dialogs.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/logic/phone/phone_auth_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/logic/phone/phone_auth_notifier.dart';
+
+import '../../../../../../../core/alerts/firebase_error_dialog.dart';
 
 class PhoneNumberAuthListener extends ConsumerWidget {
   const PhoneNumberAuthListener({super.key});
@@ -20,19 +21,15 @@ class PhoneNumberAuthListener extends ConsumerWidget {
           AppLoadingIndicator.show(context);
         } else if (next is PhoneAuthError) {
           // hide
-          hideLoadingIndicator(context, previous);
-          final error = next.error;
-          AppDialogs.showAlertDialog(
-              context: context,
-              title: error.message,
-              icon: error.icon,
-              actions: [AppDialogs.okButton(context)]);
+          _changeLoadingIndicatorVisibility(context, previous);
+          FirebaseErrorDialog.show(context, next.error);
         } else if (next is PhoneAuthCodeSent) {
-          hideLoadingIndicator(context, previous);
+          _changeLoadingIndicatorVisibility(context, previous);
           context.navigateTo(Routes.otpVerificationView);
         } else if (next is PhoneAuthSubmitCodeSuccess) {
-          hideLoadingIndicator(context, previous);
-         
+          _changeLoadingIndicatorVisibility(context, previous);
+          // Navigate to main navigation view
+          context.navigateTo(Routes.mainNavigationView);
         }
       },
     );
@@ -41,7 +38,8 @@ class PhoneNumberAuthListener extends ConsumerWidget {
 
   // If the previous state is PhoneAuthLoading, hide the loading indicator
   // by calling AppLoadingIndicator.hide(context)
-  hideLoadingIndicator(BuildContext context, PhoneAuthState? previous) {
+  _changeLoadingIndicatorVisibility(
+      BuildContext context, PhoneAuthState? previous) {
     if (previous is PhoneAuthLoading) {
       AppLoadingIndicator.hide(context);
     }

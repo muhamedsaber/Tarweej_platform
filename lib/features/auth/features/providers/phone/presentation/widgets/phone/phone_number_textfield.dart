@@ -4,9 +4,9 @@ import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/helpers/app_regex.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/logic/country/country_changer_notifier.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/logic/phone/phone_auth_notifier.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/widgets/country/country_code.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/logic/country/country_changer_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/logic/phone/phone_auth_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/widgets/country/country_code.dart';
 
 class PhoneNumberTextField extends ConsumerStatefulWidget {
   const PhoneNumberTextField({super.key});

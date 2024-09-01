@@ -7,7 +7,7 @@ import 'package:tarweej_platform/core/animation/custom_switcher_animation.dart';
 import 'package:tarweej_platform/core/helpers/app_assets.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/logic/country/country_changer_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/logic/country/country_changer_notifier.dart';
 
 part 'country_selector_button.dart';
 

@@ -449,6 +449,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Do you want to login instead?`
+  String get doYouWantToLoginInstead {
+    return Intl.message(
+      'Do you want to login instead?',
+      name: 'doYouWantToLoginInstead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dismiss`
+  String get dismiss {
+    return Intl.message(
+      'Dismiss',
+      name: 'dismiss',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

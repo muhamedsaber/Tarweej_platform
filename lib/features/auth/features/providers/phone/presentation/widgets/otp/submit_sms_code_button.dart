@@ -7,7 +7,7 @@ import 'package:tarweej_platform/core/alerts/app_toasts.dart';
 import 'package:tarweej_platform/core/common_ui/widgets/app_text_button.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/logic/phone/phone_auth_notifier.dart';
+import 'package:tarweej_platform/features/auth/features/providers/phone/presentation/logic/phone/phone_auth_notifier.dart';
 
 class SubmitSmsCodeButton extends ConsumerWidget {
   const SubmitSmsCodeButton({super.key});

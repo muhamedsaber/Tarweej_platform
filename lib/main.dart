@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,7 +17,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   //--------Test--------
-  final user =await UserCache.getUser();
+  final user = await UserCache.getUser();
   print(user.toString());
   //--------------------
   // getting app language from cache

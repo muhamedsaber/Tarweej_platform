@@ -38,7 +38,9 @@
     "enterYourEmail":"أدخل بريدك الإلكتروني",
     "confirm": "تأكيد",
     "EnterYourNewPassword":"أدخل كلمة المرور الجديدة",
-    "CheckYourEmail":"تحقق من بريدك الإلكتروني"
+    "CheckYourEmail":"تحقق من بريدك الإلكتروني",
+    "doYouWantToLoginInstead":"هل تريد تسجيل الدخول بدلاً من ذلك؟",
+    "dismiss":"تجاهل"
 
 
 }

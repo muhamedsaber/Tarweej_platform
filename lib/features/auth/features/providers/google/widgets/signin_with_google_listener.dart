@@ -2,15 +2,13 @@ import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/alerts/app_alers.dart';
-import 'package:tarweej_platform/core/alerts/app_dialogs.dart';
-import 'package:tarweej_platform/core/common_ui/widgets/app_text_button.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
-import 'package:tarweej_platform/core/helpers/size.dart';
 import 'package:tarweej_platform/features/auth/features/providers/google/logic/signin_with_google_state.dart';
 import 'package:tarweej_platform/features/auth/features/providers/google/logic/singin_with_google_notifier.dart';
+
+import '../../../../../../config/router/routes.dart';
+import '../../../../../../core/alerts/firebase_error_dialog.dart';
 
 class SigninWithGoogleListener extends ConsumerWidget {
   const SigninWithGoogleListener({super.key});
@@ -22,14 +20,12 @@ class SigninWithGoogleListener extends ConsumerWidget {
       (previous, state) {
         log(state.toString());
         if (state is SigninWithGoogleSuccess) {
-          if (previous is SigninWithGoogleLoading) {
-            AppLoadingIndicator.hide(context);
-          }
+          _changeLoadingIndicatorVisibility(context, previous);
+          // Navigate to main navigation view
+          context.navigateTo(Routes.mainNavigationView);
         } else if (state is SigninWithGoogleError) {
-          if (previous is SigninWithGoogleLoading) {
-            AppLoadingIndicator.hide(context);
-          }
-          _buildErrorDialog(context, state);
+          _changeLoadingIndicatorVisibility(context, previous);
+          FirebaseErrorDialog.show(context, state.error);
         } else if (state is SigninWithGoogleLoading) {
           AppLoadingIndicator.show(context);
         }
@@ -38,24 +34,10 @@ class SigninWithGoogleListener extends ConsumerWidget {
     return const SizedBox.shrink();
   }
 
-  _buildErrorDialog(BuildContext context, SigninWithGoogleError state) {
-    AppDialogs.showAlertDialog(
-      context: context,
-      icon: state.error.icon,
-      title: state.error.message,
-      actions: [
-        Center(
-          child: AppTextButton(
-            title: context.translate.gotIt,
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 7.h),
-            borderRadius: AppBorderRadius.circularAll6,
-            style: context.theme.font14OnSurfaceMedium,
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        )
-      ],
-    );
+  _changeLoadingIndicatorVisibility(
+      BuildContext context, SigninWithGoogleState? previous) {
+    if (previous is SigninWithGoogleLoading) {
+      AppLoadingIndicator.hide(context);
+    }
   }
 }

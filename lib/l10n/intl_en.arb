@@ -38,7 +38,9 @@
     "enterYourEmail":"Enter your email",
     "confirm": "Confirm",
     "EnterYourNewPassword":"Enter your new password",
-    "CheckYourEmail":"Check your email"
+    "CheckYourEmail":"Check your email",
+    "doYouWantToLoginInstead":"Do you want to login instead?",
+    "dismiss":"Dismiss"
    
    
 }
