@@ -18,7 +18,10 @@ void main() async {
   );
   //--------Test--------
   final user = await UserCache.getUser();
-  print(user.toString());
+  debugPrint(user.toString());
+
+  /// Check if the user is logged in or not
+  final isUserLoggedIn = await UserCache.isUserLoggedIn();
   //--------------------
   // getting app language from cache
   String appLanguage = await LocalizationHelper.loadLanguage();
@@ -38,7 +41,9 @@ void main() async {
 
         /// [overrideWithProvider] is deprecated and will be removed
       ],
-      child: const TarweejPlatformApp(),
+      child: TarweejPlatformApp(
+        isUserLoggedIn: isUserLoggedIn,
+      ),
     ),
   );
 }

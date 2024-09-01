@@ -9,8 +9,8 @@ import 'package:tarweej_platform/config/theme/dark_theme/dark_theme.dart';
 import 'package:tarweej_platform/generated/l10n.dart';
 
 class TarweejPlatformApp extends ConsumerWidget {
-  const TarweejPlatformApp({super.key});
-
+  const TarweejPlatformApp({super.key, required this.isUserLoggedIn});
+  final bool isUserLoggedIn;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     String lang = ref.watch(languageChangerProvider);
@@ -20,7 +20,9 @@ class TarweejPlatformApp extends ConsumerWidget {
         splitScreenMode: true,
         builder: (_, context) {
           return MaterialApp(
-            initialRoute: Routes.mainAuthView,
+            initialRoute: isUserLoggedIn
+                ? Routes.mainNavigationView
+                : Routes.mainAuthView,
             builder: (context, child) {
               return Theme(
                 data: DarkTheme.theme(context),

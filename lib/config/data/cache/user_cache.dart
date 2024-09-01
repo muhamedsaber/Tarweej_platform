@@ -49,9 +49,15 @@ class UserCache {
   }
 
   /// Sets the user's login status in the cache.
-  /// 
+  ///
   /// [status] is a boolean indicating whether the user is logged in (true) or logged out (false).
   static Future<void> setLoginStatusTo(bool status) async {
     await CacheHelper.setData(key: CacheConstants.loginStatus, value: status);
+  }
+
+  /// Returns the user's login status from the cache.
+
+  static Future<bool> isUserLoggedIn() async {
+    return await CacheHelper.getBool(key: CacheConstants.loginStatus);
   }
 }
