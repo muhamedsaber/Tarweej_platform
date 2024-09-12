@@ -9,7 +9,7 @@ class UserModel {
   final String? accountCoverPhoto;
   final String? bio;
   final bool? isVerified;
-  
+
   /// UserModel constructor
   UserModel({
     this.uid,
@@ -44,7 +44,8 @@ class UserModel {
       isVerified: isVerified ?? this.isVerified,
     );
   }
-  //  fromJson 
+
+  //  fromJson
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       uid: json['uid'],
@@ -69,8 +70,9 @@ class UserModel {
       'bio': bio,
       'isVerified': isVerified,
     };
-  } 
-   // fromCredentials
+  }
+
+  // fromCredentials
   factory UserModel.fromCredentials(UserCredential credential) {
     return UserModel(
       uid: credential.user?.uid,

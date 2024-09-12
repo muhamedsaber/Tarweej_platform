@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,14 +7,15 @@ import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/core/helpers/app_assets.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
-import 'package:tarweej_platform/features/auth/features/providers/facebook/logic/signin_with_facebook_notifier.dart';
-import 'package:tarweej_platform/features/auth/features/providers/facebook/widgets/signin_with_facebook_listener.dart';
-import 'package:tarweej_platform/features/auth/features/providers/github/logic/signin_with_github_notifier.dart';
-import 'package:tarweej_platform/features/auth/features/providers/github/widgets/signin_with_github_listener.dart';
-import 'package:tarweej_platform/features/auth/features/providers/google/logic/singin_with_google_notifier.dart';
-import 'package:tarweej_platform/features/auth/features/providers/google/widgets/signin_with_google_listener.dart';
-import 'package:tarweej_platform/features/auth/features/providers/twitter/logic/signin_with_twitter_notifier.dart';
-import 'package:tarweej_platform/features/auth/features/providers/twitter/widgets/signin_with_twitter_listener.dart';
+import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/facebook_auth_provider_impl.dart';
+import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/github_auth_provider_impl.dart';
+import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/google_auth_provider_impl.dart';
+
+import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/twitter_auth_provider_impl.dart';
+import 'package:tarweej_platform/features/auth/services/providers/notifiers/auth_provider_state_notifier.dart';
+
+import '../../../../core/di/dependency_injection.dart';
+import 'auth_provider_listener.dart';
 part 'provider_button.dart';
 
 class ProvidersAuthSection extends ConsumerWidget {
@@ -60,36 +63,53 @@ class ProvidersAuthSection extends ConsumerWidget {
           ],
         ),
         //----Listeners
-        const SigninWithGoogleListener(),
-        const SigninWithFacebookListener(),
-        const SigninWithTwitterListener(),
-        const SigninWithGitHubListener()
+        AuthProviderListener(
+          providerFamily:
+              authProviderStateNotifier(getIt<GoogleAuthProviderImpl>()),
+        ),
+        AuthProviderListener(
+          providerFamily:
+              authProviderStateNotifier(getIt<FacebookAuthProviderImpl>()),
+        ),
+        AuthProviderListener(
+          providerFamily:
+              authProviderStateNotifier(getIt<TwitterAuthProviderImpl>()),
+        ),
+        AuthProviderListener(
+          providerFamily:
+              authProviderStateNotifier(getIt<GitHubAuthProviderImpl>()),
+        )
       ],
     );
   }
-  //----Functions
+
+  //----Triggers
 
   _signInWithGoogle(WidgetRef ref) {
     ref
-        .read<SingInWithGoogleNotifier>(signInWithGoogleProvider.notifier)
+        .read(
+            authProviderStateNotifier(getIt<GoogleAuthProviderImpl>()).notifier)
         .signIn();
   }
 
   _signInWithFacebook(WidgetRef ref) {
     ref
-        .read<SingInWithFacebookNotifier>(signInWithFacebookProvider.notifier)
+        .read(authProviderStateNotifier(getIt<FacebookAuthProviderImpl>())
+            .notifier)
         .signIn();
   }
 
   _signInWithTwitter(WidgetRef ref) {
     ref
-        .read<SingInWithTwitterNotifier>(signInWithTwitterProvider.notifier)
+        .read(authProviderStateNotifier(getIt<TwitterAuthProviderImpl>())
+            .notifier)
         .signIn();
   }
 
   _signInWithGitHub(WidgetRef ref) {
     ref
-        .read<SingInWithGitHubNotifier>(signInWithGitHubProvider.notifier)
+        .read(
+            authProviderStateNotifier(getIt<GitHubAuthProviderImpl>()).notifier)
         .signIn();
   }
 }

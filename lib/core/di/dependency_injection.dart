@@ -1,65 +1,53 @@
 import 'package:get_it/get_it.dart';
 import 'package:tarweej_platform/features/auth/features/login/data/login_repo.dart';
 import 'package:tarweej_platform/features/auth/features/login/data/reset_password_repo.dart';
-import 'package:tarweej_platform/features/auth/features/providers/facebook/data/signin_with_facebook_repo.dart';
-import 'package:tarweej_platform/features/auth/features/providers/github/data/signin_with_github_repo.dart';
-import 'package:tarweej_platform/features/auth/features/providers/google/data/signin_with_google_repo.dart';
-import 'package:tarweej_platform/features/auth/features/providers/phone/data/signin_with_phone_number_repo.dart';
-import 'package:tarweej_platform/features/auth/features/providers/twitter/data/signin_with_twitter_repo.dart';
 import 'package:tarweej_platform/features/auth/services/email_service.dart';
 import 'package:tarweej_platform/features/auth/features/signup/data/signup_repo.dart';
-import 'package:tarweej_platform/features/auth/services/provider_services.dart';
+import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/facebook_auth_provider_impl.dart';
+import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/github_auth_provider_impl.dart';
+import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/twitter_auth_provider_impl.dart';
+
+import '../../features/auth/features/phone/data/signin_with_phone_number_repo.dart';
+import '../../features/auth/services/providers/impl/auth_providers/google_auth_provider_impl.dart';
+
+
 
 GetIt getIt = GetIt.instance;
 
 void setupDependencyInjection() {
   getIt.registerSingleton<EmailService>(EmailService());
-  getIt.registerSingleton<AuthProviderServices>(AuthProviderServices());
+ 
   _setupSignup();
-  _setupSignInWithGoogle();
-  _setupSignInWithFacebook();
-  _setupSignInWithTwitter();
-  _setupSignInWithGitHub();
+  _setupAuthenticationProviders();
   _setupSignInWithPhoneNumber();
   _setupLogin();
   _resetPasswordSetup();
 }
-
+_setupAuthenticationProviders(){
+  getIt.registerSingleton<FacebookAuthProviderImpl>(FacebookAuthProviderImpl());
+  getIt.registerSingleton<GoogleAuthProviderImpl>(GoogleAuthProviderImpl());
+  getIt.registerSingleton<GitHubAuthProviderImpl>(GitHubAuthProviderImpl());
+  getIt.registerSingleton<TwitterAuthProviderImpl>(TwitterAuthProviderImpl());
+}
 _setupSignup() {
   getIt.registerSingleton<SignupRepo>(
       SignupRepo(emailService: getIt<EmailService>()));
 }
 
-_setupSignInWithGoogle() {
-  getIt.registerSingleton<SignInWithGoogleRepo>(
-      SignInWithGoogleRepo(providersService: getIt<AuthProviderServices>()));
-}
-
-_setupSignInWithFacebook(){
-   getIt.registerSingleton<SigninWithFacebookRepo>(
-      SigninWithFacebookRepo(providerServices: getIt<AuthProviderServices>()));
-}
-_setupSignInWithTwitter(){
-   getIt.registerSingleton<SignInWithTwitterRepo>(
-      SignInWithTwitterRepo(providersService: getIt<AuthProviderServices>()));
-}
-void _setupSignInWithGitHub() {
-  getIt.registerFactory<SigninWithGitHubRepo>(
-    () => SigninWithGitHubRepo(providerServices:getIt<AuthProviderServices>()),
-  );
-}
 void _setupSignInWithPhoneNumber() {
   getIt.registerFactory<SigninWithPhoneNumberRepo>(
     () => SigninWithPhoneNumberRepo(),
   );
 }
-void _setupLogin(){
+
+void _setupLogin() {
   getIt.registerSingleton<LoginRepo>(
     LoginRepo(emailService: getIt<EmailService>()),
   );
 }
-void _resetPasswordSetup(){
+
+void _resetPasswordSetup() {
   getIt.registerSingleton<ResetPasswordRepo>(
-    ResetPasswordRepo( getIt<EmailService>()),
+    ResetPasswordRepo(getIt<EmailService>()),
   );
 }

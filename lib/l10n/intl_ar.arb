@@ -40,7 +40,8 @@
     "EnterYourNewPassword":"أدخل كلمة المرور الجديدة",
     "CheckYourEmail":"تحقق من بريدك الإلكتروني",
     "doYouWantToLoginInstead":"هل تريد تسجيل الدخول بدلاً من ذلك؟",
-    "dismiss":"تجاهل"
+    "dismiss":"تجاهل",
+    "goToLogin":"الذهاب إلى تسجيل الدخول"
 
 
 }

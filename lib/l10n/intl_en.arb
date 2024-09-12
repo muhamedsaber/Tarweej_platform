@@ -40,7 +40,8 @@
     "EnterYourNewPassword":"Enter your new password",
     "CheckYourEmail":"Check your email",
     "doYouWantToLoginInstead":"Do you want to login instead?",
-    "dismiss":"Dismiss"
+    "dismiss":"Dismiss",
+    "goToLogin":"Go to login"
    
    
 }
