@@ -18,13 +18,13 @@ class AuthProviderStateNotifier extends StateNotifier<AuthProviderState> {
     final result = await repo.signIn();
     result.when(onSuccess: (data) async {
       // Saving user info in cache
-      await UserCache.saveUser(data!);
+      await UserCache.saveUser(data);
       await UserCache.setLoginStatusTo(true);
       // updating the state
       state = AuthProviderSuccessState();
     }, onError: (error) {
-      log(error?.code.toString() ?? "");
-      state = AuthProviderErrorState(error: error!);
+      log(error.code.toString() );
+      state = AuthProviderErrorState(error: error);
     });
   }
 }
