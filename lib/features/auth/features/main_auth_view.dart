@@ -8,6 +8,7 @@ import 'package:tarweej_platform/features/auth/features/signup/presentation/widg
 import 'package:tarweej_platform/features/auth/features/widgets/or_separator.dart';
 import 'package:tarweej_platform/features/auth/features/widgets/provider_auth_section.dart';
 
+
 class MainAuthView extends StatelessWidget {
   const MainAuthView({super.key});
 
@@ -38,7 +39,9 @@ class MainAuthView extends StatelessWidget {
                   context.navigateTo(Routes.loginView);
                 },
                 backgroundColor: context.theme.scaffoldBackgroundColor,
-              )
+              ),
+              //----Listeners
+             
             ],
           ),
         ),

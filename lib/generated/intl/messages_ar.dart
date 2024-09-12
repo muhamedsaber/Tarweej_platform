@@ -58,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "goToLogin":
+            MessageLookupByLibrary.simpleMessage("الذهاب إلى تسجيل الدخول"),
         "gotIt": MessageLookupByLibrary.simpleMessage("حسناً"),
         "isPasswordContainsAtLeast1LowerCaseLetter":
             MessageLookupByLibrary.simpleMessage(

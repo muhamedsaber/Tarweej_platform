@@ -47,7 +47,7 @@ class AppDialogs {
           content: message != null
               ? Text(
                   message,
-                  style: context.theme.font18OnSurfaceMedium,
+                  style: context.theme.font14OnSurfaceMedium,
                 )
               : null,
           actions: actions,

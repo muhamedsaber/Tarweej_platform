@@ -1,13 +1,14 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
 import 'package:tarweej_platform/core/alerts/app_dialogs.dart';
-import 'package:tarweej_platform/core/common_ui/widgets/app_text_button.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_codes.dart';
 import 'package:tarweej_platform/core/networking/firebase/firebase_error_model.dart';
+
+import '../common_ui/widgets/app_text_button.dart';
 
 class FirebaseErrorDialog {
   static show(BuildContext context, FirebaseErrorModel model) {
@@ -23,7 +24,7 @@ class FirebaseErrorDialog {
             ? [
                 Center(
                   child: AppTextButton(
-                    title: context.translate.login,
+                    title: context.translate.goToLogin,
                     padding:
                         EdgeInsets.symmetric(horizontal: 20.w, vertical: 7.h),
                     borderRadius: AppBorderRadius.circularAll6,
@@ -37,6 +38,7 @@ class FirebaseErrorDialog {
                 Center(
                   child: AppTextButton(
                     title: context.translate.dismiss,
+                    backgroundColor: context.theme.colorScheme.surface,
                     padding:
                         EdgeInsets.symmetric(horizontal: 20.w, vertical: 7.h),
                     borderRadius: AppBorderRadius.circularAll6,
@@ -47,6 +49,8 @@ class FirebaseErrorDialog {
                   ),
                 )
               ]
-            : [AppDialogs.okButton(context),]);
+            : [
+                AppDialogs.okButton(context),
+              ]);
   }
 }
