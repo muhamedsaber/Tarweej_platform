@@ -31,6 +31,7 @@ final languageChangerProvider = StateNotifierProvider<LanguageChanger, String>(
   /// its important to get the System language at the first time user opening app
   /// but in my case [LanguageChanger] is being replaced by new instance with the cached language
   /// in the [ProviderScope] in the main.dart file
-  /// keep in ming that this is redundant and can be removed but for the sake of the example i will keep it
+  /// keep in ming that this is redundant and can be removed but for the sake of the example i will keep it,
+  /// Why it's redundant? because i will replace the instance of the class with the new instance in the main.dart file
   (ref) => LanguageChanger(LocalizationHelper.getSystemLanguage()),
 );

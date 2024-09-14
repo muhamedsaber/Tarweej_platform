@@ -8,17 +8,13 @@ import 'package:tarweej_platform/features/auth/features/signup/presentation/widg
 import 'package:tarweej_platform/features/auth/features/widgets/or_separator.dart';
 import 'package:tarweej_platform/features/auth/features/widgets/provider_auth_section.dart';
 
-
 class MainAuthView extends StatelessWidget {
   const MainAuthView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        // hide keyboard when user taps outside the text field
-        FocusScope.of(context).unfocus();
-      },
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         body: Padding(
           padding: AppPadding.screenHorizontal23,
@@ -40,8 +36,6 @@ class MainAuthView extends StatelessWidget {
                 },
                 backgroundColor: context.theme.scaffoldBackgroundColor,
               ),
-              //----Listeners
-             
             ],
           ),
         ),
