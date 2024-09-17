@@ -4,6 +4,16 @@
 <!--Internet Permission-->
 <uses-permission android:name="android.permission.INTERNET"/>
 
+    <!-- Permissions for Android 12 and below (API level 32 and below) -->
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>
+
+
+    <!-- Permissions for Android 13 and above (API level 33+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" 
+        android:required="false" tools:targetApi="33"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"
+        android:required="false" tools:targetApi="33"/>
     <application
         android:label="tarweej_platform"
         android:name="${applicationName}"

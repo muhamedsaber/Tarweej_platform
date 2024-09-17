@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "WeWillSendYouACodeToConfirmYourPhoneNumber":
             MessageLookupByLibrary.simpleMessage(
                 "سنرسل لك رمزًا لتأكيد رقم هاتفك"),
+        "allowAccessToPhotos":
+            MessageLookupByLibrary.simpleMessage("السماح بالوصول إلى الصور"),
         "chooseYourCountry": MessageLookupByLibrary.simpleMessage("اختر بلدك"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "create": MessageLookupByLibrary.simpleMessage("أنشئ "),
@@ -58,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "givePermission": MessageLookupByLibrary.simpleMessage("منح الإذن"),
         "goToLogin":
             MessageLookupByLibrary.simpleMessage("الذهاب إلى تسجيل الدخول"),
         "gotIt": MessageLookupByLibrary.simpleMessage("حسناً"),
@@ -78,19 +81,29 @@ class MessageLookup extends MessageLookupByLibrary {
                 "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "noPhotosAccess":
+            MessageLookupByLibrary.simpleMessage("لا يوجد إذن وصول للصور"),
         "noResults": MessageLookupByLibrary.simpleMessage("لا توجد نتائج"),
+        "openSettings": MessageLookupByLibrary.simpleMessage("افتح الإعدادات"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordIsValid":
             MessageLookupByLibrary.simpleMessage("كلمة المرور صالحة"),
         "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال بريد إلكتروني صالح"),
+        "recent": MessageLookupByLibrary.simpleMessage("الأخيرة"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "search": MessageLookupByLibrary.simpleMessage("إبحث"),
+        "select": MessageLookupByLibrary.simpleMessage("إختر"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("حدث خطأ ما"),
         "thisFieldIsRequired":
             MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "toContinue": MessageLookupByLibrary.simpleMessage("للمتابعة"),
+        "toContinuetarweejNeedsAccessToThePhotosOnYourDevice":
+            MessageLookupByLibrary.simpleMessage(
+                "للمتابعة، يحتاج ترويج إلى الوصول إلى الصور على جهازك"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك"),
         "yourAccount": MessageLookupByLibrary.simpleMessage("حسابك")
       };

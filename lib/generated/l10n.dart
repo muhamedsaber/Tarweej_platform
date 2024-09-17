@@ -479,6 +479,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Select`
+  String get select {
+    return Intl.message(
+      'Select',
+      name: 'select',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No photos access`
+  String get noPhotosAccess {
+    return Intl.message(
+      'No photos access',
+      name: 'noPhotosAccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To continue, Tarweej needs access to the photos on your device`
+  String get toContinuetarweejNeedsAccessToThePhotosOnYourDevice {
+    return Intl.message(
+      'To continue, Tarweej needs access to the photos on your device',
+      name: 'toContinuetarweejNeedsAccessToThePhotosOnYourDevice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Give permission`
+  String get givePermission {
+    return Intl.message(
+      'Give permission',
+      name: 'givePermission',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow access to photos`
+  String get allowAccessToPhotos {
+    return Intl.message(
+      'Allow access to photos',
+      name: 'allowAccessToPhotos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open settings`
+  String get openSettings {
+    return Intl.message(
+      'Open settings',
+      name: 'openSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent`
+  String get recent {
+    return Intl.message(
+      'Recent',
+      name: 'recent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get somethingWentWrong {
+    return Intl.message(
+      'Something went wrong',
+      name: 'somethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

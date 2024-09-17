@@ -7,6 +7,7 @@ import 'package:tarweej_platform/features/auth/features/main_auth_view.dart';
 import '../../features/auth/features/phone/presentation/views/change_country_view.dart';
 import '../../features/auth/features/phone/presentation/views/otp_verification_view.dart';
 import '../../features/auth/features/phone/presentation/views/phone_auth_view.dart';
+import '../../features/create/pic_selector/views/select_image_view.dart';
 import '../../features/main_navigation/presentation/views/main_navigation_view.dart';
 
 class AppRouter {
@@ -24,6 +25,8 @@ class AppRouter {
         return _buildWithTransition(const LoginView());
       case Routes.mainNavigationView:
         return _build(const MainNavigationView());
+      case Routes.selectImageView:
+        return _buildWithTransition(const SelectImageView());
       default:
         return _build(NotFoundScreen(
           routeName: settings.name ?? "",

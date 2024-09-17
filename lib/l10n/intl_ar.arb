@@ -41,7 +41,15 @@
     "CheckYourEmail":"تحقق من بريدك الإلكتروني",
     "doYouWantToLoginInstead":"هل تريد تسجيل الدخول بدلاً من ذلك؟",
     "dismiss":"تجاهل",
-    "goToLogin":"الذهاب إلى تسجيل الدخول"
+    "goToLogin":"الذهاب إلى تسجيل الدخول",
+    "select":"إختر",
+    "noPhotosAccess": "لا يوجد إذن وصول للصور",
+    "toContinuetarweejNeedsAccessToThePhotosOnYourDevice": "للمتابعة، يحتاج ترويج إلى الوصول إلى الصور على جهازك",
+    "givePermission":"منح الإذن",
+    "allowAccessToPhotos": "السماح بالوصول إلى الصور",
+    "openSettings":"افتح الإعدادات",
+    "recent":"الأخيرة",
+    "somethingWentWrong":"حدث خطأ ما"
 
 
 }

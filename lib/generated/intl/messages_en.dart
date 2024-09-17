@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "WeWillSendYouACodeToConfirmYourPhoneNumber":
             MessageLookupByLibrary.simpleMessage(
                 "We will send you a code to confirm your phone number"),
+        "allowAccessToPhotos":
+            MessageLookupByLibrary.simpleMessage("Allow access to photos"),
         "chooseYourCountry":
             MessageLookupByLibrary.simpleMessage("Choose your country"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
@@ -60,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your email"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password ?"),
+        "givePermission":
+            MessageLookupByLibrary.simpleMessage("Give permission"),
         "goToLogin": MessageLookupByLibrary.simpleMessage("Go to login"),
         "gotIt": MessageLookupByLibrary.simpleMessage("Got it"),
         "isPasswordContainsAtLeast1LowerCaseLetter":
@@ -79,18 +83,28 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Password must contain at least 8 characters"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "noPhotosAccess":
+            MessageLookupByLibrary.simpleMessage("No photos access"),
         "noResults": MessageLookupByLibrary.simpleMessage("No results"),
+        "openSettings": MessageLookupByLibrary.simpleMessage("Open settings"),
         "or": MessageLookupByLibrary.simpleMessage("or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordIsValid":
             MessageLookupByLibrary.simpleMessage("Password is valid"),
         "pleaseEnterValidEmail":
             MessageLookupByLibrary.simpleMessage("Please enter a valid email"),
+        "recent": MessageLookupByLibrary.simpleMessage("Recent"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "select": MessageLookupByLibrary.simpleMessage("Select"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "thisFieldIsRequired":
             MessageLookupByLibrary.simpleMessage("This field is required"),
         "toContinue": MessageLookupByLibrary.simpleMessage("to continue"),
+        "toContinuetarweejNeedsAccessToThePhotosOnYourDevice":
+            MessageLookupByLibrary.simpleMessage(
+                "To continue, Tarweej needs access to the photos on your device"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "yourAccount": MessageLookupByLibrary.simpleMessage("Your Account")
       };

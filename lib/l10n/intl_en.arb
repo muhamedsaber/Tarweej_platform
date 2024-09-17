@@ -41,7 +41,15 @@
     "CheckYourEmail":"Check your email",
     "doYouWantToLoginInstead":"Do you want to login instead?",
     "dismiss":"Dismiss",
-    "goToLogin":"Go to login"
+    "goToLogin":"Go to login",
+    "select":"Select",
+    "noPhotosAccess":"No photos access",
+    "toContinuetarweejNeedsAccessToThePhotosOnYourDevice": "To continue, Tarweej needs access to the photos on your device",
+    "givePermission":"Give permission",
+    "allowAccessToPhotos":"Allow access to photos",
+    "openSettings":"Open settings",
+    "recent":"Recent",
+    "somethingWentWrong":"Something went wrong"
    
    
 }

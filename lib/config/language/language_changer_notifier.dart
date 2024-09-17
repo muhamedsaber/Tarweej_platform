@@ -4,13 +4,14 @@ import 'package:tarweej_platform/config/data/cache/cache_manager.dart';
 import 'package:tarweej_platform/config/language/localization_herlper.dart';
 
 class LanguageChanger extends StateNotifier<String> {
-  // accepting the language from the constructor and passing it to the super class
-  // This is important to inject initial value outside the class and start 
+  // passing the initial state into super class
+  // This is important to inject initial value outside the class 
+  // But Why? 
   // to give initial state when creating the instance of the class
   // But Why? 
-  // my problem is doing some async operation first and this operation will determine the initial state
-  // by getting the language from the cache and i cannot creating a new instance of the class with this async issue
-  // so i do asynchronus operation first then i inject a brand new initial state to the class
+  // the problem is doing some async operation first and this operation will determine the initial state
+  // by getting the language from the cache i cannot directly creating a new instance of the class with this async issue
+  // so i do asynchronus operation first then injecting a brand new initial state to the class
   LanguageChanger(super.language);
 
   changeLanguage(String language) async {
@@ -22,7 +23,7 @@ class LanguageChanger extends StateNotifier<String> {
       return;
     }
     state = language;
-    // updating the cache with the new language with the key [CacheConstants.appLanguage]
+    // updating the cache with new language
     await CacheHelper.setData(key: CacheConstants.appLanguage, value: language);
   }
 }

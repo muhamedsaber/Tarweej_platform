@@ -55,14 +55,21 @@ dependencies:
   flutter_screenutil: ^5.9.3
   font_awesome_flutter: ^10.7.0
   pinput: ^5.0.0
+  redacted: ^1.0.12
   # State Management
   bloc: ^8.1.4
   meta: ^1.15.0
   flutter_riverpod: ^2.5.1
-
+  
   
   # Di
   get_it: ^7.7.0
+
+  # resources
+  permission_handler: ^11.3.1
+  photo_manager: ^3.3.0
+  device_info_plus: ^10.1.2
+  image: ^4.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
