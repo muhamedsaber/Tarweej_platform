@@ -25,7 +25,7 @@ class DarkTheme {
         highlightColor:DarkThemeColors.primaryColor,
          splashFactory: NoSplash.splashFactory,
         popupMenuTheme: const PopupMenuThemeData(),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
          
       ) ,
       fontFamily: LocalizationHelper.getFontFamily(context),

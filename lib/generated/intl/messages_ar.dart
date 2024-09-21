@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToLogin":
             MessageLookupByLibrary.simpleMessage("الذهاب إلى تسجيل الدخول"),
         "gotIt": MessageLookupByLibrary.simpleMessage("حسناً"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "isPasswordContainsAtLeast1LowerCaseLetter":
             MessageLookupByLibrary.simpleMessage(
                 "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل"),
@@ -81,6 +82,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "noInternetConnection":
+            MessageLookupByLibrary.simpleMessage("لا يوجد اتصال بالإنترنت"),
         "noPhotosAccess":
             MessageLookupByLibrary.simpleMessage("لا يوجد إذن وصول للصور"),
         "noResults": MessageLookupByLibrary.simpleMessage("لا توجد نتائج"),

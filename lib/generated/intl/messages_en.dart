@@ -66,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Give permission"),
         "goToLogin": MessageLookupByLibrary.simpleMessage("Go to login"),
         "gotIt": MessageLookupByLibrary.simpleMessage("Got it"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "isPasswordContainsAtLeast1LowerCaseLetter":
             MessageLookupByLibrary.simpleMessage(
                 "Password must contain at least 1 lowercase letter"),
@@ -83,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Password must contain at least 8 characters"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "noInternetConnection":
+            MessageLookupByLibrary.simpleMessage("No internet connection"),
         "noPhotosAccess":
             MessageLookupByLibrary.simpleMessage("No photos access"),
         "noResults": MessageLookupByLibrary.simpleMessage("No results"),

@@ -88,6 +88,13 @@ extension TextStylesExtension on ThemeData {
       fontWeight: FontWeightHelper.regular,
     );
   }
+  TextStyle get font11OnSurfaceRegular {
+    return TextStyle(
+      fontSize: 11.sp,
+      color: colorScheme.onSurface,
+      fontWeight: FontWeightHelper.regular,
+    );
+  }
   TextStyle get font14ErrorRegular {
     return TextStyle(
       fontSize: 14.sp,

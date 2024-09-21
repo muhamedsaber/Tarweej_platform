@@ -49,7 +49,9 @@
     "allowAccessToPhotos": "السماح بالوصول إلى الصور",
     "openSettings":"افتح الإعدادات",
     "recent":"الأخيرة",
-    "somethingWentWrong":"حدث خطأ ما"
+    "somethingWentWrong":"حدث خطأ ما",
+    "home":"الرئيسية",
+    "noInternetConnection":"لا يوجد اتصال بالإنترنت"
 
 
 }

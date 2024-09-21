@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
+import 'package:tarweej_platform/core/helpers/size.dart';
 
-import 'bottom_nav_bar/bottom_navbar_indicator.dart';
+import 'bottom_navbar_indicator.dart';
 
 class AppBottomNavBar extends StatefulWidget {
-  const AppBottomNavBar({
-    super.key,
-  });
-
+  const AppBottomNavBar({super.key,required this.onTap});
+  final Function(int index) onTap;
   @override
   State<AppBottomNavBar> createState() => _AppBottomNavBarState();
 }
@@ -31,8 +30,10 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: BottomNavigationBar(
+              elevation: 0,
               currentIndex: currentIndex,
               onTap: (value) {
+                widget.onTap(value);  
                 setState(() {
                   currentIndex = value;
                 });
@@ -51,6 +52,7 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
                     icon: Icon(Icons.person), label: 'Profile'),
               ]),
         ),
+        verticalSpace(10)
       ],
     );
   }

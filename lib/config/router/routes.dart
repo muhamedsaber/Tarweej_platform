@@ -6,5 +6,5 @@ class Routes {
   static const String otpVerificationView="/OTPVerificationView";
   static const String loginView="/LoginView";
   static const String mainNavigationView="/MainNavigationView";
-  static const String selectImageView = "/SelectImageView";
+
 }
