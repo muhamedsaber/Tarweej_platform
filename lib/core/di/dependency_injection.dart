@@ -1,4 +1,6 @@
 import 'package:get_it/get_it.dart';
+import 'package:tarweej_platform/core/networking/api/dio_interface.dart';
+import 'package:tarweej_platform/core/networking/api/upsplash_dio_factory.dart';
 import 'package:tarweej_platform/features/auth/features/login/data/login_repo.dart';
 import 'package:tarweej_platform/features/auth/features/login/data/reset_password_repo.dart';
 import 'package:tarweej_platform/features/auth/services/email_service.dart';
@@ -16,7 +18,8 @@ GetIt getIt = GetIt.instance;
 
 void setupDependencyInjection() {
   getIt.registerSingleton<EmailService>(EmailService());
- 
+  getIt.registerSingleton<UpsplashDioFactory>(UpsplashDioFactory());
+  getIt.registerSingleton<DioConsumer>(DioConsumer(getIt<UpsplashDioFactory>().dio));
   _setupSignup();
   _setupAuthenticationProviders();
   _setupSignInWithPhoneNumber();
