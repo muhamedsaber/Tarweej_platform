@@ -1,9 +1,9 @@
-
 import 'package:dio/dio.dart';
 
 import '../../../config/language/localization_herlper.dart';
 import 'api_error_model.dart';
 import 'error_messages.dart';
+import 'local_status_code.dart';
 
 class ApiErrorFactory {
   static ApiErrorModel create(DioExceptionType e) {
@@ -19,10 +19,12 @@ class ApiErrorFactory {
     final lang = LocalizationHelper.getCurrentLanguageByIntl();
     if (lang == AppLanguage.ar) {
       return ApiErrorModel(
-          errorMessage: ArabicApiErrorMessages.defaultError, statusCode: 500);
+          errorMessage: ArabicApiErrorMessages.defaultError,
+          statusCode: LocalStatusCodes.defaultCode);
     } else {
       return ApiErrorModel(
-          errorMessage: EnglishApiErrorMessages.defaultError, statusCode: 500);
+          errorMessage: EnglishApiErrorMessages.defaultError,
+          statusCode: LocalStatusCodes.defaultCode);
     }
   }
 
@@ -30,20 +32,29 @@ class ApiErrorFactory {
     switch (error) {
       case DioExceptionType.connectionTimeout:
         return ApiErrorModel(
-            errorMessage: ArabicApiErrorMessages.connectTimeout);
+            errorMessage: ArabicApiErrorMessages.connectTimeout,
+            statusCode: LocalStatusCodes.connectTimeout);
       case DioExceptionType.sendTimeout:
-        return ApiErrorModel(errorMessage: ArabicApiErrorMessages.sendTimeout);
+        return ApiErrorModel(
+            errorMessage: ArabicApiErrorMessages.sendTimeout,
+            statusCode: LocalStatusCodes.sendTimeout);
       case DioExceptionType.receiveTimeout:
         return ApiErrorModel(
-            errorMessage: ArabicApiErrorMessages.receiveTimeout);
+            errorMessage: ArabicApiErrorMessages.receiveTimeout,
+            statusCode: LocalStatusCodes.receiveTimeout);
       case DioExceptionType.connectionError:
         return ApiErrorModel(
-            errorMessage: ArabicApiErrorMessages.noInternetConnection);
+            errorMessage: ArabicApiErrorMessages.noInternetConnection,
+            statusCode: LocalStatusCodes.noInternetConnection);
       case DioExceptionType.cancel:
-        return ApiErrorModel(errorMessage: ArabicApiErrorMessages.cancel);
+        return ApiErrorModel(
+            errorMessage: ArabicApiErrorMessages.cancel,
+            statusCode: LocalStatusCodes.cancel);
 
       default:
-        return ApiErrorModel(errorMessage: ArabicApiErrorMessages.defaultError);
+        return ApiErrorModel(
+            errorMessage: ArabicApiErrorMessages.defaultError,
+            statusCode: LocalStatusCodes.defaultCode);
     }
   }
 
@@ -51,21 +62,29 @@ class ApiErrorFactory {
     switch (error) {
       case DioExceptionType.connectionTimeout:
         return ApiErrorModel(
-            errorMessage: EnglishApiErrorMessages.connectTimeout);
+            errorMessage: EnglishApiErrorMessages.connectTimeout,
+            statusCode: LocalStatusCodes.connectTimeout);
       case DioExceptionType.sendTimeout:
-        return ApiErrorModel(errorMessage: EnglishApiErrorMessages.sendTimeout);
+        return ApiErrorModel(
+            errorMessage: EnglishApiErrorMessages.sendTimeout,
+            statusCode: LocalStatusCodes.sendTimeout);
       case DioExceptionType.receiveTimeout:
         return ApiErrorModel(
-            errorMessage: EnglishApiErrorMessages.receiveTimeout);
+            errorMessage: EnglishApiErrorMessages.receiveTimeout,
+            statusCode: LocalStatusCodes.receiveTimeout);
       case DioExceptionType.connectionError:
         return ApiErrorModel(
-            errorMessage: EnglishApiErrorMessages.noInternetConnection);
+            errorMessage: EnglishApiErrorMessages.noInternetConnection,
+            statusCode: LocalStatusCodes.noInternetConnection);
       case DioExceptionType.cancel:
-        return ApiErrorModel(errorMessage: EnglishApiErrorMessages.cancel);
+        return ApiErrorModel(
+            errorMessage: EnglishApiErrorMessages.cancel,
+            statusCode: LocalStatusCodes.cancel);
 
       default:
         return ApiErrorModel(
-            errorMessage: EnglishApiErrorMessages.defaultError);
+            errorMessage: EnglishApiErrorMessages.defaultError,
+            statusCode: LocalStatusCodes.defaultCode);
     }
   }
 }
