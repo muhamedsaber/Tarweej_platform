@@ -1,7 +1,9 @@
 import 'dart:developer';
 import 'dart:isolate';
 
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
@@ -36,7 +38,7 @@ void main() async {
         /// This Provide a new instance of LanguageChanger with the new language as [InitialState]
         /// Which i can pass the cached language to it.
         languageChangerProvider.overrideWith(
-          (ref) => LanguageChanger("ar"),
+          (ref) => LanguageChanger("en"),
         ),
 
         /// [overrideWithProvider] is deprecated and will be removed

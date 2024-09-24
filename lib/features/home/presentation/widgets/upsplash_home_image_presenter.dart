@@ -20,73 +20,82 @@ class UpsplashHomeImagePresenter extends StatelessWidget {
       image: image.urls?.small ?? AppAssets.personNetwrokImagePlaceHolder,
       child: Padding(
           padding: getPaddingBasedOnIndex(isOdd, context),
-          child: Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12.r),
-                child: CachedNetworkImage(
-                  fit: BoxFit.cover,
-                  imageBuilder: (context, imageProvider) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: imageProvider,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    );
-                  },
-                  imageUrl: image.urls?.small ??
-                      AppAssets.personNetwrokImagePlaceHolder,
-                  errorWidget: (context, url, error) => Container(),
-                  placeholder: (context, url) {
-                    return Container(
-                        color:
-                            image.color ?? context.theme.colorScheme.secondary);
-                  },
-                ),
-              ),
-              Directionality(
-                textDirection: TextDirection.ltr,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 10.0,
-                  ),
-                  child: Column(
+          child: SizedBox(
+            height: image.height?.toDouble() ?? 200.h,
+            child: Stack(
+              children: [
+                // Image
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12.r),
+                  child: Stack(
                     children: [
-                      verticalSpace(10),
-                      Text(
-                        image.user?.name ?? "",
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14.sp,
-                            fontFamily: AppConstants.tommyFont),
-                      ),
-                      const Spacer(),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.favorite,
-                            size: 18.sp,
-                            color: Colors.white,
+                      Container(
+                          width: double.infinity,
+                          height: double.infinity,
+                          color: image
+                              .color // Replace with your desired placeholder color
                           ),
-                          horizontalSpace(5),
-                          Text(
-                            image.likes.toString(),
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.sp,
-                            ),
-                          ),
-                        ],
+                      FadeInImage(
+                        placeholder: const AssetImage(AppAssets
+                            .trnsparentImage), // Transparent image as placeholder
+                        image: NetworkImage(image.urls?.small ??
+                            AppAssets.personNetwrokImagePlaceHolder),
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                        height: double.infinity,
+                        fadeInDuration: const Duration(
+                            milliseconds: 300), // Adjust the duration as needed
+                        placeholderErrorBuilder: (context, error, stackTrace) =>
+                            Container(),
+                        imageErrorBuilder: (context, error, stackTrace) =>
+                            Container(),
                       ),
-                      verticalSpace(5),
                     ],
                   ),
                 ),
-              ),
-            ],
+                // inFormations
+                Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 10.0,
+                    ),
+                    child: Column(
+                      children: [
+                        verticalSpace(10),
+                        Text(
+                          image.user?.name ?? "",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14.sp,
+                              fontFamily: AppConstants.tommyFont),
+                        ),
+                        const Spacer(),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.favorite,
+                              size: 18.sp,
+                              color: Colors.white,
+                            ),
+                            horizontalSpace(5),
+                            Text(
+                              image.likes.toString(),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.sp,
+                              ),
+                            ),
+                          ],
+                        ),
+                        verticalSpace(5),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           )),
     );
   }
@@ -109,3 +118,24 @@ class UpsplashHomeImagePresenter extends StatelessWidget {
     }
   }
 }
+// CachedNetworkImage(
+//                     fit: BoxFit.cover,
+//                     imageBuilder: (context, imageProvider) {
+//                       return Container(
+//                         decoration: BoxDecoration(
+//                           image: DecorationImage(
+//                             image: imageProvider,
+//                             fit: BoxFit.cover,
+//                           ),
+//                         ),
+//                       );
+//                     },
+//                     imageUrl: image.urls?.small ??
+//                         AppAssets.personNetwrokImagePlaceHolder,
+//                     errorWidget: (context, url, error) => Container(),
+//                     placeholder: (context, url) {
+//                       return Container(
+//                           color: image.color ??
+//                               context.theme.colorScheme.secondary);
+//                     },
+//                   ),

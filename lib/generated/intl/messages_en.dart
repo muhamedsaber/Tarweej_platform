@@ -99,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "recent": MessageLookupByLibrary.simpleMessage("Recent"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "searchPhotos": MessageLookupByLibrary.simpleMessage("Search photos"),
         "select": MessageLookupByLibrary.simpleMessage("Select"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),

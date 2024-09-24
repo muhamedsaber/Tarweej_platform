@@ -38,7 +38,7 @@ class UpsplashHomeImages extends StateNotifier<UpsplashImagesState> {
 
     page++;
   }
-  
+
   List<UpsplashImageModel> getExistingImages() {
     if (state is UpsplashImagesLoaded) {
       return (state as UpsplashImagesLoaded).images;
@@ -50,5 +50,5 @@ class UpsplashHomeImages extends StateNotifier<UpsplashImagesState> {
 final upsplashHomeImagesProvider =
     StateNotifierProvider<UpsplashHomeImages, UpsplashImagesState>((ref) =>
         UpsplashHomeImages(
-            repo: UpsplashRepo(service: UpsplashService(getIt<DioConsumer>())))
-          ..fetchImages());
+            repo: UpsplashRepo(service: UpsplashService(getIt<DioConsumer>())))..fetchImages()
+         );

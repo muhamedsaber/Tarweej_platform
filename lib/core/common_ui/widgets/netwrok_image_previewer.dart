@@ -1,9 +1,13 @@
+import 'dart:math';
 import 'dart:ui';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:tarweej_platform/core/helpers/extensions.dart';
 
 class NetwrokImagePreviewer extends StatefulWidget {
-  const NetwrokImagePreviewer({super.key, required this.image,required this.child});
+  const NetwrokImagePreviewer(
+      {super.key, required this.image, required this.child});
   final String image;
   final Widget child;
   @override
@@ -58,10 +62,38 @@ class _NetwrokImagePreviewerState extends State<NetwrokImagePreviewer>
               color: Colors.black.withOpacity(0.6),
             ),
           ),
-          ScaleTransition(
-            scale: _animationController,
-            child: Image.network(widget.image),
-          )
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: ScaleTransition(
+                scale: _animationController,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: context.theme.colorScheme.surface,
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(12),
+                            topRight: Radius.circular(12),
+                          ),
+                        )),
+                    Image.network(
+                      widget.image,
+                      fit: BoxFit.contain,
+                    ),
+                    Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: context.theme.colorScheme.surface,
+                          borderRadius: const BorderRadius.only(
+                            bottomRight: Radius.circular(12),
+                            bottomLeft: Radius.circular(12),
+                          ),
+                        )),
+                  ],
+                ),
+              ))
         ],
       ),
     );

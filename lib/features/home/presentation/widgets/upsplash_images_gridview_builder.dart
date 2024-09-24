@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tarweej_platform/config/router/routes.dart';
+import 'package:tarweej_platform/core/helpers/extensions.dart';
+import 'package:tarweej_platform/features/home/presentation/widgets/home_search_button.dart';
 
 import '../../data/models/upsplash_image_model.dart';
 import '../logic/upsplash_images_notifier.dart/upsplash_home_images.dart';
@@ -53,6 +56,7 @@ class _UpsplashImagesGridViewBuilderState
             return Future.value();
           },
           child: GridView.builder(
+            padding: EdgeInsets.zero,
             physics: const AlwaysScrollableScrollPhysics(),
             controller: _scrollController,
             itemCount: widget.isFetchingMore
@@ -60,7 +64,7 @@ class _UpsplashImagesGridViewBuilderState
                 : widget.images.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisExtent: 300,
+              mainAxisExtent: 280,
             ),
             itemBuilder: (context, index) {
               if (index >= widget.images.length) {
@@ -68,9 +72,19 @@ class _UpsplashImagesGridViewBuilderState
                   child: CircularProgressIndicator(),
                 );
               }
-              return UpsplashHomeImagePresenter(
-                image: widget.images[index],
-                isOdd: index.isOdd,
+              return GestureDetector(
+                onTap: () => context.navigateTo(Routes.upSplashImageView,
+                    arguments: widget.images[index]),
+                child: Hero(
+                  createRectTween: (begin, end) {
+                    return MaterialRectCenterArcTween(begin: begin, end: end);
+                  },
+                  tag: widget.images[index].id.toString(),
+                  child: UpsplashHomeImagePresenter(
+                    image: widget.images[index],
+                    isOdd: index.isOdd,
+                  ),
+                ),
               );
             },
           ),

@@ -51,5 +51,6 @@
     "recent": "Recent",
     "somethingWentWrong": "Something went wrong",
     "home": "Home",
-    "noInternetConnection": "No internet connection"
+    "noInternetConnection": "No internet connection",
+    "searchPhotos": "Search photos"
 }

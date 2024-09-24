@@ -51,7 +51,8 @@
     "recent":"الأخيرة",
     "somethingWentWrong":"حدث خطأ ما",
     "home":"الرئيسية",
-    "noInternetConnection":"لا يوجد اتصال بالإنترنت"
+    "noInternetConnection":"لا يوجد اتصال بالإنترنت",
+    "searchPhotos":"البحث عن الصور"
 
 
 }

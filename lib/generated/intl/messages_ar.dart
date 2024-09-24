@@ -98,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "search": MessageLookupByLibrary.simpleMessage("إبحث"),
+        "searchPhotos": MessageLookupByLibrary.simpleMessage("البحث عن الصور"),
         "select": MessageLookupByLibrary.simpleMessage("إختر"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("حدث خطأ ما"),

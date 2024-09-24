@@ -10,6 +10,7 @@ class AppTextField extends StatefulWidget {
       {super.key,
       this.controller,
       this.hintText,
+      this.isButton = false,
       this.validator,
       this.suffixIcon,
       this.prefixIcon});
@@ -18,6 +19,7 @@ class AppTextField extends StatefulWidget {
   final TextEditingController? controller;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final bool isButton;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -52,7 +54,9 @@ class _AppTextFieldState extends State<AppTextField> {
   }
   @override
   Widget build(BuildContext context) {
+
     return TextFormField(
+      ignorePointers: widget.isButton,
       autofocus: false,
       controller: widget.controller,
       validator: widget.validator,

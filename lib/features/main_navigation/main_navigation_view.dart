@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tarweej_platform/core/common_ui/widgets/bottom_nav_bar/app_bottom_navbar.dart';
 import 'package:tarweej_platform/features/home/presentation/widgets/home_view_appbar.dart';
 
-import '../home/presentation/home_view_body.dart';
+import '../home/presentation/views/home_view_body.dart';
 
 class MainNavigationView extends StatefulWidget {
   const MainNavigationView({super.key});
@@ -28,10 +28,10 @@ class _MainNavigationViewState extends State<MainNavigationView> {
     );
   }
 
-  AppBar _buildAppBar() {
+  AppBar? _buildAppBar() {
     switch (currentIndex) {
       case 0:
-        return homeViewAppBar(context);
+        return null;
 
       default:
         return AppBar(
