@@ -36,7 +36,7 @@ void main() async {
         /// This Provide a new instance of LanguageChanger with the new language as [InitialState]
         /// Which i can pass the cached language to it.
         languageChangerProvider.overrideWith(
-          (ref) => LanguageChanger("en"),
+          (ref) => LanguageChanger("ar"),
         ),
 
         /// [overrideWithProvider] is deprecated and will be removed

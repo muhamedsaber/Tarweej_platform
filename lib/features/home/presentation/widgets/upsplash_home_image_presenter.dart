@@ -1,7 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej_platform/core/common_ui/widgets/netwrok_image_previewer.dart';
+import 'package:tarweej_platform/core/helpers/app_assets.dart';
 import 'package:tarweej_platform/core/helpers/app_constants.dart';
+import 'package:tarweej_platform/core/helpers/extensions.dart';
 
 import '../../../../core/helpers/size.dart';
 import '../../data/models/upsplash_image_model.dart';
@@ -14,72 +17,95 @@ class UpsplashHomeImagePresenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NetwrokImagePreviewer(
-      image: image.urls?.small ?? AppConstants.personNetwrokImagePlaceHolder,
+      image: image.urls?.small ?? AppAssets.personNetwrokImagePlaceHolder,
       child: Padding(
-        padding: getPaddingBasedOnIndex(isOdd),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.r),
-            image: DecorationImage(
-              image: NetworkImage(image.urls?.small ??
-                  AppConstants.personNetwrokImagePlaceHolder),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.black.withOpacity(0.0),
-                  Colors.black.withOpacity(0.5),
-                ],
-              ),
-            ),
-            child: Column(
-              children: [
-                verticalSpace(10),
-                Text(
-                  image.user?.name ?? "",
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14.sp,
-                      fontFamily: AppConstants.tommyFont),
-                ),
-                const Spacer(),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.favorite,
-                      size: 18.sp,
-                      color: Colors.white,
-                    ),
-                    horizontalSpace(5),
-                    Text(
-                      image.likes.toString(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.sp,
+          padding: getPaddingBasedOnIndex(isOdd, context),
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12.r),
+                child: CachedNetworkImage(
+                  fit: BoxFit.cover,
+                  imageBuilder: (context, imageProvider) {
+                    return Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: imageProvider,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                  ],
+                    );
+                  },
+                  imageUrl: image.urls?.small ??
+                      AppAssets.personNetwrokImagePlaceHolder,
+                  errorWidget: (context, url, error) => Container(),
+                  placeholder: (context, url) {
+                    return Container(
+                        color:
+                            image.color ?? context.theme.colorScheme.secondary);
+                  },
                 ),
-                verticalSpace(5),
-              ],
-            ),
-          ),
-        ),
-      ),
+              ),
+              Directionality(
+                textDirection: TextDirection.ltr,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 10.0,
+                  ),
+                  child: Column(
+                    children: [
+                      verticalSpace(10),
+                      Text(
+                        image.user?.name ?? "",
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14.sp,
+                            fontFamily: AppConstants.tommyFont),
+                      ),
+                      const Spacer(),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.favorite,
+                            size: 18.sp,
+                            color: Colors.white,
+                          ),
+                          horizontalSpace(5),
+                          Text(
+                            image.likes.toString(),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                      verticalSpace(5),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          )),
     );
   }
 
-  EdgeInsets getPaddingBasedOnIndex(bool isOdd) {
-    return isOdd
-        ? const EdgeInsets.only(left: 6.0, right: 12.0, bottom: 12.0)
-        : const EdgeInsets.only(left: 12.0, right: 6.0, bottom: 12.0);
+  EdgeInsets getPaddingBasedOnIndex(bool isOdd, BuildContext context) {
+    // This padding is applied based on the index of the image in the gridview
+    // why?
+    // because i want to make it symmetrical and more pleasant to the eye
+    // so when the image is odd it will have more padding on the left side and less on the right side
+    // and vice versa, Based also on the directionality of the app (LTR or RTL)
+    final dir = Directionality.of(context);
+    if (dir == TextDirection.ltr) {
+      return !isOdd
+          ? const EdgeInsets.only(right: 6.0, left: 12.0, bottom: 12.0)
+          : const EdgeInsets.only(right: 12.0, left: 6.0, bottom: 12.0);
+    } else {
+      return !isOdd
+          ? const EdgeInsets.only(left: 6.0, right: 12.0, bottom: 12.0)
+          : const EdgeInsets.only(left: 12.0, right: 6.0, bottom: 12.0);
+    }
   }
 }

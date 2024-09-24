@@ -1,7 +1,22 @@
+import 'dart:ui';
+
 import 'package:json_annotation/json_annotation.dart';
 part 'upsplash_image_model.g.dart';
 
+class ColorConverter implements JsonConverter<Color?, String?> {
+  const ColorConverter();
+  @override
+  Color? fromJson(String? json) {
+    if (json == null) return null;
+    return Color(int.parse(json.replaceFirst('#', '0xff')));
+  }
 
+  @override
+  String? toJson(Color? color) {
+    if (color == null) return null;
+    return '#${color.value.toRadixString(16).padLeft(8, '0')}';
+  }
+}
 
 @JsonSerializable()
 class UpsplashImageModel {
@@ -10,7 +25,8 @@ class UpsplashImageModel {
   final String? updatedAt;
   final int? width;
   final int? height;
-  final String? color;
+  @ColorConverter()
+  final Color? color;
   final String? blurHash;
   final int? likes;
   final bool? likedByUser;
@@ -21,20 +37,20 @@ class UpsplashImageModel {
   final PhotoLinks? links;
 
   UpsplashImageModel({
-     this.id,
-     this.createdAt,
-     this.updatedAt,
-     this.width,
-     this.height,
-     this.color,
-     this.blurHash,
-     this.likes,
-     this.likedByUser,
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.width,
+    this.height,
+    this.color,
+    this.blurHash,
+    this.likes,
+    this.likedByUser,
     this.description,
-     this.user,
-     this.currentUserCollections,
-     this.urls,
-     this.links,
+    this.user,
+    this.currentUserCollections,
+    this.urls,
+    this.links,
   });
 
   factory UpsplashImageModel.fromJson(Map<String, dynamic> json) =>
@@ -59,19 +75,19 @@ class User {
   final UserLinks? links;
 
   User({
-     this.id,
-     this.username,
-     this.name,
+    this.id,
+    this.username,
+    this.name,
     this.portfolioUrl,
     this.bio,
     this.location,
-     this.totalLikes,
-     this.totalPhotos,
-     this.totalCollections,
+    this.totalLikes,
+    this.totalPhotos,
+    this.totalCollections,
     this.instagramUsername,
     this.twitterUsername,
-     this.profileImage,
-     this.links,
+    this.profileImage,
+    this.links,
   });
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -85,9 +101,9 @@ class ProfileImage {
   final String? large;
 
   ProfileImage({
-     this.small,
-     this.medium,
-     this.large,
+    this.small,
+    this.medium,
+    this.large,
   });
 
   factory ProfileImage.fromJson(Map<String, dynamic> json) =>
@@ -104,11 +120,11 @@ class UserLinks {
   final String? portfolio;
 
   UserLinks({
-     this.self,
-     this.html,
-     this.photos,
-     this.likes,
-     this.portfolio,
+    this.self,
+    this.html,
+    this.photos,
+    this.likes,
+    this.portfolio,
   });
 
   factory UserLinks.fromJson(Map<String, dynamic> json) =>
@@ -127,11 +143,11 @@ class Collection {
   final String? user;
 
   Collection({
-     this.id,
-     this.title,
-     this.publishedAt,
-     this.lastCollectedAt,
-     this.updatedAt,
+    this.id,
+    this.title,
+    this.publishedAt,
+    this.lastCollectedAt,
+    this.updatedAt,
     this.coverPhoto,
     this.user,
   });
@@ -150,11 +166,11 @@ class Urls {
   final String? thumb;
 
   Urls({
-     this.raw,
-     this.full,
-     this.regular,
-     this.small,
-     this.thumb,
+    this.raw,
+    this.full,
+    this.regular,
+    this.small,
+    this.thumb,
   });
 
   factory Urls.fromJson(Map<String, dynamic> json) => _$UrlsFromJson(json);
@@ -169,10 +185,10 @@ class PhotoLinks {
   final String? downloadLocation;
 
   PhotoLinks({
-     this.self,
-     this.html,
-     this.download,
-     this.downloadLocation,
+    this.self,
+    this.html,
+    this.download,
+    this.downloadLocation,
   });
 
   factory PhotoLinks.fromJson(Map<String, dynamic> json) =>

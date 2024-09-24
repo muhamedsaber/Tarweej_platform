@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/core/networking/api/dio_interface.dart';
 import 'package:tarweej_platform/features/home/data/models/upsplash_image_model.dart';
@@ -14,18 +12,24 @@ class UpsplashHomeImages extends StateNotifier<UpsplashImagesState> {
 
   UpsplashHomeImages({required this.repo}) : super(UpsplashImagesInitial());
   int page = 0;
-  int perPage = 10;
+  int perPage = 20;
 
-  fetchImages() async {
-    state = UpsplashImagesLoading();
+  fetchImages({bool isRefreshing = false}) async {
+    if (isRefreshing) page = 0;
+    final oldImages = getExistingImages();
+
+    if (page == 0) {
+      state = UpsplashImagesLoading();
+    } else {
+      state = UpsplashImagesPagginationLoading(oldImages: oldImages);
+    }
 
     final result = await repo.getHomeImages(page: page, perPage: perPage);
 
     result.when(
       onSuccess: (data) {
-        log("success");
-        log(data.length.toString());
-        state = UpsplashImagesLoaded(images: data);
+        state =
+            UpsplashImagesLoaded(images: List.from(oldImages)..addAll(data));
       },
       onError: (e) {
         state = UpsplashImagesError(error: e);
@@ -34,10 +38,10 @@ class UpsplashHomeImages extends StateNotifier<UpsplashImagesState> {
 
     page++;
   }
-
+  
   List<UpsplashImageModel> getExistingImages() {
-    if (state is AsyncData) {
-      return (state as AsyncData).value;
+    if (state is UpsplashImagesLoaded) {
+      return (state as UpsplashImagesLoaded).images;
     }
     return [];
   }

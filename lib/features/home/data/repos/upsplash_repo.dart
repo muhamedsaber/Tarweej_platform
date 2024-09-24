@@ -22,7 +22,6 @@ class UpsplashRepo {
         return UpsplashImageModel.fromJson(e);
       }).toList();
 
-      log(response.data.toString());
       return ApiResult.success(models);
     } catch (e) {
       log(e.toString());

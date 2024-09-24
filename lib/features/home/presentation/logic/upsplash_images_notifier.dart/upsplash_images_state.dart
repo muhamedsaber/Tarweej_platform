@@ -2,28 +2,25 @@ import 'package:tarweej_platform/core/networking/api/api_error_model.dart';
 
 import '../../../data/models/upsplash_image_model.dart';
 
-class UpsplashImagesState {
-  
-}
-class UpsplashImagesInitial extends UpsplashImagesState {
+class UpsplashImagesState {}
 
-  
-}
-class UpsplashImagesLoading extends UpsplashImagesState {
+class UpsplashImagesInitial extends UpsplashImagesState {}
 
-  
-}
+class UpsplashImagesLoading extends UpsplashImagesState {}
+
 class UpsplashImagesLoaded extends UpsplashImagesState {
   final List<UpsplashImageModel> images;
 
   UpsplashImagesLoaded({required this.images});
-
-  
 }
+class UpsplashImagesPagginationLoading extends UpsplashImagesState {
+  final List<UpsplashImageModel> oldImages;
+
+  UpsplashImagesPagginationLoading({required this.oldImages});
+}
+
 class UpsplashImagesError extends UpsplashImagesState {
   final ApiErrorModel error;
 
   UpsplashImagesError({required this.error});
-
-  
 }
