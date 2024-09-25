@@ -1,14 +1,8 @@
-import 'dart:developer';
-import 'dart:isolate';
 
-import 'package:device_preview/device_preview.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 
-import 'package:tarweej_platform/firebase_options.dart';
 import 'package:tarweej_platform/tarweej_platform_app.dart';
 
 import 'config/language/language_changer_notifier.dart';

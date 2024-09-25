@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "allowAccessToPhotos":
             MessageLookupByLibrary.simpleMessage("السماح بالوصول إلى الصور"),
         "chooseYourCountry": MessageLookupByLibrary.simpleMessage("اختر بلدك"),
+        "colors": MessageLookupByLibrary.simpleMessage("الألوان"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "create": MessageLookupByLibrary.simpleMessage("أنشئ "),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
@@ -81,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "noInternetConnection":
             MessageLookupByLibrary.simpleMessage("لا يوجد اتصال بالإنترنت"),
@@ -102,6 +104,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "select": MessageLookupByLibrary.simpleMessage("إختر"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("حدث خطأ ما"),
+        "thanksForSharing":
+            MessageLookupByLibrary.simpleMessage("شكراً لمشاركتك"),
+        "theImageLinkIsExpiredOrNoMoreExist":
+            MessageLookupByLibrary.simpleMessage(
+                "انتهت صلاحية رابط الصورة أو لم يعد موجود"),
         "thisFieldIsRequired":
             MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "toContinue": MessageLookupByLibrary.simpleMessage("للمتابعة"),

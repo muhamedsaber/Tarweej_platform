@@ -9,34 +9,44 @@ import 'upsplash_images_state.dart';
 
 class UpsplashHomeImages extends StateNotifier<UpsplashImagesState> {
   final UpsplashRepo repo;
+  bool isLoadingMore = false; // Track if a fetch is in progress
 
   UpsplashHomeImages({required this.repo}) : super(UpsplashImagesInitial());
   int page = 0;
   int perPage = 20;
 
   fetchImages({bool isRefreshing = false}) async {
-    if (isRefreshing) page = 0;
+    // Avoid triggering multiple fetches at once
+    if (isLoadingMore) return;
+
+    if (isRefreshing) {
+      page = 1;
+    }
     final oldImages = getExistingImages();
 
+    // Set the loading states based on whether this is the initial load or a pagination load
     if (page == 0) {
       state = UpsplashImagesLoading();
     } else {
       state = UpsplashImagesPagginationLoading(oldImages: oldImages);
     }
 
+    isLoadingMore = true;
     final result = await repo.getHomeImages(page: page, perPage: perPage);
 
     result.when(
       onSuccess: (data) {
+        // Append new data to old images
         state =
             UpsplashImagesLoaded(images: List.from(oldImages)..addAll(data));
+        page++; // Only increment page on success
       },
       onError: (e) {
         state = UpsplashImagesError(error: e);
       },
     );
 
-    page++;
+    isLoadingMore = false;
   }
 
   List<UpsplashImageModel> getExistingImages() {
@@ -50,5 +60,5 @@ class UpsplashHomeImages extends StateNotifier<UpsplashImagesState> {
 final upsplashHomeImagesProvider =
     StateNotifierProvider<UpsplashHomeImages, UpsplashImagesState>((ref) =>
         UpsplashHomeImages(
-            repo: UpsplashRepo(service: UpsplashService(getIt<DioConsumer>())))..fetchImages()
-         );
+            repo: UpsplashRepo(service: UpsplashService(getIt<DioConsumer>())))
+          ..fetchImages());

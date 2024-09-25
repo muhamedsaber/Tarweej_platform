@@ -30,6 +30,7 @@ class UpsplashImageModel {
   final String? blurHash;
   final int? likes;
   final bool? likedByUser;
+  @JsonKey(name: "alt_description")
   final String? description;
   final User? user;
   final List<Collection>? currentUserCollections;
@@ -63,14 +64,21 @@ class User {
   final String? id;
   final String? username;
   final String? name;
+  @JsonKey(name: "portfolio_url")
   final String? portfolioUrl;
   final String? bio;
   final String? location;
+  @JsonKey(name: "total_likes")
   final int? totalLikes;
+  @JsonKey(name: "total_photos")
   final int? totalPhotos;
+  @JsonKey(name: "total_collections")
   final int? totalCollections;
+  @JsonKey(name: "instagram_username")
   final String? instagramUsername;
+  @JsonKey(name: "twitter_username")
   final String? twitterUsername;
+  @JsonKey(name: "profile_image")
   final ProfileImage? profileImage;
   final UserLinks? links;
 

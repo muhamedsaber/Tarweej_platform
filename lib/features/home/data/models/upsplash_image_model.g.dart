@@ -17,7 +17,7 @@ UpsplashImageModel _$UpsplashImageModelFromJson(Map<String, dynamic> json) =>
       blurHash: json['blurHash'] as String?,
       likes: (json['likes'] as num?)?.toInt(),
       likedByUser: json['likedByUser'] as bool?,
-      description: json['description'] as String?,
+      description: json['alt_description'] as String?,
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
@@ -43,7 +43,7 @@ Map<String, dynamic> _$UpsplashImageModelToJson(UpsplashImageModel instance) =>
       'blurHash': instance.blurHash,
       'likes': instance.likes,
       'likedByUser': instance.likedByUser,
-      'description': instance.description,
+      'alt_description': instance.description,
       'user': instance.user,
       'currentUserCollections': instance.currentUserCollections,
       'urls': instance.urls,
@@ -54,17 +54,18 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       id: json['id'] as String?,
       username: json['username'] as String?,
       name: json['name'] as String?,
-      portfolioUrl: json['portfolioUrl'] as String?,
+      portfolioUrl: json['portfolio_url'] as String?,
       bio: json['bio'] as String?,
       location: json['location'] as String?,
-      totalLikes: (json['totalLikes'] as num?)?.toInt(),
-      totalPhotos: (json['totalPhotos'] as num?)?.toInt(),
-      totalCollections: (json['totalCollections'] as num?)?.toInt(),
-      instagramUsername: json['instagramUsername'] as String?,
-      twitterUsername: json['twitterUsername'] as String?,
-      profileImage: json['profileImage'] == null
+      totalLikes: (json['total_likes'] as num?)?.toInt(),
+      totalPhotos: (json['total_photos'] as num?)?.toInt(),
+      totalCollections: (json['total_collections'] as num?)?.toInt(),
+      instagramUsername: json['instagram_username'] as String?,
+      twitterUsername: json['twitter_username'] as String?,
+      profileImage: json['profile_image'] == null
           ? null
-          : ProfileImage.fromJson(json['profileImage'] as Map<String, dynamic>),
+          : ProfileImage.fromJson(
+              json['profile_image'] as Map<String, dynamic>),
       links: json['links'] == null
           ? null
           : UserLinks.fromJson(json['links'] as Map<String, dynamic>),
@@ -74,15 +75,15 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'id': instance.id,
       'username': instance.username,
       'name': instance.name,
-      'portfolioUrl': instance.portfolioUrl,
+      'portfolio_url': instance.portfolioUrl,
       'bio': instance.bio,
       'location': instance.location,
-      'totalLikes': instance.totalLikes,
-      'totalPhotos': instance.totalPhotos,
-      'totalCollections': instance.totalCollections,
-      'instagramUsername': instance.instagramUsername,
-      'twitterUsername': instance.twitterUsername,
-      'profileImage': instance.profileImage?.toJson(),
+      'total_likes': instance.totalLikes,
+      'total_photos': instance.totalPhotos,
+      'total_collections': instance.totalCollections,
+      'instagram_username': instance.instagramUsername,
+      'twitter_username': instance.twitterUsername,
+      'profile_image': instance.profileImage?.toJson(),
       'links': instance.links?.toJson(),
     };
 

@@ -1,11 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tarweej_platform/core/common_ui/widgets/netwrok_image_previewer.dart';
+import 'package:tarweej_platform/features/home/presentation/widgets/upsplash_image_previewer.dart';
 import 'package:tarweej_platform/core/helpers/app_assets.dart';
 import 'package:tarweej_platform/core/helpers/app_constants.dart';
-import 'package:tarweej_platform/core/helpers/extensions.dart';
-
 import '../../../../core/helpers/size.dart';
 import '../../data/models/upsplash_image_model.dart';
 
@@ -16,8 +13,8 @@ class UpsplashHomeImagePresenter extends StatelessWidget {
   final bool isOdd;
   @override
   Widget build(BuildContext context) {
-    return NetwrokImagePreviewer(
-      image: image.urls?.small ?? AppAssets.personNetwrokImagePlaceHolder,
+    return UpsplashImagePreviewer(
+     image: image,
       child: Padding(
           padding: getPaddingBasedOnIndex(isOdd, context),
           child: SizedBox(

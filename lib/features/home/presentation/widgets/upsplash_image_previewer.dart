@@ -1,20 +1,25 @@
-import 'dart:math';
+import 'dart:developer';
 import 'dart:ui';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tarweej_platform/core/helpers/app_assets.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
+import 'package:tarweej_platform/core/helpers/size.dart';
+import 'package:tarweej_platform/features/home/data/models/upsplash_image_model.dart';
+import 'package:tarweej_platform/features/home/presentation/widgets/upsplash_image_view/open_upsplash_image_in_webview_button.dart';
+import 'package:tarweej_platform/features/home/presentation/widgets/upsplash_image_view/share_upsplash_image_button.dart';
 
-class NetwrokImagePreviewer extends StatefulWidget {
-  const NetwrokImagePreviewer(
+class UpsplashImagePreviewer extends StatefulWidget {
+  const UpsplashImagePreviewer(
       {super.key, required this.image, required this.child});
-  final String image;
+  final UpsplashImageModel image;
   final Widget child;
   @override
-  State<NetwrokImagePreviewer> createState() => _NetwrokImagePreviewerState();
+  State<UpsplashImagePreviewer> createState() => _UpsplashImagePreviewerState();
 }
 
-class _NetwrokImagePreviewerState extends State<NetwrokImagePreviewer>
+class _UpsplashImagePreviewerState extends State<UpsplashImagePreviewer>
     with SingleTickerProviderStateMixin {
   OverlayEntry? _dialogOverlayEntry;
   late AnimationController _animationController;
@@ -42,9 +47,7 @@ class _NetwrokImagePreviewerState extends State<NetwrokImagePreviewer>
         _showNetwrokImagePreviewerDialog(
             context); // Show the full image when long-pressed
       },
-      onLongPressEnd: (details) {
-        _closeNetwrokImagePreviewerDialog(); // Close the preview when released
-      },
+
       child: widget.child, // Show the thumbnail in the grid
     );
   }
@@ -70,7 +73,7 @@ class _NetwrokImagePreviewerState extends State<NetwrokImagePreviewer>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                        height: 40,
+                        height: 50.h,
                         decoration: BoxDecoration(
                           color: context.theme.colorScheme.surface,
                           borderRadius: const BorderRadius.only(
@@ -79,18 +82,49 @@ class _NetwrokImagePreviewerState extends State<NetwrokImagePreviewer>
                           ),
                         )),
                     Image.network(
-                      widget.image,
+                      widget.image.urls?.small ??
+                          AppAssets.personNetwrokImagePlaceHolder,
                       fit: BoxFit.contain,
                     ),
                     Container(
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: context.theme.colorScheme.surface,
-                          borderRadius: const BorderRadius.only(
-                            bottomRight: Radius.circular(12),
-                            bottomLeft: Radius.circular(12),
+                      height: 50.h,
+                      decoration: BoxDecoration(
+                        color: context.theme.colorScheme.surface,
+                        borderRadius: const BorderRadius.only(
+                          bottomRight: Radius.circular(12),
+                          bottomLeft: Radius.circular(12),
+                        ),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ShareUpsplashImageButton(
+                            image: widget.image,
+                            onShare: () {
+                              _closeNetwrokImagePreviewerDialog();
+                            },
                           ),
-                        )),
+                          OpenUpsplashImageInWebViewButton(
+                            url: widget.image.links?.html,
+                            onOpen: () {
+                              _closeNetwrokImagePreviewerDialog();
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    verticalSpace(20),
+                    IconButton(
+                      icon: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 30.h,
+                      ),
+                      onPressed: () {
+                        _closeNetwrokImagePreviewerDialog();
+                      },
+                    )
                   ],
                 ),
               ))

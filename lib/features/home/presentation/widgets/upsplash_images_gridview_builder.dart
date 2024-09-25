@@ -39,7 +39,11 @@ class _UpsplashImagesGridViewBuilderState
     if (_scrollController.position.pixels ==
         _scrollController.position.maxScrollExtent) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        ref.read(upsplashHomeImagesProvider.notifier).fetchImages();
+        final notifier = ref.read(upsplashHomeImagesProvider.notifier);
+        if (!notifier.isLoadingMore) {
+          // Check if it's already loading
+          notifier.fetchImages();
+        }
       });
     }
   }
@@ -56,6 +60,7 @@ class _UpsplashImagesGridViewBuilderState
             return Future.value();
           },
           child: GridView.builder(
+            key: const PageStorageKey('upsplash_images_gridview'),
             padding: EdgeInsets.zero,
             physics: const AlwaysScrollableScrollPhysics(),
             controller: _scrollController,

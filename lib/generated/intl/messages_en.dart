@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Allow access to photos"),
         "chooseYourCountry":
             MessageLookupByLibrary.simpleMessage("Choose your country"),
+        "colors": MessageLookupByLibrary.simpleMessage("Colors"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "create": MessageLookupByLibrary.simpleMessage("Create "),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
@@ -83,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Password must contain at least 8 characters"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "more": MessageLookupByLibrary.simpleMessage("More"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noInternetConnection":
             MessageLookupByLibrary.simpleMessage("No internet connection"),
@@ -103,6 +105,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "select": MessageLookupByLibrary.simpleMessage("Select"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "thanksForSharing":
+            MessageLookupByLibrary.simpleMessage("Thanks for sharing"),
+        "theImageLinkIsExpiredOrNoMoreExist":
+            MessageLookupByLibrary.simpleMessage(
+                "The image link is expired or no more exist"),
         "thisFieldIsRequired":
             MessageLookupByLibrary.simpleMessage("This field is required"),
         "toContinue": MessageLookupByLibrary.simpleMessage("to continue"),

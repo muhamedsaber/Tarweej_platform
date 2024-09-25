@@ -52,7 +52,12 @@
     "somethingWentWrong":"حدث خطأ ما",
     "home":"الرئيسية",
     "noInternetConnection":"لا يوجد اتصال بالإنترنت",
-    "searchPhotos":"البحث عن الصور"
+    "searchPhotos":"البحث عن الصور",
+
+    "thanksForSharing":"شكراً لمشاركتك",
+    "theImageLinkIsExpiredOrNoMoreExist":"انتهت صلاحية رابط الصورة أو لم يعد موجود",
+    "more":"المزيد",
+    "colors":"الألوان"
 
 
 }

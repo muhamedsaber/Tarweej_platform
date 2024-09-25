@@ -589,6 +589,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Thanks for sharing`
+  String get thanksForSharing {
+    return Intl.message(
+      'Thanks for sharing',
+      name: 'thanksForSharing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The image link is expired or no more exist`
+  String get theImageLinkIsExpiredOrNoMoreExist {
+    return Intl.message(
+      'The image link is expired or no more exist',
+      name: 'theImageLinkIsExpiredOrNoMoreExist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More`
+  String get more {
+    return Intl.message(
+      'More',
+      name: 'more',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Colors`
+  String get colors {
+    return Intl.message(
+      'Colors',
+      name: 'colors',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

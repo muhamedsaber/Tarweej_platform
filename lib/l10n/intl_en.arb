@@ -52,5 +52,9 @@
     "somethingWentWrong": "Something went wrong",
     "home": "Home",
     "noInternetConnection": "No internet connection",
-    "searchPhotos": "Search photos"
+    "searchPhotos": "Search photos",
+    "thanksForSharing": "Thanks for sharing",
+    "theImageLinkIsExpiredOrNoMoreExist": "The image link is expired or no more exist",
+    "more": "More",
+    "colors": "Colors"
 }

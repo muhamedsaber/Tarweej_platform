@@ -7,5 +7,6 @@ class Routes {
   static const String loginView="/LoginView";
   static const String mainNavigationView="/MainNavigationView";
   static const String upSplashImageView="/UpsplashImageView";
+  static  const String publisherProfileWebView="/AppWebView";
 
 }

@@ -64,7 +64,8 @@ dependencies:
   redacted: ^1.0.12
   skeletonizer: ^1.4.2
   cached_network_image: ^3.4.1
-  
+  webview_flutter: ^4.9.0
+  share_plus: ^10.0.2
   # State Management
   bloc: ^8.1.4
   meta: ^1.15.0
