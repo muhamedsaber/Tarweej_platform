@@ -9,7 +9,7 @@ class ResetPasswordRepo {
   Future<FirebaseResult<bool>> resetPassword({required String email}) async {
     try {
       await emailService.sendPasswordResetEmail(email: email);
-      return FirebaseResult.success(true);
+      return const FirebaseResult.success(true);
     } catch (e) {
       return FirebaseResult.error(FirebaseErrorHandler.handle(e));
     }
@@ -29,7 +29,7 @@ class ResetPasswordRepo {
     try {
       await emailService.confirmPasswordReset(
           code: code, newPassword: newPassword);
-      return FirebaseResult.success(null);
+      return const FirebaseResult.success(null);
     } catch (e) {
       return FirebaseResult.error(FirebaseErrorHandler.handle(e));
     }
