@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej_platform/config/theme/styles/text_styles.dart';
@@ -10,15 +9,24 @@ class AppTextField extends StatefulWidget {
       {super.key,
       this.controller,
       this.hintText,
+      this.isButton = false,
       this.validator,
+      this.autofocus = false,
+      this.focusNode,
+      this.onChanged,
       this.suffixIcon,
+      this.onSubmitted,
       this.prefixIcon});
   final String? hintText;
   final String? Function(String? word)? validator;
   final TextEditingController? controller;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
-
+  final bool isButton;
+  final bool autofocus;
+  final Function(String)? onSubmitted;
+  final FocusNode? focusNode;
+  final Function(String)? onChanged;
   @override
   State<AppTextField> createState() => _AppTextFieldState();
 }
@@ -28,7 +36,7 @@ class _AppTextFieldState extends State<AppTextField> {
   late Color fillColor;
   @override
   void initState() {
-    focusNode = FocusNode();
+    focusNode = widget.focusNode ?? FocusNode();
     focusNode.addListener(updateFillColor);
     super.initState();
   }
@@ -45,17 +53,22 @@ class _AppTextFieldState extends State<AppTextField> {
         : context.theme.colorScheme.surface;
     setState(() {});
   }
+
   @override
   void dispose() {
     focusNode.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      autofocus: false,
+      onChanged: widget.onChanged,
+      onFieldSubmitted: widget.onSubmitted,
+      ignorePointers: widget.isButton,
       controller: widget.controller,
       validator: widget.validator,
+        autofocus: widget.autofocus,
       focusNode: focusNode,
       style:
           context.theme.font18OnSurfaceRegular.copyWith(decorationThickness: 0),

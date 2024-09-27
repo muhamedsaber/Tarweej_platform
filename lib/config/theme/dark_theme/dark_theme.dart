@@ -21,9 +21,16 @@ class DarkTheme {
         backgroundColor: DarkThemeColors.scaffoldBackgroundColor,
         
       ),
-      
+      splashColor: Colors.transparent,
+        highlightColor:DarkThemeColors.primaryColor,
+         splashFactory: NoSplash.splashFactory,
+        popupMenuTheme: const PopupMenuThemeData(),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+         
+      ) ,
       fontFamily: LocalizationHelper.getFontFamily(context),
       textTheme: const TextTheme().apply(
         fontFamily: LocalizationHelper.getFontFamily(context),
       ));
+      
 }

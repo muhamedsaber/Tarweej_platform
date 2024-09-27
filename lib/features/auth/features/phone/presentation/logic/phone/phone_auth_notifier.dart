@@ -48,12 +48,12 @@ class PhoneAuthNotifier extends StateNotifier<PhoneAuthState> {
     final result = await repo.verifyCodeSMS(
         smsCode: otbController.text, verificationId: verificationId);
     result.when(onSuccess: (data) async {
-      await UserCache.saveUser(data!);
+      await UserCache.saveUser(data);
       await UserCache.setLoginStatusTo(true);
       state = PhoneAuthSubmitCodeSuccess();
     }, onError: (error) {
       log(error.toString());
-      state = PhoneAuthError(error!);
+      state = PhoneAuthError(error);
     });
   }
 }

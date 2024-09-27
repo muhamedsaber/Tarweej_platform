@@ -52,7 +52,13 @@ extension TextStylesExtension on ThemeData {
       fontWeight: FontWeightHelper.regular,
     );
   }
-
+  TextStyle get font20SecondaryRegular {
+    return TextStyle(
+      fontSize: 20.sp,
+      color: colorScheme.secondary,
+      fontWeight: FontWeightHelper.regular,
+    );
+  }
   TextStyle get font24OnSurfaceRegular {
     return TextStyle(
       fontSize: 24.sp,
@@ -85,6 +91,13 @@ extension TextStylesExtension on ThemeData {
     return TextStyle(
       fontSize: 10.sp,
       color: Colors.grey,
+      fontWeight: FontWeightHelper.regular,
+    );
+  }
+  TextStyle get font11OnSurfaceRegular {
+    return TextStyle(
+      fontSize: 11.sp,
+      color: colorScheme.onSurface,
       fontWeight: FontWeightHelper.regular,
     );
   }

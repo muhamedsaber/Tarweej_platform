@@ -26,12 +26,12 @@ class LoginNotifier extends StateNotifier<LoginState> {
     final result = await repo.login(
         email: emailController.text, password: passwordController.text);
     result.when(onSuccess: (data) async{
-      await UserCache.saveUser(data!);
+      await UserCache.saveUser(data);
       await UserCache.setLoginStatusTo(true);
       log(data.toString());
       state = LoginSuccess();
     }, onError: (error) {
-      state = LoginError(error: error!);
+      state = LoginError(error: error);
     });
   } //elo@gmail.com
   //Qwerty0000#

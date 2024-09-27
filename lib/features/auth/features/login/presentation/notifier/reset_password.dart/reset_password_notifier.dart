@@ -21,7 +21,7 @@ class ResetPasswordNotifier extends StateNotifier<ResetPasswordState> {
     result.when(onSuccess: (data) {
       state = ResetPasswordCodeSentSuccess();
     }, onError: (error) {
-      state = ResetPasswordError(error: error!);
+      state = ResetPasswordError(error: error);
     });
   }
 

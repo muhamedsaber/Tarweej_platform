@@ -18,19 +18,20 @@ class AuthProviderStateNotifier extends StateNotifier<AuthProviderState> {
     final result = await repo.signIn();
     result.when(onSuccess: (data) async {
       // Saving user info in cache
-      await UserCache.saveUser(data!);
+      await UserCache.saveUser(data);
       await UserCache.setLoginStatusTo(true);
       // updating the state
       state = AuthProviderSuccessState();
     }, onError: (error) {
-      log(error?.code.toString() ?? "");
-      state = AuthProviderErrorState(error: error!);
+      log(error.code.toString());
+      state = AuthProviderErrorState(error: error);
     });
   }
 }
+
 // here i feel the power of riverpod.
 // imagine how easy it to change a dependency in the runtime.
-// i can change the authProvider in the runtime without changing the code. 
+// i can change the authProvider in the runtime without changing the code.
 final authProviderStateNotifier = StateNotifierProvider.family<
     AuthProviderStateNotifier, AuthProviderState, AuthenticationProvider>(
   (ref, authProvider) => AuthProviderStateNotifier(MockAuthProviderRepoImpl()),

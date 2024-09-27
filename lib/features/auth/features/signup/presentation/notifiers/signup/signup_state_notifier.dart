@@ -25,11 +25,11 @@ class SignupNotifier extends StateNotifier<SignupState> {
     final result = await repo.signup(
         email: emailController.text, password: passwordController.text);
     result.when(onSuccess: (data)async {
-      await UserCache.saveUser(data!);
+      await UserCache.saveUser(data);
       await UserCache.setLoginStatusTo(true);
       state = SignupSuccess();
     }, onError: (error) {
-      state = SignupError(error: error!);
+      state = SignupError(error: error);
     });
   }
 }
