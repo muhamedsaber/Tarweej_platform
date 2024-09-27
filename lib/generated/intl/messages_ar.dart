@@ -46,14 +46,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "allowAccessToPhotos":
             MessageLookupByLibrary.simpleMessage("السماح بالوصول إلى الصور"),
         "chooseYourCountry": MessageLookupByLibrary.simpleMessage("اختر بلدك"),
+        "colorCopied": MessageLookupByLibrary.simpleMessage("تم نسخ اللون"),
         "colors": MessageLookupByLibrary.simpleMessage("الألوان"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
+        "copy": MessageLookupByLibrary.simpleMessage("نسخ"),
+        "copyLink": MessageLookupByLibrary.simpleMessage("نسخ الرابط"),
         "create": MessageLookupByLibrary.simpleMessage("أنشئ "),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "digits": MessageLookupByLibrary.simpleMessage("أرقام"),
         "dismiss": MessageLookupByLibrary.simpleMessage("تجاهل"),
         "doYouWantToLoginInstead": MessageLookupByLibrary.simpleMessage(
             "هل تريد تسجيل الدخول بدلاً من ذلك؟"),
+        "downloading": MessageLookupByLibrary.simpleMessage("جاري التحميل"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("أدخل رقم الهاتف"),
@@ -81,7 +85,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "isPasswordContainsAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل"),
+        "largeSize": MessageLookupByLibrary.simpleMessage("حجم كبير"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "mediumSize": MessageLookupByLibrary.simpleMessage("حجم متوسط"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "noInternetConnection":
@@ -89,11 +95,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "noPhotosAccess":
             MessageLookupByLibrary.simpleMessage("لا يوجد إذن وصول للصور"),
         "noResults": MessageLookupByLibrary.simpleMessage("لا توجد نتائج"),
+        "noStorageAccess":
+            MessageLookupByLibrary.simpleMessage("لا يوجد إذن وصول للتخزين"),
         "openSettings": MessageLookupByLibrary.simpleMessage("افتح الإعدادات"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordIsValid":
             MessageLookupByLibrary.simpleMessage("كلمة المرور صالحة"),
+        "photoDownloaded":
+            MessageLookupByLibrary.simpleMessage("تم تحميل الصورة"),
         "pleaseEnterValidEmail": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال بريد إلكتروني صالح"),
         "recent": MessageLookupByLibrary.simpleMessage("الأخيرة"),
@@ -102,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("إبحث"),
         "searchPhotos": MessageLookupByLibrary.simpleMessage("البحث عن الصور"),
         "select": MessageLookupByLibrary.simpleMessage("إختر"),
+        "smallSize": MessageLookupByLibrary.simpleMessage("حجم صغير"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("حدث خطأ ما"),
         "thanksForSharing":
@@ -115,7 +126,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "toContinuetarweejNeedsAccessToThePhotosOnYourDevice":
             MessageLookupByLibrary.simpleMessage(
                 "للمتابعة، يحتاج ترويج إلى الوصول إلى الصور على جهازك"),
+        "toContinuetarweejNeedsAccessToTheStorageOnYourDevice":
+            MessageLookupByLibrary.simpleMessage(
+                "للمتابعة، يحتاج ترويج إلى الوصول إلى ذاكرةالتخزين على جهازك"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك"),
+        "youMustGoToSettingsAndGiveStoragePermission":
+            MessageLookupByLibrary.simpleMessage(
+                "يجب عليك الذهاب إلى الإعدادات ومنح إذن الوصول لذتكرة التخزين"),
         "yourAccount": MessageLookupByLibrary.simpleMessage("حسابك")
       };
 }

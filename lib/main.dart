@@ -1,6 +1,8 @@
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 
 import 'package:tarweej_platform/tarweej_platform_app.dart';
@@ -9,20 +11,10 @@ import 'config/language/language_changer_notifier.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // initializing firebase
 
-  //--------Test--------
-  // final user = await UserCache.getUser();
-  // debugPrint(user.toString());
-
-  // /// Check if the user is logged in or not
-  // final isUserLoggedIn = await UserCache.isUserLoggedIn();
-  //--------------------
-  // getting app language from cache
-  // String appLanguage = await LocalizationHelper.loadLanguage();
-  // setting up dependency injection
   setupDependencyInjection();
-
+  final appDocumentsDirectory = await getExternalStorageDirectory();
+  log(appDocumentsDirectory.toString());
   runApp(
     ProviderScope(
       overrides: [

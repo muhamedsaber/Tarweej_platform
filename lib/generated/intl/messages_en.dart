@@ -48,14 +48,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Allow access to photos"),
         "chooseYourCountry":
             MessageLookupByLibrary.simpleMessage("Choose your country"),
+        "colorCopied": MessageLookupByLibrary.simpleMessage("Color copied"),
         "colors": MessageLookupByLibrary.simpleMessage("Colors"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "copy": MessageLookupByLibrary.simpleMessage("Copy"),
+        "copyLink": MessageLookupByLibrary.simpleMessage("Copy link"),
         "create": MessageLookupByLibrary.simpleMessage("Create "),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "digits": MessageLookupByLibrary.simpleMessage("digits"),
         "dismiss": MessageLookupByLibrary.simpleMessage("Dismiss"),
         "doYouWantToLoginInstead": MessageLookupByLibrary.simpleMessage(
             "Do you want to login instead?"),
+        "downloading": MessageLookupByLibrary.simpleMessage("Downloading"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Enter phone number"),
@@ -83,7 +87,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "isPasswordContainsAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "Password must contain at least 8 characters"),
+        "largeSize": MessageLookupByLibrary.simpleMessage("Large size"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "mediumSize": MessageLookupByLibrary.simpleMessage("Medium size"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noInternetConnection":
@@ -91,11 +97,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "noPhotosAccess":
             MessageLookupByLibrary.simpleMessage("No photos access"),
         "noResults": MessageLookupByLibrary.simpleMessage("No results"),
+        "noStorageAccess":
+            MessageLookupByLibrary.simpleMessage("No storage access"),
         "openSettings": MessageLookupByLibrary.simpleMessage("Open settings"),
         "or": MessageLookupByLibrary.simpleMessage("or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordIsValid":
             MessageLookupByLibrary.simpleMessage("Password is valid"),
+        "photoDownloaded":
+            MessageLookupByLibrary.simpleMessage("Photo downloaded"),
         "pleaseEnterValidEmail":
             MessageLookupByLibrary.simpleMessage("Please enter a valid email"),
         "recent": MessageLookupByLibrary.simpleMessage("Recent"),
@@ -103,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchPhotos": MessageLookupByLibrary.simpleMessage("Search photos"),
         "select": MessageLookupByLibrary.simpleMessage("Select"),
+        "smallSize": MessageLookupByLibrary.simpleMessage("Small size"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "thanksForSharing":
@@ -116,7 +127,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "toContinuetarweejNeedsAccessToThePhotosOnYourDevice":
             MessageLookupByLibrary.simpleMessage(
                 "To continue, Tarweej needs access to the photos on your device"),
+        "toContinuetarweejNeedsAccessToTheStorageOnYourDevice":
+            MessageLookupByLibrary.simpleMessage(
+                "To continue, Tarweej needs access to the storage on your device"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "youMustGoToSettingsAndGiveStoragePermission":
+            MessageLookupByLibrary.simpleMessage(
+                "You must go to settings and give storage permission"),
         "yourAccount": MessageLookupByLibrary.simpleMessage("Your Account")
       };
 }

@@ -690,6 +690,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.0"
+  image_gallery_saver:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: knottx
+      resolved-ref: "05675bd4d70f3f4dfd702ae4f0075fa09025c436"
+      url: "https://github.com/knottx/image_gallery_saver"
+    source: git
+    version: "2.0.3"
   intl:
     dependency: "direct main"
     description:
@@ -842,6 +851,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  palette_generator:
+    dependency: "direct main"
+    description:
+      name: palette_generator
+      sha256: d50fbcd69abb80c5baec66d700033b1a320108b1aa17a5961866a12c0abb7c0c
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.3+4"
   path:
     dependency: transitive
     description:
@@ -859,7 +876,7 @@ packages:
     source: hosted
     version: "1.0.1"
   path_provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path_provider
       sha256: fec0d61223fba3154d87759e3cc27fe2c8dc498f6386c6d6fc80d1afdd1bf378

@@ -500,6 +500,16 @@ class S {
     );
   }
 
+  /// `No storage access`
+  String get noStorageAccess {
+    return Intl.message(
+      'No storage access',
+      name: 'noStorageAccess',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `To continue, Tarweej needs access to the photos on your device`
   String get toContinuetarweejNeedsAccessToThePhotosOnYourDevice {
     return Intl.message(
@@ -510,11 +520,31 @@ class S {
     );
   }
 
+  /// `To continue, Tarweej needs access to the storage on your device`
+  String get toContinuetarweejNeedsAccessToTheStorageOnYourDevice {
+    return Intl.message(
+      'To continue, Tarweej needs access to the storage on your device',
+      name: 'toContinuetarweejNeedsAccessToTheStorageOnYourDevice',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Give permission`
   String get givePermission {
     return Intl.message(
       'Give permission',
       name: 'givePermission',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must go to settings and give storage permission`
+  String get youMustGoToSettingsAndGiveStoragePermission {
+    return Intl.message(
+      'You must go to settings and give storage permission',
+      name: 'youMustGoToSettingsAndGiveStoragePermission',
       desc: '',
       args: [],
     );
@@ -610,6 +640,16 @@ class S {
     );
   }
 
+  /// `Photo downloaded`
+  String get photoDownloaded {
+    return Intl.message(
+      'Photo downloaded',
+      name: 'photoDownloaded',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `More`
   String get more {
     return Intl.message(
@@ -625,6 +665,76 @@ class S {
     return Intl.message(
       'Colors',
       name: 'colors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy link`
+  String get copyLink {
+    return Intl.message(
+      'Copy link',
+      name: 'copyLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy`
+  String get copy {
+    return Intl.message(
+      'Copy',
+      name: 'copy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Color copied`
+  String get colorCopied {
+    return Intl.message(
+      'Color copied',
+      name: 'colorCopied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Downloading`
+  String get downloading {
+    return Intl.message(
+      'Downloading',
+      name: 'downloading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Small size`
+  String get smallSize {
+    return Intl.message(
+      'Small size',
+      name: 'smallSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medium size`
+  String get mediumSize {
+    return Intl.message(
+      'Medium size',
+      name: 'mediumSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Large size`
+  String get largeSize {
+    return Intl.message(
+      'Large size',
+      name: 'largeSize',
       desc: '',
       args: [],
     );

@@ -82,6 +82,12 @@ dependencies:
   photo_view: ^0.15.0
   image: ^4.2.0
   device_preview: ^1.2.0
+  palette_generator: ^0.3.3+4
+  path_provider: ^2.1.4
+  image_gallery_saver: 
+     git:
+      url: https://github.com/knottx/image_gallery_saver   # https://pub.dev/packages/image_gallery_saver
+      ref: knottx
 dev_dependencies:
   flutter_test:
     sdk: flutter

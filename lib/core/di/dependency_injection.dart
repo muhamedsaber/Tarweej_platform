@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:tarweej_platform/core/networking/api/dio_interface.dart';
-import 'package:tarweej_platform/core/networking/api/upsplash_dio_factory.dart';
+import 'package:tarweej_platform/core/networking/api/factory/upsplash_dio_factory.dart';
 import 'package:tarweej_platform/features/auth/features/login/data/login_repo.dart';
 import 'package:tarweej_platform/features/auth/features/login/data/reset_password_repo.dart';
 import 'package:tarweej_platform/features/auth/services/email_service.dart';
@@ -8,9 +8,12 @@ import 'package:tarweej_platform/features/auth/features/signup/data/signup_repo.
 import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/facebook_auth_provider_impl.dart';
 import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/github_auth_provider_impl.dart';
 import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/twitter_auth_provider_impl.dart';
+import 'package:tarweej_platform/features/main_navigation/search/data/repos/search_images_repo.dart';
+import 'package:tarweej_platform/features/main_navigation/search/data/service/search_images_service.dart';
 
 import '../../features/auth/features/phone/data/signin_with_phone_number_repo.dart';
 import '../../features/auth/services/providers/impl/auth_providers/google_auth_provider_impl.dart';
+import '../networking/api/factory/datasume_dio_factory.dart';
 
 
 
@@ -18,13 +21,19 @@ GetIt getIt = GetIt.instance;
 
 void setupDependencyInjection() {
   getIt.registerSingleton<EmailService>(EmailService());
+  //upsplash
   getIt.registerSingleton<UpsplashDioFactory>(UpsplashDioFactory());
   getIt.registerSingleton<DioConsumer>(DioConsumer(getIt<UpsplashDioFactory>().dio));
+  // 
   _setupSignup();
   _setupAuthenticationProviders();
   _setupSignInWithPhoneNumber();
   _setupLogin();
   _resetPasswordSetup();
+  getIt.registerSingleton<DatasumeDioFactory>(DatasumeDioFactory());
+  getIt.registerSingleton<DioConsumer>(DioConsumer(getIt<DatasumeDioFactory>().dio),instanceName:"datasume");
+  getIt.registerSingleton<SearchImagesService>(SearchImagesService(getIt<DioConsumer>(instanceName:"datasume")));
+   getIt.registerSingleton<SearchImagesRepo>(SearchImagesRepo(service:  getIt<SearchImagesService>()));
 }
 _setupAuthenticationProviders(){
   getIt.registerSingleton<FacebookAuthProviderImpl>(FacebookAuthProviderImpl());

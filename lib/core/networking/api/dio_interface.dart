@@ -9,6 +9,8 @@ abstract class ApiInterface<T> {
       {Map<String, dynamic>? queryParameters, dynamic body, Options? options});
   Future<Response<dynamic>> patch(String endpoint,
       {Map<String, dynamic>? queryParameters, dynamic body, Options? options});
+
+  Future<Response<dynamic>> downloadFile({required String url, required String savePath, Function(int, int)? onReceiveProgress});
 }
 
 class DioConsumer<T> implements ApiInterface<T> {
@@ -61,5 +63,10 @@ class DioConsumer<T> implements ApiInterface<T> {
     final response = await dio.post(endpoint,
         queryParameters: queryParameters, options: options, data: body);
     return response;
+  }
+  @override
+  Future<Response<dynamic>> downloadFile({required String url, required String savePath, Function(int, int)? onReceiveProgress}) async{
+     final response=await dio.download(url, savePath,onReceiveProgress: onReceiveProgress,);
+      return response;
   }
 }

@@ -44,8 +44,11 @@
     "goToLogin": "Go to login",
     "select": "Select",
     "noPhotosAccess": "No photos access",
+    "noStorageAccess": "No storage access",
     "toContinuetarweejNeedsAccessToThePhotosOnYourDevice": "To continue, Tarweej needs access to the photos on your device",
+    "toContinuetarweejNeedsAccessToTheStorageOnYourDevice": "To continue, Tarweej needs access to the storage on your device",
     "givePermission": "Give permission",
+    "youMustGoToSettingsAndGiveStoragePermission": "You must go to settings and give storage permission",
     "allowAccessToPhotos": "Allow access to photos",
     "openSettings": "Open settings",
     "recent": "Recent",
@@ -55,6 +58,14 @@
     "searchPhotos": "Search photos",
     "thanksForSharing": "Thanks for sharing",
     "theImageLinkIsExpiredOrNoMoreExist": "The image link is expired or no more exist",
+    "photoDownloaded": "Photo downloaded",
     "more": "More",
-    "colors": "Colors"
+    "colors": "Colors",
+    "copyLink": "Copy link",
+    "copy": "Copy",
+    "colorCopied": "Color copied",
+    "downloading" : "Downloading",
+    "smallSize" : "Small size",
+    "mediumSize" : "Medium size",
+    "largeSize" : "Large size"
 }

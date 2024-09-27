@@ -14,10 +14,14 @@
         android:required="false" tools:targetApi="33"/>
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"
         android:required="false" tools:targetApi="33"/>
+        
     <application
         android:label="tarweej_platform"
         android:name="${applicationName}"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
+        
+
         <!-- Facebook SDK meta-data -->
         
                 <!-- facebook_app_id is Exist in strings.xml in values folder-->
