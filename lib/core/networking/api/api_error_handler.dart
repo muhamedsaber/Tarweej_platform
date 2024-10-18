@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:tarweej_platform/core/helpers/error_logger.dart';
 import 'package:tarweej_platform/core/networking/api/api_error_model.dart';
@@ -9,10 +11,8 @@ class ApiErrorHandler {
     if (e is DioException) {
       Logger.logError(
         message: e.message,
-       
         statusCose: e.response?.statusCode.toString(),
         errorType: e.type.toString(),
-      
       );
       if (e.type == DioExceptionType.badResponse) {
         return ApiErrorModel(
@@ -22,11 +22,10 @@ class ApiErrorHandler {
       }
     } else {
       Logger.logError(
-        message: "default error",
-        
-        statusCose: "default error",
-        errorType: "default error",
+        message: e.toString(),
+        stackTrace: e.stackTrace,
       );
+
       return ApiErrorFactory.getDefaultError();
     }
   }

@@ -63,12 +63,13 @@ class _AppTextFieldState extends State<AppTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: context.theme.colorScheme.primary,
       onChanged: widget.onChanged,
       onFieldSubmitted: widget.onSubmitted,
       ignorePointers: widget.isButton,
       controller: widget.controller,
       validator: widget.validator,
-        autofocus: widget.autofocus,
+      autofocus: widget.autofocus,
       focusNode: focusNode,
       style:
           context.theme.font18OnSurfaceRegular.copyWith(decorationThickness: 0),

@@ -14,7 +14,7 @@ class UpsplashHomeImagePresenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UpsplashImagePreviewer(
-     image: image,
+      image: image,
       child: Padding(
           padding: getPaddingBasedOnIndex(isOdd, context),
           child: SizedBox(
@@ -115,24 +115,3 @@ class UpsplashHomeImagePresenter extends StatelessWidget {
     }
   }
 }
-// CachedNetworkImage(
-//                     fit: BoxFit.cover,
-//                     imageBuilder: (context, imageProvider) {
-//                       return Container(
-//                         decoration: BoxDecoration(
-//                           image: DecorationImage(
-//                             image: imageProvider,
-//                             fit: BoxFit.cover,
-//                           ),
-//                         ),
-//                       );
-//                     },
-//                     imageUrl: image.urls?.small ??
-//                         AppAssets.personNetwrokImagePlaceHolder,
-//                     errorWidget: (context, url, error) => Container(),
-//                     placeholder: (context, url) {
-//                       return Container(
-//                           color: image.color ??
-//                               context.theme.colorScheme.secondary);
-//                     },
-//                   ),

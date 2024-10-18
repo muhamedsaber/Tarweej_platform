@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tarweej_platform/core/common_ui/widgets/bottom_nav_bar/app_bottom_navbar.dart';
-import 'package:tarweej_platform/features/main_navigation/home/presentation/widgets/home_view/home_view_appbar.dart';
 
 import 'home/presentation/views/home_view_body.dart';
-import 'search/presentation/logic/search_photos_view_body.dart';
+import 'search/presentation/views/search_photos_view_body.dart';
 
 class MainNavigationView extends StatefulWidget {
   const MainNavigationView({super.key});
@@ -41,7 +40,7 @@ class _MainNavigationViewState extends State<MainNavigationView> {
       case 0:
         return null;
       case 1:
-      return null;  
+        return null;
       default:
         return AppBar(
           title: const Text("TODO"),

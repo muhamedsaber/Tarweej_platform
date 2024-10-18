@@ -67,10 +67,8 @@ dependencies:
   webview_flutter: ^4.9.0
   share_plus: ^10.0.2
   # State Management
-  bloc: ^8.1.4
-  meta: ^1.15.0
   flutter_riverpod: ^2.5.1
-  
+  rxdart: ^0.28.0
   
   # Di
   get_it: ^8.0.0

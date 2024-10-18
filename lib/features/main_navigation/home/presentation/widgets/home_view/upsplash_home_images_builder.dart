@@ -23,22 +23,15 @@ class UpSplashHomeImagesBuilder extends ConsumerWidget {
           : (state as UpsplashImagesPagginationLoading).oldImages);
 
       return Expanded(
-        child: Column(
-          children: [
-            Expanded(
-              child: UpsplashImagesGridViewBuilder(
-                images: images,
-                isFetchingMore: state is UpsplashImagesPagginationLoading,
-              ),
-            ),
-          ],
+        child: UpsplashImagesGridViewBuilder(
+          images: images,
         ),
       );
     } else if (state is UpsplashImagesLoading) {
       return const UpsplashImagesLoadingGridview();
     } else if (state is UpsplashImagesError) {
       return RefreshIndicator(
-        onRefresh: () => notifier.fetchImages(isRefreshing: true),
+        onRefresh: () => notifier.fetchImages(page: 0),
         child: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
           child: CustomError(

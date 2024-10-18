@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../config/data/cache/user_cache.dart';
 import '../../../../../core/networking/firebase/firebase_error_model.dart';
+import '../impl/repos/auth_provider_repo_impl.dart';
 import '../impl/repos/mock_auth_provider_repo_impl.dart';
 import '../interfaces/authentication_provider.dart';
 import '../interfaces/auth_provider_repo.dart';
@@ -34,5 +35,5 @@ class AuthProviderStateNotifier extends StateNotifier<AuthProviderState> {
 // i can change the authProvider in the runtime without changing the code.
 final authProviderStateNotifier = StateNotifierProvider.family<
     AuthProviderStateNotifier, AuthProviderState, AuthenticationProvider>(
-  (ref, authProvider) => AuthProviderStateNotifier(MockAuthProviderRepoImpl()),
+  (ref, authProvider) => AuthProviderStateNotifier(AuthProviderRepoImpl(authProvider:authProvider)),
 );
