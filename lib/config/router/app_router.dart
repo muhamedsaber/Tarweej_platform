@@ -3,7 +3,7 @@ import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/features/auth/features/login/presentation/views/login_view.dart';
 import 'package:tarweej_platform/features/auth/features/main_auth_view.dart';
 import 'package:tarweej_platform/core/common_ui/views/app_web_view.dart';
-import 'package:tarweej_platform/features/main_navigation/home/presentation/views/upsplash_search_view.dart';
+import 'package:tarweej_platform/features/main_navigation/search/presentation/views/search_images_result_view.dart';
 
 import '../../features/auth/features/phone/presentation/views/change_country_view.dart';
 import '../../features/auth/features/phone/presentation/views/otp_verification_view.dart';
@@ -25,7 +25,7 @@ class AppRouter {
         return _buildWithTransition(const OTPVerificationView());
       case Routes.loginView:
         return _buildWithTransition(const LoginView());
-    
+
       case Routes.mainNavigationView:
         return _build(const MainNavigationView());
       case Routes.upSplashImageView:
@@ -37,6 +37,8 @@ class AppRouter {
       case Routes.publisherProfileWebView:
         final args = settings.arguments as String;
         return _buildWithTransition(AppWebView(url: args));
+      case Routes.searchImagesResultView:
+        return _buildWithTransition(const SearchImagesResultView());
       default:
         return _build(NotFoundScreen(
           routeName: settings.name ?? "",

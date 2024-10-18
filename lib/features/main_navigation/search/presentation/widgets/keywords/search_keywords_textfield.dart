@@ -1,24 +1,22 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/features/main_navigation/search/presentation/logic/search_keywords/search_keywords_notifier.dart';
-import 'package:tarweej_platform/features/main_navigation/search/presentation/logic/toggle_search_notifier.dart';
 
-import '../../../../../core/common_ui/widgets/app_text_field.dart';
-import '../../../../../core/helpers/size.dart';
+import '../../../../../../core/common_ui/widgets/app_text_field.dart';
+import '../../../../../../core/helpers/size.dart';
 
-class SearchImagesTextField extends ConsumerWidget {
-  const SearchImagesTextField({super.key});
+class SearchKeywordsTextField extends ConsumerWidget {
+  const SearchKeywordsTextField({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final notifier = ref.watch(toggleSearchProvider.notifier);
-    final searchProvider = ref.watch(searchKeywordsNotifierProvider.notifier);
+    final searchProvider = ref.watch(searchImagesNotifierProvider.notifier);
+
+    /// This is the notifier that toggles the search bar to change the ui
+    final toggleSearchNotifier = ref.watch(toggleSearchProvider.notifier);
     final isSearchActive = ref.watch(toggleSearchProvider);
 
-    log(isSearchActive.toString());
     return Row(
       children: [
         horizontalSpace(10),
@@ -36,13 +34,13 @@ class SearchImagesTextField extends ConsumerWidget {
             child: GestureDetector(
                 key: ValueKey(isSearchActive),
                 onTap: () {
-                  notifier.toggleSearch();
+                  toggleSearchNotifier.state = !toggleSearchNotifier.state;
                 },
                 child: AppTextField(
                   onChanged: (p0) {
-                    searchProvider.searchKeywords();
+                    searchProvider.searchKeywords(p0);
                   },
-                  controller: searchProvider.controller,
+                  controller: searchProvider.searchKewordsController,
                   isButton: !isSearchActive,
                   hintText: context.translate.search,
                   autofocus: isSearchActive,
@@ -53,7 +51,7 @@ class SearchImagesTextField extends ConsumerWidget {
         if (isSearchActive)
           IconButton(
             onPressed: () {
-              notifier.toggleSearch();
+             toggleSearchNotifier.state = !toggleSearchNotifier.state;
             },
             icon: Icon(
               Icons.close,
@@ -64,4 +62,10 @@ class SearchImagesTextField extends ConsumerWidget {
       ],
     );
   }
+
+ 
 }
+
+final toggleSearchProvider = StateProvider<bool>(
+  (ref) => false,
+);

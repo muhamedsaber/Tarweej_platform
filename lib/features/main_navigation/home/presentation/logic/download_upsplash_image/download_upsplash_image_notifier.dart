@@ -4,12 +4,11 @@ import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:tarweej_platform/core/helpers/app_constants.dart';
 import 'package:tarweej_platform/features/main_navigation/home/data/repos/upsplash_repo.dart';
 import 'package:tarweej_platform/features/main_navigation/home/presentation/logic/download_upsplash_image/download_upsplash_image_state.dart';
 
 import '../../../../../../core/di/dependency_injection.dart';
-import '../../../../../../core/networking/api/dio_interface.dart';
+import '../../../../../../core/networking/api/dio_consumer.dart';
 import '../../../data/services/upsplash_service.dart';
 
 class DownloadUpsplashImageNotifier
@@ -33,13 +32,7 @@ class DownloadUpsplashImageNotifier
     );
 
     result.when(onSuccess: (data) async {
-      final status =
-          await ImageGallerySaver.saveFile(savePath, isReturnPathOfIOS: true);
-      log(status.toString());
-      log("------------------------------");
-      log("Downloaded");
-      log("Location : $savePath");
-      log("------------------------------");
+      await ImageGallerySaver.saveFile(savePath, isReturnPathOfIOS: true);
 
       state = DownloadUpsplashImageSucces();
     }, onError: (e) {

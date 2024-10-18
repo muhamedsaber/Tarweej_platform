@@ -17,7 +17,7 @@ class UpsplashImagesLoadingGridview extends StatelessWidget {
           highlightColor: context.theme.colorScheme.secondary.withOpacity(0.5),
         ),
         child: UpsplashImagesGridViewBuilder(
-            isFetchingMore: false,
+             
             images: List.generate(
               6,
               (index) => UpsplashImageModel(),
