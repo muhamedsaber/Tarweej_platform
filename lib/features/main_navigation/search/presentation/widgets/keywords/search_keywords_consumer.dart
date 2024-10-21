@@ -14,7 +14,12 @@ class SearchKeywordsConsumer extends ConsumerWidget {
     final searchProvider = ref.watch(searchImagesNotifierProvider.notifier);
     if (state is SearchImagesKeywordUpadated) {
       return SearchKeywordsListViewBuilder(
-        keywords:searchProvider.keywords ,
+        keywords: searchProvider.keywords,
+        onSelectKeyword: (model) {
+          searchProvider.selectedKeyword = model;
+          searchProvider.searchImagesController.text = model.word!;
+          searchProvider.searchImages();
+        },
       );
     } else if (state is SearchImagesError) {
       return Center(

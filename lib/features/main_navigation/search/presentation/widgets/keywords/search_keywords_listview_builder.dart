@@ -7,8 +7,11 @@ import '../../../../../../core/helpers/size.dart';
 import '../../../data/models/search_keyword_model.dart';
 
 class SearchKeywordsListViewBuilder extends StatelessWidget {
-  const SearchKeywordsListViewBuilder({super.key, required this.keywords});
+  const SearchKeywordsListViewBuilder({super.key, required this.keywords,
+  required this.onSelectKeyword
+  });
   final List<SearchKeywordModel> keywords;
+  final Function(SearchKeywordModel model) onSelectKeyword;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -25,6 +28,7 @@ class SearchKeywordsListViewBuilder extends StatelessWidget {
                   Expanded(
                     child: ListTile(
                       onTap: () {
+                        onSelectKeyword(keywords[index]);
                         context.navigateTo(Routes.searchImagesResultView);
                       },
                       title: Text(

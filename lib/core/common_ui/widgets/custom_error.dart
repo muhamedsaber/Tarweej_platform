@@ -38,7 +38,7 @@ class CustomError extends StatelessWidget {
           icon = Icons.error;
       }
     }
-    return Container(
+    return SizedBox(
       height: isFullScreen ? context.screenHeight : null,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
