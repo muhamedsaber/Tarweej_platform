@@ -8,12 +8,11 @@ import '../../logic/upsplash_images_notifier/upsplash_home_images.dart';
 import 'upsplash_home_image_presenter.dart';
 
 class UpsplashImagesGridViewBuilder extends ConsumerWidget {
-  const UpsplashImagesGridViewBuilder({super.key, required this.images});
+  const UpsplashImagesGridViewBuilder({super.key, required this.images, required this.scrollController});
   final List<UpsplashImageModel> images;
-
+  final ScrollController scrollController;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final notifier = ref.read(upsplashHomeImagesProvider.notifier);
     return RefreshIndicator(
       onRefresh: () {
         ref.read(upsplashHomeImagesProvider.notifier).fetchImages(page: 0);
@@ -24,7 +23,7 @@ class UpsplashImagesGridViewBuilder extends ConsumerWidget {
         padding: EdgeInsets.zero,
         physics: const BouncingScrollPhysics(
             decelerationRate: ScrollDecelerationRate.fast),
-        controller: notifier.scrollController,
+        controller: scrollController,
         // add 6 more items to the list to show the loading indicator at the end
         itemCount: images.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

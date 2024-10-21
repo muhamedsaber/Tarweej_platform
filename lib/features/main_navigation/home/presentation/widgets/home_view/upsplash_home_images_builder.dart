@@ -25,6 +25,7 @@ class UpSplashHomeImagesBuilder extends ConsumerWidget {
       return Expanded(
         child: UpsplashImagesGridViewBuilder(
           images: images,
+          scrollController: notifier.scrollController,
         ),
       );
     } else if (state is UpsplashImagesLoading) {
