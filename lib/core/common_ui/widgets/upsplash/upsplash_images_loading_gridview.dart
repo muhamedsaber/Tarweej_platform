@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
-import 'package:tarweej_platform/features/main_navigation/home/presentation/widgets/home_view/upsplash_images_gridview_builder.dart';
+import 'package:tarweej_platform/core/common_ui/widgets/upsplash/upsplash_images_gridview_builder.dart';
 
-import '../../../data/models/upsplash_image_model.dart';
+import '../../../../features/main_navigation/home/data/models/upsplash_image_model.dart';
 
 class UpsplashImagesLoadingGridview extends StatelessWidget {
   const UpsplashImagesLoadingGridview({super.key});
@@ -17,10 +17,11 @@ class UpsplashImagesLoadingGridview extends StatelessWidget {
           highlightColor: context.theme.colorScheme.secondary.withOpacity(0.5),
         ),
         child: UpsplashImagesGridViewBuilder(
-             scrollController: ScrollController(),
+            scrollController: ScrollController(),
+            onRefresh: () async {},
             images: List.generate(
               6,
-              (index) => UpsplashImageModel(),
+              (index) => UpsplashImageModel(id: index.toString()),
             )),
       ),
     );

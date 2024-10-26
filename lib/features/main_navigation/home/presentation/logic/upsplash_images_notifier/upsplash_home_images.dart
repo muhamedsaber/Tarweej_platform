@@ -5,11 +5,12 @@ import 'package:tarweej_platform/features/main_navigation/home/data/repos/upspla
 import 'package:tarweej_platform/features/main_navigation/home/data/services/upsplash_service.dart';
 
 import '../../../../../../core/di/dependency_injection.dart';
+import '../../../../../../core/di/di_constants.dart';
 import '../../../../../../core/networking/api/dio_consumer.dart';
 import 'upsplash_images_state.dart';
 
 class UpsplashHomeImages extends StateNotifier<UpsplashImagesState> {
-  final UpsplashRepo repo;
+  final UpsplashHomeRepo repo;
 
   /// Track if a fetch is in progress to prevent multiple fetches at the same time
   bool isAlreadyLoadingMoreImages = false;
@@ -93,7 +94,6 @@ class UpsplashHomeImages extends StateNotifier<UpsplashImagesState> {
 }
 
 final upsplashHomeImagesProvider =
-    StateNotifierProvider<UpsplashHomeImages, UpsplashImagesState>((ref) =>
-        UpsplashHomeImages(
-            repo: UpsplashRepo(service: UpsplashService(getIt<DioConsumer>())))
-          ..fetchImages(page: 1));
+    StateNotifierProvider<UpsplashHomeImages, UpsplashImagesState>(
+        (ref) => UpsplashHomeImages(repo: getIt<UpsplashHomeRepo>()));
+          // ..fetchImages(page: 1));

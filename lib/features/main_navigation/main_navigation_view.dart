@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarweej_platform/core/common_ui/widgets/bottom_nav_bar/app_bottom_navbar.dart';
+import 'package:tarweej_platform/features/main_navigation/search/presentation/widgets/keywords/search_keywords_textfield.dart';
+import 'package:tarweej_platform/tarweej_platform_app.dart';
 
 import 'home/presentation/views/home_view_body.dart';
 import 'search/presentation/views/search_photos_view_body.dart';
@@ -40,7 +43,11 @@ class _MainNavigationViewState extends State<MainNavigationView> {
       case 0:
         return null;
       case 1:
-        return null;
+        return AppBar(
+          toolbarHeight: 80.h,
+          surfaceTintColor: Colors.transparent,
+          title: const SearchKeywordsTextField(),
+        );
       default:
         return AppBar(
           title: const Text("TODO"),

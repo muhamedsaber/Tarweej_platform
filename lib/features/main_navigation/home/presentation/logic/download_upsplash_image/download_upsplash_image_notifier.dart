@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:tarweej_platform/core/di/di_constants.dart';
 import 'package:tarweej_platform/features/main_navigation/home/data/repos/upsplash_repo.dart';
 import 'package:tarweej_platform/features/main_navigation/home/presentation/logic/download_upsplash_image/download_upsplash_image_state.dart';
 
@@ -15,7 +16,7 @@ class DownloadUpsplashImageNotifier
     extends StateNotifier<DownloadUpsplashImageState> {
   DownloadUpsplashImageNotifier({required this.repo})
       : super(DownloadUpsplashImageInitial());
-  final UpsplashRepo repo;
+  final UpsplashHomeRepo repo;
 
   downloadImage({
     required String url,
@@ -73,4 +74,4 @@ class DownloadUpsplashImageNotifier
 final downloadUpsplashImageProvider = StateNotifierProvider<
         DownloadUpsplashImageNotifier, DownloadUpsplashImageState>(
     (ref) => DownloadUpsplashImageNotifier(
-        repo: UpsplashRepo(service: UpsplashService(getIt<DioConsumer>()))));
+        repo: getIt<UpsplashHomeRepo>()));

@@ -71,6 +71,9 @@ class _AppTextFieldState extends State<AppTextField> {
       validator: widget.validator,
       autofocus: widget.autofocus,
       focusNode: focusNode,
+      onTapOutside: (event) {
+        focusNode.unfocus();
+      },
       style:
           context.theme.font18OnSurfaceRegular.copyWith(decorationThickness: 0),
       decoration: InputDecoration(

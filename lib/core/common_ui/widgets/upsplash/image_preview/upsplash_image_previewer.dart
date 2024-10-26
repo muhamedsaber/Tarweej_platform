@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -7,8 +6,6 @@ import 'package:tarweej_platform/core/helpers/app_assets.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 import 'package:tarweej_platform/core/helpers/size.dart';
 import 'package:tarweej_platform/features/main_navigation/home/data/models/upsplash_image_model.dart';
-import 'package:tarweej_platform/features/main_navigation/home/presentation/widgets/upsplash_image_view/open_upsplash_image_in_webview_button.dart';
-import 'package:tarweej_platform/features/main_navigation/home/presentation/widgets/upsplash_image_view/share_upsplash_image_button.dart';
 
 class UpsplashImagePreviewer extends StatefulWidget {
   const UpsplashImagePreviewer(
@@ -47,6 +44,9 @@ class _UpsplashImagePreviewerState extends State<UpsplashImagePreviewer>
         _showNetwrokImagePreviewerDialog(
             context); // Show the full image when long-pressed
       },
+      onLongPressEnd: (details) {
+        _closeNetwrokImagePreviewerDialog(); // Close the full image
+      },
 
       child: widget.child, // Show the thumbnail in the grid
     );
@@ -66,7 +66,7 @@ class _UpsplashImagePreviewerState extends State<UpsplashImagePreviewer>
             ),
           ),
           Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: ScaleTransition(
                 scale: _animationController,
                 child: Column(
@@ -95,36 +95,8 @@ class _UpsplashImagePreviewerState extends State<UpsplashImagePreviewer>
                           bottomLeft: Radius.circular(12),
                         ),
                       ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          ShareUpsplashImageButton(
-                            image: widget.image,
-                            onShare: () {
-                              _closeNetwrokImagePreviewerDialog();
-                            },
-                          ),
-                          OpenUpsplashImageInWebViewButton(
-                            url: widget.image.links?.html,
-                            onOpen: () {
-                              _closeNetwrokImagePreviewerDialog();
-                            },
-                          ),
-                        ],
-                      ),
                     ),
                     verticalSpace(20),
-                    IconButton(
-                      icon: Icon(
-                        Icons.close,
-                        color: Colors.white,
-                        size: 30.h,
-                      ),
-                      onPressed: () {
-                        _closeNetwrokImagePreviewerDialog();
-                      },
-                    )
                   ],
                 ),
               ))

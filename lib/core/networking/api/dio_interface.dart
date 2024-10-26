@@ -10,5 +10,8 @@ abstract class ApiInterface<T> {
   Future<Response<dynamic>> patch(String endpoint,
       {Map<String, dynamic>? queryParameters, dynamic body, Options? options});
 
-  Future<Response<dynamic>> downloadFile({required String url, required String savePath, Function(int, int)? onReceiveProgress});
+  Future<Response<dynamic>> downloadFile(
+      {required String url,
+      required String savePath,
+      Function(int, int)? onReceiveProgress});
 }

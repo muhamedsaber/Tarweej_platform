@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:tarweej_platform/core/helpers/error_logger.dart';

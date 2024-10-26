@@ -31,7 +31,23 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
+    // flavors setup
+    // flavorDimensions += "default"
 
+    // productFlavors {
+    //     // development
+    //     create("dev") {
+    //         dimension = "default"
+    //         resValue(type = "string", name = "app_name", value = "Tarweej Platform Dev")
+    //         applicationIdSuffix = ".dev"
+    //     }
+    //     // production
+    //     create("prod") {
+    //         dimension = "default"
+    //         resValue(type = "string", name = "app_name", value = "Tarweej Platform")
+            
+    //     }
+    // }
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

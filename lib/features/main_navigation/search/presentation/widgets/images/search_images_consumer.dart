@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tarweej_platform/features/main_navigation/search/presentation/logic/search_keywords/search_keywords_notifier.dart';
+import 'package:tarweej_platform/features/main_navigation/search/presentation/logic/search_keywords/search_images_notifier.dart';
 import 'package:tarweej_platform/features/main_navigation/search/presentation/logic/search_keywords/search_keywords_state.dart';
 
 import '../../../../../../core/common_ui/widgets/custom_error.dart';
-import '../../../../home/presentation/widgets/home_view/upsplash_images_gridview_builder.dart';
-import '../../../../home/presentation/widgets/home_view/upsplash_images_loading_gridview.dart';
+import '../../../../../../core/common_ui/widgets/upsplash/upsplash_images_gridview_builder.dart';
+import '../../../../../../core/common_ui/widgets/upsplash/upsplash_images_loading_gridview.dart';
 
 class SearchImagesConsumer extends ConsumerWidget {
   const SearchImagesConsumer({super.key});
@@ -19,6 +19,11 @@ class SearchImagesConsumer extends ConsumerWidget {
       return Expanded(
         child: UpsplashImagesGridViewBuilder(
           images: notifier.images,
+          onRefresh: () {
+            notifier.searchImages(
+                searchKeyWord: notifier.searchImagesController.text);
+            return Future.value();
+          },
           scrollController: notifier.scrollController,
         ),
       );

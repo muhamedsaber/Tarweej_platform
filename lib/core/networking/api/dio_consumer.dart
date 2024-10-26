@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:tarweej_platform/core/networking/api/dio_interface.dart';
 
@@ -53,9 +52,17 @@ class DioConsumer<T> implements ApiInterface<T> {
         queryParameters: queryParameters, options: options, data: body);
     return response;
   }
+
   @override
-  Future<Response<dynamic>> downloadFile({required String url, required String savePath, Function(int, int)? onReceiveProgress}) async{
-     final response=await dio.download(url, savePath,onReceiveProgress: onReceiveProgress,);
-      return response;
+  Future<Response<dynamic>> downloadFile(
+      {required String url,
+      required String savePath,
+      Function(int, int)? onReceiveProgress}) async {
+    final response = await dio.download(
+      url,
+      savePath,
+      onReceiveProgress: onReceiveProgress,
+    );
+    return response;
   }
 }

@@ -5,8 +5,8 @@ import '../../../../../../core/common_ui/widgets/custom_error.dart';
 import '../../../data/models/upsplash_image_model.dart';
 import '../../logic/upsplash_images_notifier/upsplash_home_images.dart';
 import '../../logic/upsplash_images_notifier/upsplash_images_state.dart';
-import 'upsplash_images_gridview_builder.dart';
-import 'upsplash_images_loading_gridview.dart';
+import '../../../../../../core/common_ui/widgets/upsplash/upsplash_images_gridview_builder.dart';
+import '../../../../../../core/common_ui/widgets/upsplash/upsplash_images_loading_gridview.dart';
 
 class UpSplashHomeImagesBuilder extends ConsumerWidget {
   const UpSplashHomeImagesBuilder({super.key});
@@ -25,6 +25,10 @@ class UpSplashHomeImagesBuilder extends ConsumerWidget {
       return Expanded(
         child: UpsplashImagesGridViewBuilder(
           images: images,
+          onRefresh: () {
+            ref.read(upsplashHomeImagesProvider.notifier).fetchImages(page: 0);
+            return Future.value();
+          },
           scrollController: notifier.scrollController,
         ),
       );
