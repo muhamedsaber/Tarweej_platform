@@ -31,6 +31,7 @@ class AppRouter {
       case Routes.upSplashImageView:
         final UpsplashImageModel image =
             settings.arguments as UpsplashImageModel;
+  
         return _buildWithTransition(UpsplashImageView(
           image: image,
         ));

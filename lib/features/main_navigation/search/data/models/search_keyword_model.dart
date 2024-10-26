@@ -1,6 +1,6 @@
 class SearchKeywordModel {
-  final String? word;
-  final int? score;
+   String? word;
+   int? score;
 
   SearchKeywordModel({
     this.word,

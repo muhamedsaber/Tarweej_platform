@@ -8,10 +8,10 @@ import 'package:tarweej_platform/features/main_navigation/search/data/service/se
 import '../../../home/data/models/upsplash_image_model.dart';
 import '../models/search_images_request_model.dart';
 
-class SearchImagesRepo {
-  final SearchImagesService service;
+class SearchRepo {
+  final SearchService service;
 
-  SearchImagesRepo({required this.service});
+  SearchRepo({required this.service});
   Future<ApiResult<List<SearchKeywordModel>>> searchForKeywords({
     required String query,
   }) async {

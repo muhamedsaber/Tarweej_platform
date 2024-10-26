@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tarweej_platform/features/main_navigation/home/presentation/widgets/home_view/upsplash_image_previewer.dart';
+import 'package:tarweej_platform/core/common_ui/widgets/upsplash/image_preview/upsplash_image_previewer.dart';
 import 'package:tarweej_platform/core/helpers/app_assets.dart';
 import 'package:tarweej_platform/core/helpers/app_constants.dart';
 import '../../../../../../core/helpers/size.dart';
@@ -98,11 +98,6 @@ class UpsplashHomeImagePresenter extends StatelessWidget {
   }
 
   EdgeInsets getPaddingBasedOnIndex(bool isOdd, BuildContext context) {
-    // This padding is applied based on the index of the image in the gridview
-    // why?
-    // because i want to make it symmetrical and more pleasant to the eye
-    // so when the image is odd it will have more padding on the left side and less on the right side
-    // and vice versa, Based also on the directionality of the app (LTR or RTL)
     final dir = Directionality.of(context);
     if (dir == TextDirection.ltr) {
       return !isOdd

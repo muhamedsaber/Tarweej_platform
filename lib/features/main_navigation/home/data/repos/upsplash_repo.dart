@@ -6,10 +6,10 @@ import '../../../../../core/networking/api/api_result.dart';
 import '../models/upsplash_image_model.dart';
 import '../services/upsplash_service.dart';
 
-class UpsplashRepo {
+class UpsplashHomeRepo {
   final UpsplashService service;
 
-  UpsplashRepo({required this.service});
+  UpsplashHomeRepo({required this.service});
 
   Future<ApiResult<List<UpsplashImageModel>>> getHomeImages({
     required int page,
@@ -41,6 +41,4 @@ class UpsplashRepo {
       return ApiResult.error(ApiErrorHandler.handle(e));
     }
   }
-
- 
 }

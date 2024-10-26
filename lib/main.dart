@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:tarweej_platform/config/state_logger.dart';
 import 'package:tarweej_platform/core/di/dependency_injection.dart';
 import 'package:tarweej_platform/firebase_options.dart';
 
@@ -19,6 +20,7 @@ void main() async {
   log(appDocumentsDirectory.toString());
   runApp(
     ProviderScope(
+      observers: [StateLogger()],
       overrides: [
         /// Look at [languageChangerProvider] for more details.
         ///

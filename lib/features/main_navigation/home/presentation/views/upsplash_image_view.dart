@@ -18,6 +18,7 @@ class UpsplashImageView extends StatelessWidget {
   final UpsplashImageModel image;
   @override
   Widget build(BuildContext context) {
+    final heroTag = image.id;
     log(image.height.toString());
     return Scaffold(
       body: Column(
@@ -45,8 +46,7 @@ class UpsplashImageView extends StatelessWidget {
                         maxScale: PhotoViewComputedScale.contained,
                         tightMode: true,
                         filterQuality: FilterQuality.high,
-                        heroAttributes:
-                            PhotoViewHeroAttributes(tag: image.id.toString()),
+                        heroAttributes: PhotoViewHeroAttributes(tag: heroTag!),
                         backgroundDecoration: BoxDecoration(
                           color: context.theme.scaffoldBackgroundColor,
                         ),

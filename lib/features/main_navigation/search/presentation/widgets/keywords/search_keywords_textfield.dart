@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tarweej_platform/config/router/routes.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
-import 'package:tarweej_platform/features/main_navigation/search/presentation/logic/search_keywords/search_keywords_notifier.dart';
+import 'package:tarweej_platform/features/main_navigation/search/presentation/logic/search_keywords/search_images_notifier.dart';
 
 import '../../../../../../core/common_ui/widgets/app_text_field.dart';
 import '../../../../../../core/helpers/size.dart';
@@ -37,8 +38,14 @@ class SearchKeywordsTextField extends ConsumerWidget {
                   toggleSearchNotifier.state = !toggleSearchNotifier.state;
                 },
                 child: AppTextField(
+                  onSubmitted: (p0) {
+                    //search directly
+                    searchProvider.searchImages(searchKeyWord: p0);
+                    searchProvider.images.clear();
+                    context.navigateTo(Routes.searchImagesResultView);
+                  },
                   onChanged: (p0) {
-                    searchProvider.searchKeywords(p0);
+                    searchProvider.onSearchChanged(p0);
                   },
                   controller: searchProvider.searchKewordsController,
                   isButton: !isSearchActive,
@@ -51,7 +58,9 @@ class SearchKeywordsTextField extends ConsumerWidget {
         if (isSearchActive)
           IconButton(
             onPressed: () {
-             toggleSearchNotifier.state = !toggleSearchNotifier.state;
+              toggleSearchNotifier.state = !toggleSearchNotifier.state;
+              searchProvider.searchKewordsController.clear();
+              searchProvider.resetSearchKeywordsViewToInitialState();
             },
             icon: Icon(
               Icons.close,
@@ -62,8 +71,6 @@ class SearchKeywordsTextField extends ConsumerWidget {
       ],
     );
   }
-
- 
 }
 
 final toggleSearchProvider = StateProvider<bool>(

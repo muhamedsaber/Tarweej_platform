@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/core/helpers/extensions.dart';
 
 import '../../../../../../core/common_ui/widgets/app_text_field.dart';
-import '../../logic/search_keywords/search_keywords_notifier.dart';
+import '../../logic/search_keywords/search_images_notifier.dart';
 
 class SearchImagesTextField extends ConsumerWidget {
   const SearchImagesTextField({super.key});
@@ -11,18 +11,19 @@ class SearchImagesTextField extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final searchProvider = ref.watch(searchImagesNotifierProvider.notifier);
-    searchProvider.searchImagesController.text =
-        searchProvider.searchKewordsController.text;
     return Expanded(
       child: AppTextField(
         suffixIcon: IconButton(
           icon: const Icon(Icons.search),
           onPressed: () {
-            // do search
+            //search directly
+            searchProvider.searchImages(
+                searchKeyWord: searchProvider.searchImagesController.text);
           },
         ),
         onSubmitted: (p0) {
-          //do search
+          //search directly
+          searchProvider.searchImages(searchKeyWord: p0);
         },
         hintText: context.translate.search,
         autofocus: false,

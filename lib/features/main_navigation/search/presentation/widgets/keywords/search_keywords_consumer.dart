@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tarweej_platform/features/main_navigation/search/presentation/logic/search_keywords/search_keywords_state.dart';
 
-import '../../logic/search_keywords/search_keywords_notifier.dart';
+import '../../logic/search_keywords/search_images_notifier.dart';
 import 'search_keywords_listview_builder.dart';
 
 class SearchKeywordsConsumer extends ConsumerWidget {
@@ -12,12 +12,12 @@ class SearchKeywordsConsumer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(searchImagesNotifierProvider);
     final searchProvider = ref.watch(searchImagesNotifierProvider.notifier);
-    if (state is SearchImagesKeywordUpadated) {
+    if (state is SearchKeywordsUpdatedState || state is SearchImagesSuccess) {
       return SearchKeywordsListViewBuilder(
         keywords: searchProvider.keywords,
         onSelectKeyword: (model) {
           searchProvider.selectedKeyword = model;
-          searchProvider.searchImagesController.text = model.word!;
+          searchProvider.images.clear();
           searchProvider.searchImages();
         },
       );

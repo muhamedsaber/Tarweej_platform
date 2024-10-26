@@ -9,48 +9,100 @@ import 'package:tarweej_platform/features/auth/features/signup/data/signup_repo.
 import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/facebook_auth_provider_impl.dart';
 import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/github_auth_provider_impl.dart';
 import 'package:tarweej_platform/features/auth/services/providers/impl/auth_providers/twitter_auth_provider_impl.dart';
+import 'package:tarweej_platform/features/main_navigation/home/data/repos/upsplash_repo.dart';
 import 'package:tarweej_platform/features/main_navigation/search/data/repos/search_images_repo.dart';
 import 'package:tarweej_platform/features/main_navigation/search/data/service/search_images_service.dart';
 
 import '../../features/auth/features/phone/data/signin_with_phone_number_repo.dart';
 import '../../features/auth/services/providers/impl/auth_providers/google_auth_provider_impl.dart';
+import '../../features/main_navigation/home/data/services/upsplash_service.dart';
 import '../networking/api/dio_consumer.dart';
-
-
 
 GetIt getIt = GetIt.instance;
 
 void setupDependencyInjection() {
   // Email Service
   getIt.registerSingleton<EmailService>(EmailService());
-  //upsplash
-  getIt.registerSingleton<DioFactory>(DioFactory(headers:ApiConstants.upsplashRequestHeaders,
-  baseUrl: ApiConstants.updplashBaseUrl
-  ),instanceName: DiConstants.upsplshDioFactory);
-  getIt.registerSingleton<DioConsumer>(DioConsumer(getIt<DioFactory>(instanceName: DiConstants.upsplshDioFactory).dio));
-  // 
+
+  // --- This section for Firebase Auth
   _setupSignup();
   _setupAuthenticationProviders();
   _setupSignInWithPhoneNumber();
   _setupLogin();
   _resetPasswordSetup();
-  /// Upsplash 
-  getIt.registerSingleton<DioFactory>(DioFactory(baseUrl:ApiConstants.datamuseApiBaseUrl));
-  getIt.registerSingleton<DioConsumer>(DioConsumer(getIt<DioFactory>().dio),instanceName:DiConstants.datasumeDioFactory);
-  getIt.registerSingleton<SearchImagesService>(SearchImagesService(getIt<DioConsumer>(instanceName:DiConstants.datasumeDioFactory)));
-  getIt.registerSingleton<SearchImagesRepo>(SearchImagesRepo(service:  getIt<SearchImagesService>()));
+
+  /// APIs
+
+  _setupDioFactory();
+  _setupDioConsumer();
+  _setupUpsplashHomeImages();
+  _setupSearchImagesAndKeywords();
+}
+
+_setupUpsplashHomeImages() {
+  getIt.registerSingleton<UpsplashService>(UpsplashService(
+    getIt<DioConsumer>(instanceName: DiConstants.upsplshDioConsumer),
+  ));
+  getIt.registerFactory<UpsplashHomeRepo>(
+      () => UpsplashHomeRepo(service: getIt<UpsplashService>()));
+}
+
+///----- search images
+_setupSearchImagesAndKeywords() {
+  getIt.registerSingleton<SearchService>(
+    SearchService(
+      searchImagesApi:
+          getIt<DioConsumer>(instanceName: DiConstants.upsplshDioConsumer),
+      searchKeywordsApi:
+          getIt<DioConsumer>(instanceName: DiConstants.datasumeDioConsumer),
+    ),
+  );
+
+  getIt.registerSingleton<SearchRepo>(
+    SearchRepo(
+      service: getIt<SearchService>(),
+    ),
+  );
+}
+
+void _setupDioConsumer() {
+  getIt.registerSingleton<DioConsumer>(
+    DioConsumer(
+      getIt<DioFactory>(instanceName: DiConstants.upsplshDioFactory).dio,
+    ),
+    instanceName: DiConstants.upsplshDioConsumer,
+  );
+  getIt.registerSingleton<DioConsumer>(
+    DioConsumer(
+        getIt<DioFactory>(instanceName: DiConstants.datasumeDioFactory).dio),
+    instanceName: DiConstants.datasumeDioConsumer,
+  );
+}
+
+/// ---- Dio Factory
+void _setupDioFactory() {
+  getIt.registerSingleton<DioFactory>(
+    DioFactory(
+      headers: ApiConstants.upsplashRequestHeaders,
+      baseUrl: ApiConstants.upsplashBaseUrl,
+    ),
+    instanceName: DiConstants.upsplshDioFactory,
+  );
+  getIt.registerSingleton<DioFactory>(
+    DioFactory(baseUrl: ApiConstants.datamuseApiBaseUrl),
+    instanceName: DiConstants.datasumeDioFactory,
+  );
 }
 
 ///---------- Auth Providers
-_setupAuthenticationProviders(){
+_setupAuthenticationProviders() {
   getIt.registerSingleton<FacebookAuthProviderImpl>(FacebookAuthProviderImpl());
   getIt.registerSingleton<GoogleAuthProviderImpl>(GoogleAuthProviderImpl());
   getIt.registerSingleton<GitHubAuthProviderImpl>(GitHubAuthProviderImpl());
   getIt.registerSingleton<TwitterAuthProviderImpl>(TwitterAuthProviderImpl());
 }
 
-
-///----------- Auth Repos 
+///----------- Auth Repos
 _setupSignup() {
   getIt.registerSingleton<SignupRepo>(
       SignupRepo(emailService: getIt<EmailService>()));
@@ -61,8 +113,6 @@ void _setupSignInWithPhoneNumber() {
     () => SigninWithPhoneNumberRepo(),
   );
 }
-
-
 
 void _setupLogin() {
   getIt.registerSingleton<LoginRepo>(

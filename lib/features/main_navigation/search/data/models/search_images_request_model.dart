@@ -14,7 +14,7 @@ class SearchImagesRequestModel {
       this.color,
       this.orientation});
 
-  copyWith({
+  SearchImagesRequestModel copyWith({
     String? query,
     int? page,
     int? perPage,
@@ -30,5 +30,5 @@ class SearchImagesRequestModel {
       color: color ?? this.color,
       orientation: orientation ?? this.orientation,
     );
-  }    
+  }
 }
